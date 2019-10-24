@@ -1,1 +1,28 @@
-Amir: ich habe mich erfolgreich angemeldet:D
+diary that contains all meetings (date/time, attendance, minutes) and the
+todo's (what, who, deadline, status -> open, in progress, done)
+
+18.10.19
+meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+introduction to project, choosing the topic, finding an interview partner
+todo's: check if there are interview partners (all), think about questions (all)
+
+18.10.19 - 21.10.19
+everyone for herself/himself
+tasks: setup github project (Selina), update eclipse, setup of svn and tests
+
+22.10.19
+meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+prepare interview questions, send them via mail (person wants to be anonymous),
+define storyboards to do, declare tasks for next meeting
+Selina wrote all things down on that date
+todo's until 24.10.19: scoping (Amir), research (Patricia, Tom), synthesize (Floriana),
+design (all)
+
+24.10.19
+meeting: interviewer, Stefanie, Tom
+todo's: write answers into a document (Tom)
+
+25.10.19
+meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+discuss the done work for 24.10.19, do the prototyping and the validate
+put all things in one document
