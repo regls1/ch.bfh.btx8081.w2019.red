@@ -27,5 +27,7 @@ meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
 discuss the done work for 24.10.19, do the prototyping and the validate
 put all things in one document
 
+jkhkjjk
+
 
 test
