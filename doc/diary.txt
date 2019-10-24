@@ -21,7 +21,6 @@ design (all)
 24.10.19
 meeting: interviewer, Stefanie, Tom
 todo's: write answers into a document (Tom)
-StefanieTest
 
 25.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
