@@ -24,16 +24,16 @@ notice: steps 5 (prototyping) and 6 (validating) on Friday
 
 23.10.19
 Tom
-50 min
-created storyboards
+50 min created storyboards
+45 min beginn research
 todo's: copy them to the template created by Selina
 
 24.10.19
 meeting: interviewer, Stefanie, Tom
 40 min interview (both)
-60 min create document and beginn research (Tom)
-30 min added storyboards into template (Tom)
-xx min finished research and added to file where interview is (Tom)
+30 min write interview in plain text (Tom)
+30 min add storyboards into template (Tom)
+50 min finish research and add it to file where interview is (Tom)
 
 24.10.19
 meeting: Patricia, Stefanie, Tom
