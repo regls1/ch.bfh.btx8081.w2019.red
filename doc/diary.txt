@@ -15,7 +15,7 @@ meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
 prepare interview questions, send them via mail (person wants to be anonymous),
 define storyboards to do, declare tasks for next meeting
 Selina wrote all things down on that date
-todo's until 24.10.19: scoping (Amir), research (Patricia, Tom), synthesize (Floriana),
+todo's until 24.10.19: scoping (Amir), research (Patricia, Stefanie, Tom), synthesize (Floriana),
 design (all)
 
 24.10.19
