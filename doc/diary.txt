@@ -3,24 +3,42 @@ todo's (what, who, deadline, status -> open, in progress, done)
 
 18.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
-introduction to project, choosing the topic, finding an interview partner
+90 min
+introduction to project, choosing the topic, finding an interview partner, setup github project (Selina)
 todo's: check if there are interview partners (all), think about questions (all)
 
-18.10.19 - 21.10.19
-everyone for herself/himself
-tasks: setup github project (Selina), update eclipse, setup of svn and tests
+beginning by 18.10.19, done latest by start of programming
+todo's: setup eclipse and svn and import project from github (all individual)
+notice: latest date because of individual problems like new ordered laptop
+
 
 22.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+90 min
 prepare interview questions, send them via mail (person wants to be anonymous),
 define storyboards to do, declare tasks for next meeting
 Selina wrote all things down on that date
-todo's until 24.10.19: scoping (Amir), research (Patricia, Stefanie, Tom), synthesize (Floriana),
+todo's until 25.10.19: scoping (Amir), research (Patricia, Stefanie, Tom), synthesize (Floriana),
 design (all)
+notice: steps 5 (prototyping) and 6 (validating) on Friday
+
+23.10.19
+Tom
+50 min
+created storyboards
+todo's: copy them to the template created by Selina
 
 24.10.19
 meeting: interviewer, Stefanie, Tom
-todo's: write answers into a document (Tom)
+40 min interview (both)
+60 min create document and beginn research (Tom)
+30 min added storyboards into template (Tom)
+xx min finished research and added to file where interview is (Tom)
+
+24.10.19
+meeting: Patricia, Stefanie, Tom
+60 min
+setup eclipse and svn together and tested update and commit
 
 25.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
