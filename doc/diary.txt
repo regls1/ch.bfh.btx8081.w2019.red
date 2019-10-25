@@ -44,3 +44,6 @@ setup eclipse and svn together and tested update and commit
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
 discuss the done work for 24.10.19, do the prototyping and the validate
 put all things in one document
+
+25.10.19
+Stefanie: drew storyboards, uploaded. (1h)
