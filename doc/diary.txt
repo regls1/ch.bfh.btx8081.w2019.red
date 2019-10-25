@@ -36,6 +36,12 @@ meeting: interviewer, Stefanie, Tom
 50 min finish research and add it to file where interview is (Tom)
 
 24.10.19
+Floriana
+180 min
+Persona, functionality of the system
+To-Do: prototyping
+
+24.10.19
 meeting: Patricia, Stefanie, Tom
 60 min
 setup eclipse and svn together and tested update and commit
@@ -46,4 +52,5 @@ discuss the done work for 24.10.19, do the prototyping and the validate
 put all things in one document
 
 25.10.19
-Stefanie: drew storyboards, uploaded. (1h)
+60 min
+Stefanie: drew storyboards, uploaded
