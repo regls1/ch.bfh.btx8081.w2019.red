@@ -39,18 +39,25 @@ meeting: interviewer, Stefanie, Tom
 Floriana
 180 min
 Persona, functionality of the system
-To-Do: prototyping
 
 24.10.19
 meeting: Patricia, Stefanie, Tom
 60 min
 setup eclipse and svn together and tested update and commit
+todo's: setup eclipse and svn (Floriana, Selina)
 
 25.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
-discuss the done work for 24.10.19, do the prototyping and the validate
-put all things in one document
+120 min
+discuss storyboards, discuss prototyping (which ones), discuss what to do till 29.10.19
+todo's: finish research, prototyping, add all elements to one file
 
 25.10.19
+Stefanie
 60 min
-Stefanie: drew storyboards, uploaded
+draw storyboards, upload them
+
+28.10.19
+Tom
+180 min
+research , update document (add existing things into one document)
