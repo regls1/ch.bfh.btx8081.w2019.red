@@ -61,3 +61,8 @@ draw storyboards, upload them
 Tom
 180 min
 research , update document (add existing things into one document)
+
+29.10.19
+Selina, Tom
+40 min
+install svn, test update and commit
