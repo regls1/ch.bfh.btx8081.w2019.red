@@ -71,3 +71,8 @@ research , update document (add existing things into one document)
 Selina, Tom
 40 min
 install svn, test update and commit
+
+29.10.19
+meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+90 min
+discuss prototype, discussion who presents which part of presentation
