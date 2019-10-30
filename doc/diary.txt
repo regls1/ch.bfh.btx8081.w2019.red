@@ -67,6 +67,11 @@ Amir
 60 min
 draw storyboards, upload them
 
+26.10.19
+Patricia
+80min
+draw storyboards, upload them
+
 28.10.19
 Tom
 180 min
@@ -78,6 +83,7 @@ Stefanie
 Selina, Tom
 40 min
 install svn, test update and commit
+
 
 29.10.19
 meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
