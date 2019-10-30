@@ -2,7 +2,7 @@ diary that contains all meetings (date/time, attendance, minutes) and the
 todo's (what, who, deadline, status -> open, in progress, done)
 
 18.10.19
-meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 90 min
 introduction to project, choosing the topic, finding an interview partner, setup github project (Selina)
 todo's: check if there are interview partners (all), think about questions (all)
@@ -13,7 +13,7 @@ notice: latest date because of individual problems like new ordered laptop
 
 
 22.10.19
-meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 90 min
 prepare interview questions, send them via mail (person wants to be anonymous),
 define storyboards to do, declare tasks for next meeting
@@ -23,42 +23,42 @@ design (all)
 notice: steps 5 (prototyping) and 6 (validating) on Friday
 
 23.10.19
-Tom
+wackt2
 50 min created storyboards
 45 min beginn research
 todo's: copy them to the template created by Selina
 
 24.10.19
-meeting: interviewer, Stefanie, Tom
+meeting: interviewer, neues4, wackt2
 40 min interview (both)
 30 min write interview in plain text (Tom)
 30 min add storyboards into template (Tom)
 50 min finish research and add it to file where interview is (Tom)
 
 24.10.19
-Floriana
+gashf2
 180 min
 Persona, functionality of the system
 
 24.10.2019
-Selina
+regls1
 150 min
 Draw storyboards, make research and write text about it
 
 24.10.19
-meeting: Patricia, Stefanie, Tom
+meeting: romap1, neues4, wackt2
 60 min
 setup eclipse and svn together and tested update and commit
 todo's: setup eclipse and svn (Floriana, Selina)
 
 25.10.19
-meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 120 min
 discuss storyboards, discuss prototyping (which ones), discuss what to do till 29.10.19
 todo's: finish research, prototyping, add all elements to one file
 
 25.10.19
-Stefanie
+neues4
 60 min
 draw storyboards, upload them
 
@@ -73,22 +73,27 @@ Patricia
 draw storyboards, upload them
 
 28.10.19
-Tom
+wackt2
 180 min
 research , update document (add existing things into one document)
 Stefanie
 60 min draw prototype
 
 29.10.19
-Selina, Tom
+regls1, wackt2
 40 min
 install svn, test update and commit
 
-
 29.10.19
-meeting: Amir, Floriana, Patricia, Selina, Stefanie, Tom
+meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 90 min
 discuss prototype, discussion who presents which part of presentation
 
 29.10.19
-Stefanie: Validate: get Feedback for my storyboards and prototype
+neues4
+Validate: get Feedback for my storyboards and prototype
+
+30.10.19
+meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+225 min
+discuss presentation, try it, layout of report, discuss report
