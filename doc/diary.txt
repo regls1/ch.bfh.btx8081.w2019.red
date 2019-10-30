@@ -2,7 +2,7 @@ diary that contains all meetings (date/time, attendance, minutes) and the
 todo's (what, who, deadline, status -> open, in progress, done)
 
 18.10.19
-meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 90 min
 introduction to project, choosing the topic, finding an interview partner, setup github project (regls1)
 todo's: check if there are interview partners (all), think about questions (all)
@@ -13,12 +13,12 @@ notice: latest date because of individual problems like new ordered laptop
 
 
 22.10.19
-meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 90 min
 prepare interview questions, send them via mail (person wants to be anonymous),
 define storyboards to do, declare tasks for next meeting
 regls1 wrote all things down on that date
-todo's until 25.10.19: scoping (Amir), research (romap1, neues4, wackt2), synthesize (gashf2),
+todo's until 25.10.19: scoping (khala1), research (romap1, neues4, wackt2), synthesize (gashf2),
 design (all)
 notice: steps 5 (prototyping) and 6 (validating) on Friday
 
@@ -52,7 +52,7 @@ setup eclipse and svn together and tested update and commit
 todo's: setup eclipse and svn (gashf2, regls1)
 
 25.10.19
-meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 120 min
 discuss storyboards, discuss prototyping (which ones), discuss what to do till 29.10.19
 todo's: finish research, prototyping, add all elements to one file
@@ -63,7 +63,7 @@ neues4
 draw storyboards, upload them
 
 26.10.19
-Amir
+khala1
 60 min
 draw storyboards, upload them
 
@@ -85,7 +85,7 @@ regls1, wackt2
 install svn, test update and commit
 
 29.10.19
-meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 90 min
 discuss prototype, discussion who presents which part of presentation
 
@@ -94,6 +94,6 @@ neues4
 Validate: get Feedback for my storyboards and prototype
 
 30.10.19
-meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 225 min
 discuss presentation, try it, layout of report, discuss report
