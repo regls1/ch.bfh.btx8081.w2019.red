@@ -4,7 +4,7 @@ todo's (what, who, deadline, status -> open, in progress, done)
 18.10.19
 meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 90 min
-introduction to project, choosing the topic, finding an interview partner, setup github project (Selina)
+introduction to project, choosing the topic, finding an interview partner, setup github project (regls1)
 todo's: check if there are interview partners (all), think about questions (all)
 
 beginning by 18.10.19, done latest by start of programming
@@ -17,8 +17,8 @@ meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
 90 min
 prepare interview questions, send them via mail (person wants to be anonymous),
 define storyboards to do, declare tasks for next meeting
-Selina wrote all things down on that date
-todo's until 25.10.19: scoping (Amir), research (Patricia, Stefanie, Tom), synthesize (Floriana),
+regls1 wrote all things down on that date
+todo's until 25.10.19: scoping (Amir), research (romap1, neues4, wackt2), synthesize (gashf2),
 design (all)
 notice: steps 5 (prototyping) and 6 (validating) on Friday
 
@@ -26,7 +26,7 @@ notice: steps 5 (prototyping) and 6 (validating) on Friday
 wackt2
 50 min created storyboards
 45 min beginn research
-todo's: copy them to the template created by Selina
+todo's: copy them to the template created by regls1
 
 24.10.19
 meeting: interviewer, neues4, wackt2
@@ -49,7 +49,7 @@ Draw storyboards, make research and write text about it
 meeting: romap1, neues4, wackt2
 60 min
 setup eclipse and svn together and tested update and commit
-todo's: setup eclipse and svn (Floriana, Selina)
+todo's: setup eclipse and svn (gashf2, regls1)
 
 25.10.19
 meeting: Amir, gashf2, romap1, regls1, neues4, wackt2
@@ -68,7 +68,7 @@ Amir
 draw storyboards, upload them
 
 26.10.19
-Patricia
+romap1
 80min
 draw storyboards, upload them
 
@@ -76,7 +76,7 @@ draw storyboards, upload them
 wackt2
 180 min
 research , update document (add existing things into one document)
-Stefanie
+neues4
 60 min draw prototype
 
 29.10.19
