@@ -90,8 +90,9 @@ meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 discuss prototype, discussion who presents which part of presentation
 
 29.10.19
-neues4
-Validate: get Feedback for my storyboards and prototype
+neues4, wackt2, khala1, romap1, gashf2, regls1
+55 min
+Validate: get Feedback for our storyboards and prototype
 
 30.10.19
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
