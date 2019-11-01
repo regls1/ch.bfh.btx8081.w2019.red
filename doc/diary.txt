@@ -98,3 +98,9 @@ Validate: get Feedback for our storyboards and prototype
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 225 min
 discuss presentation, try it, layout of report, discuss report
+
+01.11.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+30 min
+discuss next steps to do and what to include (diary, emergency contact, exercise)
+todo's: UML Domain model (romap1, regls1, gashf2), UML sequence diagram (khala1, neues4, wackt2)
