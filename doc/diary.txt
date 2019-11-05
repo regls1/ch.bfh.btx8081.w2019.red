@@ -109,3 +109,8 @@ todo's: UML Domain model (romap1, regls1, gashf2), UML sequence diagram (khala1,
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 45 min
 discuss domain model and CRC cards
+
+05.11.19
+meeting: khala1, wackt2, neues4
+80 min
+draw sequence diagrams about diary
