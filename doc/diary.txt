@@ -114,3 +114,8 @@ discuss domain model and CRC cards
 meeting: khala1, wackt2, neues4
 80 min
 draw sequence diagrams about diary
+
+06.11.19
+Amir
+60 min
+digitalization from sequence diagrams 
