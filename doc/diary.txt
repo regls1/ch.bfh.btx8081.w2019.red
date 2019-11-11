@@ -137,3 +137,9 @@ wackt2
 created report doc with directory, titles and added sequence diagrams
 created presentation with directory, titles and added sequence diagrams
 todo's: add crc cards, domain model and class diagramm into both documents, decide who's doing presentation
+
+11.11.19
+romap1
+70min
+correction of domain model and class diagramm, added crc cards, domain model and class diagramm into presentation
+
