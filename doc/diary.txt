@@ -121,6 +121,19 @@ meeting: khala1, wackt2, neues4
 draw sequence diagrams about diary
 
 06.11.19
-Amir
+khala1
 60 min
-digitalization from sequence diagrams 
+digitalization from sequence diagrams
+
+10.11.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+50 min
+discuss class diagram, sequence diagram
+todo's: add all things into a document, prepare presentation
+
+11.11.19
+wackt2
+45 min
+created report doc with directory, titles and added sequence diagrams
+created presentation with directory, titles and added sequence diagrams
+todo's: add crc cards, domain model and class diagramm into both documents, decide who's doing presentation
