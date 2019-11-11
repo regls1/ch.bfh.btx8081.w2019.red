@@ -142,4 +142,5 @@ todo's: add crc cards, domain model and class diagramm into both documents, deci
 romap1
 70min
 correction of domain model and class diagramm, added crc cards, domain model and class diagramm into presentation
+and into report
 
