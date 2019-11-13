@@ -144,3 +144,7 @@ romap1
 correction of domain model and class diagramm, added crc cards, domain model and class diagramm into presentation
 and into report
 
+13.11.19
+neues4
+15min
+upload the documents of task 2
