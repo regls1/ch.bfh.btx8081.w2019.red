@@ -152,4 +152,10 @@ upload the documents of task 2
 14.11.19
 romap1
 5min
-added Appendix and UML Domain Model Folder 
+added Appendix and UML Domain Model Folder
+
+14.11.19 - 15.11.19
+wackt2
+125 min
+configured vaadin project and added it to project folder
+todo's: do the configuration on the other team member's machines
