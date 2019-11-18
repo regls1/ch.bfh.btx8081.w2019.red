@@ -164,3 +164,8 @@ todo's: do the configuration on the other team member's machines
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 105 min
 component diagram, deployment diagram
+
+18.11.19
+wackt2
+180 min
+corrected component diagram, research scrum, think about class diagram, scrum excel file update
