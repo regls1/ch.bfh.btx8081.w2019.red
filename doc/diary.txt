@@ -159,3 +159,8 @@ wackt2
 125 min
 configured vaadin project and added it to project folder
 todo's: do the configuration on the other team member's machines
+
+18.11.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+105 min
+component diagram, deployment diagram
