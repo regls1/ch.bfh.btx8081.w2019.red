@@ -170,6 +170,11 @@ wackt2
 180 min
 corrected component diagram, research scrum, think about class diagram, scrum excel file update
 
+18.11.19
+romap1
+90min
+working on classdiagram
+
 19.11.19
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 90min
@@ -179,3 +184,8 @@ working on task 4 - first draft for sprints
 meeting: gashf2, romap1, regls1
 120min
 working on task 4 - improvements for product and sprint backlog as well as detailed class diagram
+
+19.11.19
+romap1
+60min
+working on classdiagram, correction from feedback
