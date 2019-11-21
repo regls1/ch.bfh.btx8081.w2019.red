@@ -190,6 +190,11 @@ romap1
 60min
 working on classdiagram, correction from feedback
 
+20.11.19
+neues4
+60min
+working on presentation and documentation for task 3 and task 4
+
 21.11.19
 wackt2
 300 min
