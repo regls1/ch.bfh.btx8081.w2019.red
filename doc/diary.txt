@@ -189,3 +189,8 @@ working on task 4 - improvements for product and sprint backlog as well as detai
 romap1
 60min
 working on classdiagram, correction from feedback
+
+21.11.19
+wackt2
+300 min
+updated class diagram (added variables, values), added diagrams, added report for task 3
