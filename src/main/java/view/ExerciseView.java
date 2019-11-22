@@ -8,7 +8,7 @@ import com.vaadin.flow.router.Route;
 public class ExerciseView extends VerticalLayout {
 
 	public ExerciseView() {
-		add(new H1("I am a sample view"));
+		add(new H1("I am a sample exercise view"));
 	}
 }
 
