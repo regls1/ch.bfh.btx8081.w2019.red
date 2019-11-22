@@ -10,8 +10,10 @@ public class DiaryEntryView extends VerticalLayout{
 Button button = new Button("Hello", event -> Notification.show("Clicked!"));
     
 	
-	public DiaryEntryView(){
-	add(new H1("Hello!!!"));
-	}
+	//public DiaryEntryView(){
+	//add(new H1("Hello!!!"));
+	//}
+
+
 	
 }
