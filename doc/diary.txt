@@ -200,7 +200,17 @@ wackt2
 300 min
 updated class diagram (added variables, values), added diagrams, added report for task 3
 
-21.11.10
+21.11.19
 regls1
 150min
 edit prototype, research for exercises
+
+22.11.19
+khala1, gashf2, romap1, regls1, neues4
+15min 
+Daily Scrum
+
+22.11.19
+khala1, gashf2, romap1, regls1, neues4
+180min
+Learn how to vaadin. All packages, classes and link from main view to contact, diary and exercise.
