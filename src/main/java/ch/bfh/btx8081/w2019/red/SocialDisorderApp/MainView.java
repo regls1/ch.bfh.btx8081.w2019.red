@@ -7,7 +7,6 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.upload.UploadI18N.Units;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
@@ -29,7 +28,7 @@ public class MainView extends VerticalLayout {
         add(new RouterLink("Go to the sample exercise view!", ExerciseView.class));
         Button diary = new Button("Diary", event -> Notification.show("Clicked!"));
         add(diary);
-        //add(new RouterLink("Go to the sample diary view!", DiaryView.class));
+        add(new RouterLink("Go to the sample diary view!", DiaryView.class));
         l.add(contact, exercise, diary);
         add(l);
         
