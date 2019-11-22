@@ -9,13 +9,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class DiaryView extends VerticalLayout {
 
 	
-	HorizontalLayout header = new HorizontalLayout();
-	
-	Button button = new Button("Hello", event -> Notification.show("Clicked!"));
     
 	
 	public DiaryView(){
 	add(new H1("Hello!!!"));
+
+	
+	Button button = new Button("Hello", event -> Notification.show("Clicked!"));
 	}
 	
 	
