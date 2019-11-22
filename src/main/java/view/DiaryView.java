@@ -11,13 +11,15 @@ public class DiaryView extends VerticalLayout {
 	
     
 	
-	public DiaryView(){
-	add(new H1("Hello!!!"));
+	//public DiaryView(){
+	//add(new H1("Hello!!!"));
 
-	
-	Button button = new Button("Hello", event -> Notification.show("Clicked!"));
+	public DiaryView() {
+		add(new H1("I am a sample exercise view"));
 	}
-	
-	
-	
+	//Button button = new Button("Hello", event -> Notification.show("Clicked!"));
 }
+	
+	
+	
+
