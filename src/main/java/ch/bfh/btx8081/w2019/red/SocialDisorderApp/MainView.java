@@ -22,8 +22,8 @@ public class MainView extends VerticalLayout {
 
     public MainView() {
      	HorizontalLayout l = new HorizontalLayout();
-     	Button contact = new Button("Contact", event -> Notification.show("Clicked!"));
-        add(contact);
+     	Button Diary = new Button("Diary", event -> Notification.show("Clicked!"));
+        add(hi);
         add(new RouterLink("Go to the sample contact view!", ContactView.class));
         Button exercise = new Button("Exercise", event -> Notification.show("Clicked!"));
         add(exercise);
@@ -33,7 +33,7 @@ public class MainView extends VerticalLayout {
         add(new RouterLink("Go to the sample diary view!", DiaryView.class)); 
         
         
-        l.add(contact, exercise, diary);
+        l.add(Diary, exercise, diary);
         add(l);
         
         /**
