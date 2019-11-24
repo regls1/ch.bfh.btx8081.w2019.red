@@ -214,3 +214,8 @@ Daily Scrum
 khala1, gashf2, romap1, regls1, neues4
 180min
 Learn how to vaadin. All packages, classes and link from main view to contact, diary and exercise.
+
+24.11.19
+romap1
+150min
+programming DiaryView
