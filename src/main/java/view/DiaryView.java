@@ -45,7 +45,7 @@ public class DiaryView extends VerticalLayout {
 		//Button delete = new Button("delete");
 		//grid.addColumn(delete);
 	
-		
+	
 		//returnToHomescreen()
 		Button returnButton = new Button("Return");
 		returnButton.addClickListener( e -> UI.getCurrent().navigate(MainView.class));
