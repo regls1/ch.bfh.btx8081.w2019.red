@@ -1,6 +1,6 @@
 package view;
 
-
+//Klasse wird von romap1 bearbeitet.
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
