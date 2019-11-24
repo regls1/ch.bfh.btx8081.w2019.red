@@ -41,7 +41,7 @@ public class DiaryView extends VerticalLayout {
 		grid.addColumn(MockEntry::getEntryNb).setHeader("Entry Number");
 		
 		
-		entryAddButton.addClickListener( event -> Notification.show("Clicked!"));
+		entryAddButton.addClickListener(  e -> UI.getCurrent().navigate(DiaryEntryView.class));
 		//Button delete = new Button("delete");
 		//grid.addColumn(delete);
 	
