@@ -82,6 +82,7 @@ public class DiaryEntryView extends VerticalLayout{
 		activites.setItems("Schwimmen","Lesen","Fitness","Klettern","Tanzen","Tischtenis","Minigolf","Yoga","Wandern","Treffen");
 		ok1 = new Button("OK");
 		close1 = new Button("Abbrechen");
+		close1.addClickListener(event -> dlgActivity.close());
 		footerAct = new HorizontalLayout(ok1,close1);
 		
 		// dialog for choosing an activities
@@ -100,6 +101,7 @@ public class DiaryEntryView extends VerticalLayout{
 		rbgMood.setLabel("Mood today");
 		ok = new Button("OK");
 		close = new Button("Abbrechen");
+		close.addClickListener(event -> dlgMood.close());
 		footerMood = new HorizontalLayout(ok,close);
 		
 		
