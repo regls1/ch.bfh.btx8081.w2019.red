@@ -22,9 +22,8 @@ public class ContactView extends VerticalLayout {
 	
 	public ContactView() {
 		HorizontalLayout contactPersonLayout = new HorizontalLayout();
-    	Button contactPersonButton = new Button(new Icon(VaadinIcon.ARROW_LEFT));
-    	contactPersonButton.setIconAfterText(true);
-		H3 contactPersonLabel = new H3("My Contact Persons");
+    	Button contactPersonButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
+		H3 contactPersonLabel = new H3("Meine Kontaktpersonen");
 		contactPersonButton.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
 		contactPersonLayout.add(contactPersonButton, contactPersonLabel);
 		add(contactPersonLayout);
@@ -34,11 +33,11 @@ public class ContactView extends VerticalLayout {
 		Button b2 = new Button("Person 2");
 		Button b3 = new Button("Person 3");
 		Button b4 = new Button("Person 4");
-		contactPersonBox.setSizeFull();
+		contactPersonBox.setWidth("100%");
 		contactPersonBox.add(b1, b2, b3, b4);
 		add(contactPersonBox);
 		
-		H3 moreContactsLabel = new H3("Further Contacts");
+		H3 moreContactsLabel = new H3("Weitere Kontakte");
 		add(moreContactsLabel);
 		
 		ListBox<Button> moreContactsBox = new ListBox<Button>();
@@ -46,7 +45,7 @@ public class ContactView extends VerticalLayout {
 		Button a2 = new Button("Person 2");
 		Button a3 = new Button("Person 3");
 		Button a4 = new Button("Person 4");
-		moreContactsBox.setSizeFull();
+		moreContactsBox.setWidth("100%");
 		moreContactsBox.add(a1, a2, a3, a4);
 		add(moreContactsBox);
 	}
