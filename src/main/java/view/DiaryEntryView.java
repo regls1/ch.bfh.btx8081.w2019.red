@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
+import com.vaadin.flow.component.checkbox.CheckboxGroup;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
@@ -37,14 +38,7 @@ public class DiaryEntryView extends VerticalLayout{
 	Button close;
 	Button ok1;
 	Button close1;
-	Checkbox activity1;
-	Checkbox activity2;
-	Checkbox activity3;
-	Checkbox activity4;
-	Checkbox activity5;
-	Checkbox activity6;
-	Checkbox activity7;
-	Checkbox activity8;
+	CheckboxGroup<String> activites;
 	Button btnSave;
 	
 	public DiaryEntryView() {
@@ -80,30 +74,15 @@ public class DiaryEntryView extends VerticalLayout{
 		btnActivity = new Button("Aktivitäten");
 		btnActivity.addClickListener(e -> dlgActivity.open());
 		
-		// checkboxes for activities
-		activity1 = new Checkbox();
-		activity2 = new Checkbox();
-		activity3 = new Checkbox();
-		activity4 = new Checkbox();
-		activity5 = new Checkbox();
-		activity6 = new Checkbox();
-		activity7 = new Checkbox();
-		activity8 = new Checkbox();
-		activity1.setLabel("Schwimmen");
-		activity2.setLabel("Lesen");
-		activity3.setLabel("Fitness");
-		activity4.setLabel("Klettern");
-		activity5.setLabel("Tanzen");
-		activity6.setLabel("Tischtenis");
-		activity7.setLabel("Minigolf");
-		activity8.setLabel("Yoga");
+		activites = new CheckboxGroup<String>();
+		activites.setLabel("Activites");
+		activites.setItems("Schwimmen","Lesen","Fitness","Klettern","Tanzen","Tischtenis","Minigolf","Yoga","Wandern","Treffen");
 		
 		// dialog for choosing an activities
 		dlgActivity = new Dialog();
 		ok1 = new Button("OK");
 		close1 = new Button("Abbrechen");
-		dlgActivity.add(activity1, activity2, activity3, activity4, activity5, activity6, activity7, activity8, ok1,
-				close1);
+		dlgActivity.add(activites, ok1,close1);
 		dlgActivity.setWidth("500px");
 		dlgActivity.setHeight("150px");
 		
