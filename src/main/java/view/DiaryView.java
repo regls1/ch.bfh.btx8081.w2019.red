@@ -25,6 +25,7 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
  * @author Patricia
  *
  */
+@SuppressWarnings("serial")
 @Route
 public class DiaryView extends VerticalLayout {
 
