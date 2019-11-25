@@ -221,6 +221,11 @@ romap1
 programming DiaryView
 
 24.11.19
+regls1
+120min
+creating mainview (homescreen view)
+
+24.11.19
 wackt2
 270 min
 implemented diary entry view, linking stuff
