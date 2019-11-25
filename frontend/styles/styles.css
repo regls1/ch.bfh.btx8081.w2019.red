@@ -1,4 +1,16 @@
 @charset "ISO-8859-1";
-.icon70 iron-icon {
-	font-size: 70px;
+
+.icon50px iron-icon {
+	font-size: 50px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lblVertical {
+	position: relative;
+	top: -45%;
 }
