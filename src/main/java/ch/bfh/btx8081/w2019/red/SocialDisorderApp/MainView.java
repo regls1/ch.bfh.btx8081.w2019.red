@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -22,13 +23,18 @@ import com.vaadin.flow.router.Route;
 public class MainView extends VerticalLayout {
 
     public MainView() {    	
+    	// label with the app title
+    	H3 lblAppTitle = new H3("DAILY GHOST");
+    	lblAppTitle.addClassName("centered");
+    	
+    	// label that contains a div and shows a curve under the app title
+    	Label lblCurve = new Label();
+    	lblCurve.addClassName("curvy");
+    	lblCurve.addClassName("centered");
+        
     	// image with the app logo
     	Image imgLogo = new Image("./img/ghosty.png", "Ghosty");
-    	imgLogo.addClassName("center");
-    	
-    	// labels with the app title
-    	H3 lblAppTitle = new H3("DAILY GHOST");
-    	lblAppTitle.addClassName("center");
+    	imgLogo.addClassName("centered");
     	
     	// button with link to contact view
      	Button btnContact = new Button("Kontakte", new Icon(VaadinIcon.USER_CARD));
@@ -55,6 +61,6 @@ public class MainView extends VerticalLayout {
         btnDiary.addClickListener(e -> UI.getCurrent().navigate(DiaryView.class));
         
         // add all components to layout
-        add(lblAppTitle, imgLogo, btnContact, btnExercise, btnDiary);
+        add(lblAppTitle, lblCurve, imgLogo, btnContact, btnExercise, btnDiary);
     }
 }
