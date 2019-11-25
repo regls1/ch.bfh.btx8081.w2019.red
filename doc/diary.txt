@@ -219,3 +219,18 @@ Learn how to vaadin. All packages, classes and link from main view to contact, d
 romap1
 150min
 programming DiaryView
+
+24.11.19
+wackt2
+270 min
+implemented diary entry view, linking stuff
+
+25.11.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+15 min
+Daily Scrum
+
+25.11.19
+wackt2
+240 min
+added css, modified views, code reviews, discussions, helping others
