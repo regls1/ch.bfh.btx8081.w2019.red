@@ -3,9 +3,14 @@ package view;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.renderer.NativeButtonRenderer;
 import com.vaadin.flow.router.Route;
+
+import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 
 
 // WIRD BEARBEITET DURCH NEUES4!
@@ -24,7 +29,9 @@ public class ExerciseView extends VerticalLayout {
 	 * constructor: create new exercises (later we have to do this in the model)
 	 * create an array list and add the exercises to this array list
 	 * add a column to the grid and insert the exercise list
-	 * add the grid to the view
+	 * create new button and link it back to the main view
+	 * add the grid and button to the view
+	 * add a new column to choose the exercise. Button is linked with exercise detail view
 	 */
 	public ExerciseView() {
 
@@ -42,9 +49,15 @@ public class ExerciseView extends VerticalLayout {
 		exerciseGrid.addColumn(Exercise::getExerciseName).setHeader("Exercises");
 
 		exerciseGrid.setItems(exerciseList);
+		
+		Button btnReturn = new Button("Return");
+		
+		btnReturn.addClickListener( e -> UI.getCurrent().navigate(MainView.class));
 
-		add(exerciseGrid);
-
+		add(btnReturn, exerciseGrid);
+		
+		exerciseGrid.addColumn(new NativeButtonRenderer<>("choose", clickedItem ->
+			UI.getCurrent().navigate(ExerciseDetailView.class)));
 
 	}
 
