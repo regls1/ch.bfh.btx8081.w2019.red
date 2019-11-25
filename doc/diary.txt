@@ -234,3 +234,8 @@ Daily Scrum
 wackt2
 240 min
 added css, modified views, code reviews, discussions, helping others
+
+25.11.19
+neues4
+360 min
+implemented exercise view, implemented exercise detail view, linked the different views
