@@ -13,7 +13,8 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 /**
- * The main view contains a button and a click listener.
+ * Shows the Main View with three Buttons
+ * @author relgs1
  */
 @Route("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
@@ -24,7 +25,7 @@ public class MainView extends VerticalLayout {
     	VerticalLayout l = new VerticalLayout();
      	//Button contact = new Button("Contact", event -> Notification.show("Clicked!"));
      	
-     	Button contact = new Button("Contact", new Icon(VaadinIcon.USER_CARD));
+     	Button contact = new Button("Kontakte", new Icon(VaadinIcon.USER_CARD));
      	contact.addClassName("icon70");
      	contact.setIconAfterText(true);
      	contact.setWidth("100%");
@@ -32,7 +33,7 @@ public class MainView extends VerticalLayout {
      	add(contact);
         contact.addClickListener(e -> UI.getCurrent().navigate(ContactView.class));
      
-        Button exercise = new Button("Exercise", new Icon(VaadinIcon.CHECK_SQUARE_O));
+        Button exercise = new Button("Übungen", new Icon(VaadinIcon.CHECK_SQUARE_O));
         exercise.addClassName("icon70");
         exercise.setIconAfterText(true);
         exercise.setWidth("100%");
@@ -40,7 +41,7 @@ public class MainView extends VerticalLayout {
         add(exercise);
         exercise.addClickListener(e -> UI.getCurrent().navigate(ExerciseView.class));
           
-        Button diary = new Button("Diary", new Icon(VaadinIcon.CALENDAR));
+        Button diary = new Button("Tagebuch", new Icon(VaadinIcon.CALENDAR));
         diary.addClassName("icon70");
         diary.setIconAfterText(true);
         diary.setWidth("100%");
