@@ -1,13 +1,12 @@
 package view;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.listbox.ListBox;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.data.renderer.NativeButtonRenderer;
 import com.vaadin.flow.router.Route;
 
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
@@ -18,47 +17,33 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 @Route
 public class ExerciseView extends VerticalLayout {
 
-	// List<Exercise> exerciseList = new ArrayList<>();
-
 	/*
-	 * create a new grid to show the exercises
+	 * create new list box with buttons
 	 */
-	private Grid<Exercise> exerciseGrid = new Grid<>();
+	ListBox<Button> exerciseBox = new ListBox<>();
 
 	/*
-	 * constructor: create new exercises (later we have to do this in the model)
-	 * create an array list and add the exercises to this array list
-	 * add a column to the grid and insert the exercise list
-	 * create new button and link it back to the main view
-	 * add the grid and button to the view
-	 * add a new column to choose the exercise. Button is linked with exercise detail view
+	 * constructor which sets the title, the return button, and a button for each exercise
 	 */
 	public ExerciseView() {
 
-		//add(new H1("I am a sample exercise view"));
-		Exercise ex1 = new Exercise("Atemübung");
-		Exercise ex2 = new Exercise("Yoga");
-		Exercise ex3 = new Exercise("Fremde Menschen ansprechen");
+		H1 title = new H1("Übungen");
 
-		List<Exercise> exerciseList = new ArrayList<>();
+		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
+		btnReturn.setIconAfterText(false);
 
-		exerciseList.add(ex1);
-		exerciseList.add(ex2);
-		exerciseList.add(ex3);
+		Button ex1 = new Button("Atemübung");
+		Button ex2 = new Button("Yoga");
+		Button ex3 = new Button("Fremde Menschen ansprechen");
 
-		exerciseGrid.addColumn(Exercise::getExerciseName).setHeader("Exercises");
+		ex1.addClickListener( e -> UI.getCurrent().navigate(ExerciseDetailView.class));
+		ex2.addClickListener( e -> UI.getCurrent().navigate(ExerciseDetailView.class));
+		ex3.addClickListener( e -> UI.getCurrent().navigate(ExerciseDetailView.class));
 
-		exerciseGrid.setItems(exerciseList);
-		
-		Button btnReturn = new Button("Return");
-		
+		exerciseBox.add(ex1, ex2, ex3);
+		exerciseBox.setSizeFull();
 		btnReturn.addClickListener( e -> UI.getCurrent().navigate(MainView.class));
-
-		add(btnReturn, exerciseGrid);
-		
-		exerciseGrid.addColumn(new NativeButtonRenderer<>("choose", clickedItem ->
-			UI.getCurrent().navigate(ExerciseDetailView.class)));
-
+		add(btnReturn, title, exerciseBox);	
 	}
 
 	/*
@@ -73,13 +58,6 @@ public class ExerciseView extends VerticalLayout {
 		 */
 		public Exercise(String exerciseName) {
 			this.exerciseName = exerciseName;
-		}
-
-		/*
-		 * method to return the exercise name
-		 */
-		public String getExerciseName() {
-			return exerciseName;
 		}
 	}
 }	
