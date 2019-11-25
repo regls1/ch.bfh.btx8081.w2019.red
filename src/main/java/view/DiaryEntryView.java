@@ -13,6 +13,7 @@ import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.textfield.TextArea;
@@ -40,6 +41,8 @@ public class DiaryEntryView extends VerticalLayout{
 	Button close1;
 	CheckboxGroup<String> activites;
 	Button btnSave;
+	HorizontalLayout footerMood;
+	HorizontalLayout footerAct;
 	
 	public DiaryEntryView() {
 		// button for returning to diary page
@@ -77,12 +80,13 @@ public class DiaryEntryView extends VerticalLayout{
 		activites = new CheckboxGroup<String>();
 		activites.setLabel("Activites");
 		activites.setItems("Schwimmen","Lesen","Fitness","Klettern","Tanzen","Tischtenis","Minigolf","Yoga","Wandern","Treffen");
+		ok1 = new Button("OK");
+		close1 = new Button("Abbrechen");
+		footerAct = new HorizontalLayout(ok1,close1);
 		
 		// dialog for choosing an activities
 		dlgActivity = new Dialog();
-		ok1 = new Button("OK");
-		close1 = new Button("Abbrechen");
-		dlgActivity.add(activites, ok1,close1);
+		dlgActivity.add(activites, footerAct);
 		dlgActivity.setWidth("500px");
 		dlgActivity.setHeight("150px");
 		
@@ -94,12 +98,15 @@ public class DiaryEntryView extends VerticalLayout{
 		rbgMood = new RadioButtonGroup<>();
 		rbgMood.setItems("Sehr gut", "Gut", "mittelmässig", "schlecht", "sehr schlecht");
 		rbgMood.setLabel("Mood today");
+		ok = new Button("OK");
+		close = new Button("Abbrechen");
+		footerMood = new HorizontalLayout(ok,close);
+		
 		
 		// dialog for choosing current
 		dlgMood = new Dialog();
-		ok = new Button("OK");
-		close = new Button("Abbrechen");
-		dlgMood.add(rbgMood, ok, close);
+		
+		dlgMood.add(rbgMood, footerMood);
 		dlgMood.setWidth("500px");
 		dlgMood.setHeight("150px");
 		
