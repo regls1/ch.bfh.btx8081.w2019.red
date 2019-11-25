@@ -25,7 +25,7 @@ public class MainView extends VerticalLayout {
      	//Button contact = new Button("Contact", event -> Notification.show("Clicked!"));
      	
      	Button contact = new Button("Contact", new Icon(VaadinIcon.USER_CARD));
-     	contact.addClassName("");
+     	contact.addClassName("icon96");
      	contact.setIconAfterText(true);
      	contact.setWidth("100%");
         contact.setHeight("150px");
