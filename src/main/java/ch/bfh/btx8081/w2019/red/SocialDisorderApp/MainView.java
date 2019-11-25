@@ -5,11 +5,10 @@ import view.ContactView;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
@@ -17,27 +16,20 @@ import com.vaadin.flow.router.Route;
  * Shows the Main View with three Buttons
  * @author relgs1
  */
+@SuppressWarnings("serial")
 @Route("")
 @CssImport("./styles/styles.css")
 public class MainView extends VerticalLayout {
 
     public MainView() {    	
-    	// create horizontal layout which is centered
-    	HorizontalLayout hLayout = new HorizontalLayout();
-    	hLayout.addClassName("center");
-    	
     	// image with the app logo
     	Image imgLogo = new Image("./img/ghosty.png", "Ghosty");
+    	imgLogo.addClassName("center");
     	
     	// labels with the app title
-    	Label lblAppTitlePartOne = new Label("Daily");
-    	lblAppTitlePartOne.addClassName("lblVertical");
-    	Label lblAppTitlePartTwo = new Label("Ghost");
-    	lblAppTitlePartTwo.addClassName("lblVertical");
+    	H3 lblAppTitle = new H3("DAILY GHOST");
+    	lblAppTitle.addClassName("center");
     	
-    	// add components to horizontal layout
-    	hLayout.add(lblAppTitlePartOne, imgLogo, lblAppTitlePartTwo);
-     	
     	// button with link to contact view
      	Button btnContact = new Button("Kontakte", new Icon(VaadinIcon.USER_CARD));
      	btnContact.addClassName("icon50px");
@@ -63,6 +55,6 @@ public class MainView extends VerticalLayout {
         btnDiary.addClickListener(e -> UI.getCurrent().navigate(DiaryView.class));
         
         // add all components to layout
-        add(hLayout, btnContact, btnExercise, btnDiary);
+        add(lblAppTitle, imgLogo, btnContact, btnExercise, btnDiary);
     }
 }
