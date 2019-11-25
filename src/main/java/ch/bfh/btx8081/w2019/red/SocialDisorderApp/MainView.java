@@ -25,7 +25,7 @@ public class MainView extends VerticalLayout {
      	//Button contact = new Button("Contact", event -> Notification.show("Clicked!"));
      	
      	Button contact = new Button("Contact", new Icon(VaadinIcon.USER_CARD));
-     	contact.addClassName("icon96");
+     	contact.addClassName("icon70");
      	contact.setIconAfterText(true);
      	contact.setWidth("100%");
         contact.setHeight("150px");
@@ -33,6 +33,7 @@ public class MainView extends VerticalLayout {
         contact.addClickListener(e -> UI.getCurrent().navigate(ContactView.class));
      
         Button exercise = new Button("Exercise", new Icon(VaadinIcon.CHECK_SQUARE_O));
+        exercise.addClassName("icon70");
         exercise.setIconAfterText(true);
         exercise.setWidth("100%");
         exercise.setHeight("150px");
@@ -40,6 +41,7 @@ public class MainView extends VerticalLayout {
         exercise.addClickListener(e -> UI.getCurrent().navigate(ExerciseView.class));
           
         Button diary = new Button("Diary", new Icon(VaadinIcon.CALENDAR));
+        diary.addClassName("icon70");
         diary.setIconAfterText(true);
         diary.setWidth("100%");
         diary.setHeight("150px");
