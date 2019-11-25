@@ -9,95 +9,130 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.HeaderRow;
-import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.Route;
 
-
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
+
 /**
  * PLEASE contact me if you want to change something in this class.
+ * 
  * @author Patricia
  *
  */
 @Route
 public class DiaryView extends VerticalLayout {
 
-	// private List<Object> DiaryEntryList = new ArrayList();
+	private List<MockEntry> diaryEntryList = new ArrayList();
 	private Grid<MockEntry> grid = new Grid<>();
-	private Button entryAddButton = new Button("Create new Entry");
+	private Button entryAddButton = new Button("Neuer Eintrag");
 
-
-/**
- * Constructor, creates a mock entry  and sets the layout.
- */
+	/**
+	 * Constructor, creates a mock entry and sets the layout.
+	 */
 	public DiaryView() {
-		MockEntry mockEntry = new MockEntry("datum", 1);
-		
-		
-		grid.addColumn(MockEntry::getDate).setHeader("Date");
-		grid.addColumn(MockEntry::getEntryNb).setHeader("Entry Number");
-		
-		
-		entryAddButton.addClickListener(  e -> UI.getCurrent().navigate(DiaryEntryView.class));
-		//Button delete = new Button("delete");
-		//grid.addColumn(delete);
-	
-	
-		//returnToHomescreen()
-		Button returnButton = new Button("Return");
-		returnButton.addClickListener( e -> UI.getCurrent().navigate(MainView.class));
 
-		add(returnButton, new H1("Diary"), entryAddButton, grid);
-		
-		
-		// gridtest.setItems(entries);
-		// for (int i=1; i < 5; i++) {
-		// DiaryEntryList.add("test" + i);
-		// }
+		// Add mock data in Grid.
+		diaryEntryList.add(new MockEntry(1, "Hallo Welt!", "01.01.1999"));
+		diaryEntryList.add(new MockEntry(2, "dasdf", "12314"));
+		grid.setItems(diaryEntryList);
+
+		// Set the name of the Header in Grid. A bug doesn't allow to set the Header
+		// when its empty.
+		grid.addColumn(MockEntry::getEntryNb).setHeader("Eintragsnummer");
+		grid.addColumn(MockEntry::getTitel).setHeader("Titel");
+		grid.addColumn(MockEntry::getDate).setHeader("Datum");
+
+		// Adds a delete Button
+		grid.addComponentColumn(item -> deleteEntry(grid, item)).setHeader("Löschen");
+		grid.setWidthFull();
+
+		// navigates to DiaryEntryView. Will later navigate to a specific
+		// DiaryEntryView.
+		grid.addItemClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
+
+		// navigates to DiaryEntryView for Creating a new Entry.
+		entryAddButton.addClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
+
+		// returnToHomescreen()
+		Button returnButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
+
+		// returnButton.setIconAfterText(false);
+		returnButton.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
+
+		// Layout
+		add(returnButton, new H2("Tagebuch"), entryAddButton, grid);
 
 	}
-	
 
-/**
- * trying how to add a mockEntry into the Grid.
- * @return
- */
+	
+	/**
+	 * 
+	 * @param grid
+	 * @param item
+	 * @return
+	 */
+	private Button deleteEntry(Grid<MockEntry> grid, MockEntry item) {
+		@SuppressWarnings("unchecked")
+		Button button = new Button("Löschen", clickEvent -> {
+			ListDataProvider<MockEntry> dataProvider = (ListDataProvider<MockEntry>) grid.getDataProvider();
+			dataProvider.getItems().remove(item);
+			dataProvider.refreshAll();
+		});
+		return button;
+	}
+
+	/**
+	 * trying how to add a mockEntry into the Grid.
+	 * 
+	 * @return
+	 */
 	private Component test() {
 		entryAddButton.addClickListener(null);
 		return entryAddButton;
 
 	}
 
-	
-	//public void deleteEntry(Entry)
-	//openEntryDetails(Entry)
-	//addEntry()
-	
+	// openEntryDetails(Entry)
+	// addEntry()
 
-/**
- * Mock Entry Class for setting Header of Grid
- * @author Patricia
- *
- */
+	/**
+	 * Mock Entry Class for setting Header of Grid
+	 * 
+	 * @author Patricia
+	 *
+	 */
 	public class MockEntry {
 
 		private String date;;
 		private int entryNb;
-		
+		private String titel;
+
+		public MockEntry(int entryNb, String titel, String d) {
+			this.entryNb = entryNb;
+			this.titel = titel;
+			date = d;
+
+		}
+
+		public String getTitel() {
+			return titel;
+		}
+
+		public void setTitel(String titel) {
+			this.titel = titel;
+		}
 
 		public int getEntryNb() {
 			return entryNb;
 		}
 
 		public void setEntryNb(int entryNb) {
-			this.entryNb = entryNb;
-		}
-
-		public MockEntry(String d, int entryNb) {
-			date = d;
 			this.entryNb = entryNb;
 		}
 
@@ -110,7 +145,6 @@ public class DiaryView extends VerticalLayout {
 		}
 	}
 
-	
 	/*
 	 * Please comment if you change something in this class.
 	 */
