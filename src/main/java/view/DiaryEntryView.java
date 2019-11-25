@@ -35,10 +35,10 @@ public class DiaryEntryView extends VerticalLayout{
 	Dialog dlgMood;
 	RadioButtonGroup<String> rbgMood;
 	Button message;
-	Button ok;
-	Button close;
-	Button ok1;
-	Button close1;
+	Button btnOkActivityDialog;
+	Button btnCloseActivityDialog;
+	Button btnOkMoodDialog;
+	Button btnCloseMoodDialog;
 	CheckboxGroup<String> activites;
 	Button btnSave;
 	HorizontalLayout footerMood;
@@ -80,10 +80,10 @@ public class DiaryEntryView extends VerticalLayout{
 		activites = new CheckboxGroup<String>();
 		activites.setLabel("Activites");
 		activites.setItems("Schwimmen","Lesen","Fitness","Klettern","Tanzen","Tischtenis","Minigolf","Yoga","Wandern","Treffen");
-		ok1 = new Button("OK");
-		close1 = new Button("Abbrechen");
-		close1.addClickListener(event -> dlgActivity.close());
-		footerAct = new HorizontalLayout(ok1,close1);
+		btnOkActivityDialog = new Button("OK");
+		btnCloseActivityDialog = new Button("Abbrechen");
+		btnCloseActivityDialog.addClickListener(event -> dlgActivity.close());
+		footerAct = new HorizontalLayout(btnOkActivityDialog,btnCloseActivityDialog);
 		
 		// dialog for choosing an activities
 		dlgActivity = new Dialog();
@@ -99,10 +99,10 @@ public class DiaryEntryView extends VerticalLayout{
 		rbgMood = new RadioButtonGroup<>();
 		rbgMood.setItems("Sehr gut", "Gut", "mittelmässig", "schlecht", "sehr schlecht");
 		rbgMood.setLabel("Mood today");
-		ok = new Button("OK");
-		close = new Button("Abbrechen");
-		close.addClickListener(event -> dlgMood.close());
-		footerMood = new HorizontalLayout(ok,close);
+		btnOkMoodDialog = new Button("OK");
+		btnCloseMoodDialog = new Button("Abbrechen");
+		btnCloseMoodDialog.addClickListener(event -> dlgMood.close());
+		footerMood = new HorizontalLayout(btnOkMoodDialog,btnCloseMoodDialog);
 		
 		
 		// dialog for choosing current
