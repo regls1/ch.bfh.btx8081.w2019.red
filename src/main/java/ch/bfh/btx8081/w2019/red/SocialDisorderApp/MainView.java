@@ -5,6 +5,7 @@ import view.ContactView;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -16,6 +17,7 @@ import com.vaadin.flow.server.PWA;
  */
 @Route("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
+@CssImport("./styles/styles.css")
 public class MainView extends VerticalLayout {
 
     public MainView() {
@@ -23,6 +25,7 @@ public class MainView extends VerticalLayout {
      	//Button contact = new Button("Contact", event -> Notification.show("Clicked!"));
      	
      	Button contact = new Button("Contact", new Icon(VaadinIcon.USER_CARD));
+     	contact.addClassName("");
      	contact.setIconAfterText(true);
      	contact.setWidth("100%");
         contact.setHeight("150px");
