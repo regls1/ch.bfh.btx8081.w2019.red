@@ -244,3 +244,8 @@ added css, modified views, code reviews, discussions, helping others
 neues4
 360 min
 implemented exercise view, implemented exercise detail view, linked the different views
+
+25.11.19
+romap
+120min 
+diary entry view correction and further implementation
