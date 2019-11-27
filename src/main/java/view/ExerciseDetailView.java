@@ -38,7 +38,7 @@ public class ExerciseDetailView extends VerticalLayout {
 		 */
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		btnReturn.setIconAfterText(false);
-		btnReturn.addClickListener( e -> UI.getCurrent().navigate(MainView.class));	
+		btnReturn.addClickListener( e -> UI.getCurrent().navigate(ExerciseView.class));	
 
 		/*
 		 * title of the exercise
