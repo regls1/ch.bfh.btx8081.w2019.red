@@ -11,9 +11,12 @@ import com.vaadin.flow.router.Route;
 
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 
-
-// WIRD BEARBEITET DURCH NEUES4!
-
+/**
+ * A view which contains all the exercises
+ * 
+ * @author neues4
+ *
+ */
 @Route
 public class ExerciseView extends VerticalLayout {
 

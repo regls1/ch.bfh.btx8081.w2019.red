@@ -15,7 +15,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
-import ch.bfh.btx8081.MainView.Contact;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 /**
  * A list of all contacts for a patient with emergency contacts.
