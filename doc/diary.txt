@@ -274,3 +274,8 @@ creating dialog for ContactView for detailed view
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 30min
 Daily Scrum
+
+28.11.19
+wackt2
+30 min
+added suppress warnings to all pages, removed unused imports of all pages, removed dialogs from diary entry view, added arraylist, code review
