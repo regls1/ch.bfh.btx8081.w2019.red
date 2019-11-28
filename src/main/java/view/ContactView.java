@@ -22,16 +22,17 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
  * @author Floriana
  *
  */
+@SuppressWarnings("serial")
 @Route
 public class ContactView extends VerticalLayout {
 	
 	public ContactView() {
+		Button contactPersonButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		HorizontalLayout contactPersonLayout = new HorizontalLayout();
-    	Button contactPersonButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		H3 contactPersonLabel = new H3("Meine Kontaktpersonen");
 		contactPersonButton.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
-		contactPersonLayout.add(contactPersonButton, contactPersonLabel);
-		add(contactPersonLayout);
+		contactPersonLayout.add(contactPersonLabel);
+		add(contactPersonButton, contactPersonLayout);
 		
 		ListBox<Button> contactPersonBox = new ListBox<Button>();
 		Button b1 = new Button("Person 1");
