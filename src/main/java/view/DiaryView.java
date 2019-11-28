@@ -19,6 +19,8 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 /**
  * PLEASE contact me if you want to change something in this class.
  * 
+ * This class shows every entry of the diary in a View.
+ * 
  * @author Patricia
  *
  */
@@ -28,7 +30,7 @@ public class DiaryView extends VerticalLayout {
 
 	private List<MockEntry> diaryEntryList = new ArrayList<MockEntry>();
 	private Grid<MockEntry> grid = new Grid<>();
-	private Button entryAddButton = new Button("Neuer Eintrag");
+	private Button entryAddBtn = new Button("Neuer Eintrag");
 
 	/**
 	 * Constructor, creates a mock entry and sets the layout.
@@ -36,8 +38,8 @@ public class DiaryView extends VerticalLayout {
 	public DiaryView() {
 
 		// Add mock data in Grid.
-		diaryEntryList.add(new MockEntry(1, "Hallo Welt!", "01.01.1999"));
-		diaryEntryList.add(new MockEntry(2, "dasdf", "12314"));
+		diaryEntryList.add(new MockEntry(1, "Hallo Welt!", "26.11.2019"));
+		diaryEntryList.add(new MockEntry(2, "Familientreffen", "27.11.2019"));
 		grid.setItems(diaryEntryList);
 
 		// Set the name of the Header in Grid. A bug doesn't allow to set the Header
@@ -46,59 +48,56 @@ public class DiaryView extends VerticalLayout {
 		grid.addColumn(MockEntry::getTitel).setHeader("Titel");
 		grid.addColumn(MockEntry::getDate).setHeader("Datum");
 
-		// Adds a delete Button
-		grid.addComponentColumn(item -> deleteEntry(grid, item)).setHeader("Löschen");
-		grid.setWidthFull();
-
-		// navigates to DiaryEntryView. Will later navigate to a specific
-		// DiaryEntryView.
+		// navigation to DiaryEntryView by Eye Icon or klick on Entry. Will later
+		// navigate to a specific DiaryEntryView.
+		grid.addComponentColumn(entry -> showDiaryEntryView(entry)).setHeader("Anzeigen");
 		grid.addItemClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
 
+		// Adds a delete Button in Grid.
+		grid.addComponentColumn(entry -> deleteEntry(grid, entry)).setHeader("Löschen");
+		grid.setWidthFull();
+
 		// navigates to DiaryEntryView for Creating a new Entry.
-		entryAddButton.addClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
+		entryAddBtn.addClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
 
 		// returnToHomescreen()
 		Button returnButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
-
-		// returnButton.setIconAfterText(false);
 		returnButton.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
 
 		// Layout
-		add(returnButton, new H2("Tagebuch"), entryAddButton, grid);
+		add(returnButton, new H2("Tagebuch"), entryAddBtn, grid);
 
+	}
+
+	/**
+	 * Deletes an Entry
+	 * 
+	 * @param grid, contains MockeEntries
+	 * @param entry, a MockEntry
+	 * @return Button with Trash Icon
+	 */
+	private Button deleteEntry(Grid<MockEntry> grid, MockEntry entry) {
+		@SuppressWarnings("unchecked")
+		Button TrashBtn = new Button(new Icon(VaadinIcon.TRASH), clickEvent -> {
+			ListDataProvider<MockEntry> dataProvider = (ListDataProvider<MockEntry>) grid.getDataProvider();
+			dataProvider.getItems().remove(entry);
+			dataProvider.refreshAll();
+		});
+		return TrashBtn;
+	}
+
+	/**
+	 * Navigates to the DiaryEntryView.
+	 * @param entry, a MockEntry.
+	 * @return Button with Eye Icon
+	 */
+	private Button showDiaryEntryView(MockEntry entry) {
+		Button eyeBtn = new Button(new Icon(VaadinIcon.EYE));
+		eyeBtn.addClickListener(event -> UI.getCurrent().navigate(DiaryEntryView.class));
+		return eyeBtn;
 	}
 
 	
-	/**
-	 * 
-	 * @param grid
-	 * @param item
-	 * @return
-	 */
-	private Button deleteEntry(Grid<MockEntry> grid, MockEntry item) {
-		@SuppressWarnings("unchecked")
-		Button button = new Button("Löschen", clickEvent -> {
-			ListDataProvider<MockEntry> dataProvider = (ListDataProvider<MockEntry>) grid.getDataProvider();
-			dataProvider.getItems().remove(item);
-			dataProvider.refreshAll();
-		});
-		return button;
-	}
-
-	/**
-	 * trying how to add a mockEntry into the Grid.
-	 * 
-	 * @return
-	 */
-	@SuppressWarnings("unused")
-	private Component test() {
-		entryAddButton.addClickListener(null);
-		return entryAddButton;
-
-	}
-
-	// openEntryDetails(Entry)
-	// addEntry()
 
 	/**
 	 * Mock Entry Class for setting Header of Grid
@@ -144,11 +143,6 @@ public class DiaryView extends VerticalLayout {
 		}
 	}
 
-	/*
-	 * Please comment if you change something in this class.
-	 */
-	// public DiaryView() {
-	// add(new H1("Bla bla bla bla"));
-	// }
-	// Button button = new Button("Hello", event -> Notification.show("Clicked!"));
+	// openEntryDetails(Entry) Implementing Method when connected to Database
+
 }
