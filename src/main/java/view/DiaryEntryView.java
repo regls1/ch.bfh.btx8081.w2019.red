@@ -44,12 +44,12 @@ public class DiaryEntryView extends VerticalLayout{
 	Button btnSave;
 	HorizontalLayout footerMood;
 	HorizontalLayout footerAct;
-	HorizontalLayout moodButton;
-	Button sehrGut;
-	Button gut;
-	Button normal;
-	Button schelcht;
-	Button sehrSchlecht;
+	HorizontalLayout moodButtonLayout;
+	Button btnMoodVeryWell;
+	Button btnMoodGood;
+	Button btnMoodNormal;
+	Button btnMoodSad;
+	Button btnMoodVerySad;
 	
 	
 	public DiaryEntryView() {
@@ -103,18 +103,18 @@ public class DiaryEntryView extends VerticalLayout{
 		btnMood = new Button("Stimmung");
 		btnMood.addClickListener(e -> dlgMood.open());
 		
-		sehrGut = new Button(new Image("./img/Sehr gut.png", "Sehr Gut"));
-		gut = new Button(new Image("./img/gut.png", "Gut"));
-		normal = new Button(new Image("./img/normal.png", "normal"));
-		schelcht = new Button(new Image("./img/schlecht.png", "schlecht"));
-		sehrSchlecht = new Button(new Image("./img/sehr schlecht.png", "sehr schlecht"));
-		moodButton = new HorizontalLayout();
-		moodButton.add(sehrGut,gut,normal,schelcht,sehrSchlecht);
+		btnMoodVeryWell = new Button(new Image("./img/Sehr gut.png", "Sehr Gut"));
+		btnMoodGood = new Button(new Image("./img/gut.png", "Gut"));
+		btnMoodNormal = new Button(new Image("./img/normal.png", "normal"));
+		btnMoodSad = new Button(new Image("./img/schlecht.png", "schlecht"));
+		btnMoodVerySad = new Button(new Image("./img/sehr schlecht.png", "sehr schlecht"));
+		moodButtonLayout = new HorizontalLayout();
+		moodButtonLayout.add(btnMoodVeryWell, btnMoodGood, btnMoodNormal, btnMoodSad, btnMoodVerySad);
 		
 		
 		// radiobuttongroup with different moods
 		rbgMood = new RadioButtonGroup<>();
-		rbgMood.add(moodButton);
+		rbgMood.add(moodButtonLayout);
 		rbgMood.setLabel("Mood today");
 		btnOkMoodDialog = new Button("OK");
 		btnCloseMoodDialog = new Button("Abbrechen");
