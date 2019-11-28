@@ -96,7 +96,7 @@ public class DiaryEntryView extends VerticalLayout{
 		txtDaySymptom.getStyle().set("minHeight", "100px");
 		
 		// textarea for description
-		txtAddition = new TextArea("Was möchtest Du zum heutigen tag sonst noch sagen?");
+		txtAddition = new TextArea("Was möchtest Du zum heutigen Tag sonst noch sagen?");
 		txtAddition.setWidth("100%");
 		txtAddition.getStyle().set("minHeight", "175px");
 		
