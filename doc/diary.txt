@@ -269,3 +269,8 @@ editing first version of Contact View
 gashf2
 120 min
 creating dialog for ContactView for detailed view
+
+28.11.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+30min
+Daily Scrum
