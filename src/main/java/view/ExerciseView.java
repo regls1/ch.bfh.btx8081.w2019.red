@@ -17,6 +17,7 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
  * @author neues4
  *
  */
+@SuppressWarnings("serial")
 @Route
 public class ExerciseView extends VerticalLayout {
 
@@ -60,6 +61,14 @@ public class ExerciseView extends VerticalLayout {
 		 * constructor
 		 */
 		public Exercise(String exerciseName) {
+			this.setExerciseName(exerciseName);
+		}
+
+		public String getExerciseName() {
+			return exerciseName;
+		}
+
+		public void setExerciseName(String exerciseName) {
 			this.exerciseName = exerciseName;
 		}
 	}
