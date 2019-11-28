@@ -43,13 +43,12 @@ public class ExerciseDetailView extends VerticalLayout {
 		/*
 		 * title of the exercise
 		 */
-		H1 title = new H1("Hier wird der Übungstitel stehen");
+		H1 title = new H1("Atemübung");
 
 		/*
 		 * description of the exercise
 		 */
-		Label exerciseDescription = new Label("Hier wird eine Anleitung für die Übung stehen");
-
+		Label lblExerciseDescription = new Label("Diese Übung wird dir dabei helfen dich zu beruhigen.");
 		/*
 		 * button to start the exercise
 		 */
@@ -59,47 +58,47 @@ public class ExerciseDetailView extends VerticalLayout {
 		/*
 		 * add the components to the view
 		 */
-		add(btnReturn, title, exerciseDescription, btnStart);
+		add(btnReturn, title, lblExerciseDescription, btnStart);
 
 		/*
 		 * create a new dialog to show further information of the exercise
 		 * "abbrechen" to go back to the exercise detail view,
 		 * "beenden" to finish the exercise
 		 */
-		Dialog exerciseDetail = new Dialog();
+		Dialog dlgExerciseDetail = new Dialog();
 	
 		Button btnExit = new Button("Abbrechen", event -> {
-			exerciseDetail.close();
+			dlgExerciseDetail.close();
 		});
 		Button btnFinish = new Button("Beenden", event -> {
-			exerciseDetail.close();
+			dlgExerciseDetail.close();
 		});
 
-		Label label = new Label("Hier stehen weiere Informationen, die dem User bei der Durchführung helfen");
+		Label lblExerciseDetail = new Label("Atme langsam und tief durch die Nase ein, bis sich Dein Bauch mit Luft gefüllt hat, und atme durch den Mund wieder aus. Versuche dabei die einströmende Luft in der Nase zu spüren und fühle, wie sich Deine Bauchdecke hebt und wieder senkt. Du kannst auch eine Hand auf Deinen Bauch legen, damit es Dir einfacher fällt, Dich auf das Heben und Senken Deines Bauches zu konzentrieren. Achte auf Deinen Atem und achte darauf, dass Du in das Zwerchfell oder den Bauch, anstatt in die Brust atmest. Konzentriere Dich so lange auf Deine Atmung, bis sich Deine Angst wieder gelegt hat und sich Dein Herzschlag verlangsamt. Wenn dies der Fall ist, klicke auf beenden.");
 		HorizontalLayout layout = new HorizontalLayout(btnExit, btnFinish);
-		exerciseDetail.add(label, layout);
+		dlgExerciseDetail.add(lblExerciseDetail, layout);
 
-		exerciseDetail.setWidth("400px");
-		exerciseDetail.setHeight("600px");
+		dlgExerciseDetail.setWidth("400px");
+		dlgExerciseDetail.setHeight("600px");
 
-		btnStart.addClickListener(event -> exerciseDetail.open());
+		btnStart.addClickListener(event -> dlgExerciseDetail.open());
 
 		/*
 		 * dialog to rate the exercise after finishing 
 		 */
-		Dialog rating = new Dialog();
-		btnFinish.addClickListener(event -> rating.open());
+		Dialog dlgRating = new Dialog();
+		btnFinish.addClickListener(event -> dlgRating.open());
 
 		RadioButtonGroup<String> rbgRating = new RadioButtonGroup<>();
 		rbgRating.setItems("5", "4", "3", "2", "1");
 		rbgRating.setLabel("Mit wie vielen Sternen bewertest du diese Übung?");
 
 		Button btnOk = new Button("OK", event -> {
-			rating.close();
+			dlgRating.close();
 		});
 		Button btnClose = new Button("Abbrechen", event -> {
-			rating.close();
+			dlgRating.close();
 		});
-		rating.add(rbgRating, btnOk, btnClose);
+		dlgRating.add(rbgRating, btnOk, btnClose);
 	}
 }
