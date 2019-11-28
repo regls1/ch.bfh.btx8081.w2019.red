@@ -1,18 +1,15 @@
 package view;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.grid.HeaderRow;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.Route;
@@ -29,7 +26,7 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 @Route
 public class DiaryView extends VerticalLayout {
 
-	private List<MockEntry> diaryEntryList = new ArrayList();
+	private List<MockEntry> diaryEntryList = new ArrayList<MockEntry>();
 	private Grid<MockEntry> grid = new Grid<>();
 	private Button entryAddButton = new Button("Neuer Eintrag");
 
@@ -93,6 +90,7 @@ public class DiaryView extends VerticalLayout {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private Component test() {
 		entryAddButton.addClickListener(null);
 		return entryAddButton;
