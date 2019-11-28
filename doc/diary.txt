@@ -160,6 +160,11 @@ wackt2
 configured vaadin project and added it to project folder
 todo's: do the configuration on the other team member's machines
 
+15.11.19
+gashf2
+180 min
+create first version of product and sprint backlog
+
 18.11.19
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 105 min
@@ -226,6 +231,11 @@ regls1
 creating mainview (homescreen view)
 
 24.11.19
+gashf2
+120 min
+creating ContactView
+
+24.11.19
 wackt2
 270 min
 implemented diary entry view, linking stuff
@@ -249,3 +259,13 @@ implemented exercise view, implemented exercise detail view, linked the differen
 romap
 120min 
 diary entry view correction and further implementation
+
+25.11.19
+gashf2
+120 min
+editing first version of Contact View
+
+27.11.19
+gashf2
+120 min
+creating dialog for ContactView for detailed view
