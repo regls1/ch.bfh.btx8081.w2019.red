@@ -279,3 +279,5 @@ Daily Scrum
 wackt2
 30 min
 added suppress warnings to all pages, removed unused imports of all pages, removed dialogs from diary entry view, added arraylist, code review
+
+29.11.19
