@@ -1,0 +1,93 @@
+/* first create a new database in pgAdmin with the name "dbSocialDisorder" */
+/* then select this database and execute following code (right click on the databse and "query tool" */
+
+CREATE TABLE "User"(
+	"userID" NUMERIC(6),
+	"firstName" varchar(25),
+	"name" varchar(25),
+	PRIMARY KEY("userID")
+);
+
+CREATE TABLE "City"(
+	"cityID" NUMERIC(6),
+	"zip" integer,
+	"name" varchar(25),
+	PRIMARY KEY("cityID")
+);
+
+CREATE TABLE "Status"(
+	"statusID" NUMERIC(6),
+	value varchar(50),
+	PRIMARY KEY("statusID")
+);
+
+CREATE TABLE "Contact"(
+	"contactID" NUMERIC(6),
+	"statusID" NUMERIC(6),
+	"userID" NUMERIC(6),
+	"title" varchar(25),
+	"firstName" varchar(25),
+	"name" varchar(25),
+	"mail" varchar(50),
+	"mobile" varchar(25),
+	"street" varchar(25),
+	PRIMARY KEY("contactID"),
+	FOREIGN KEY ("statusID") REFERENCES "Status"("statusID"),
+	FOREIGN KEY ("userID") REFERENCES "User"("userID")	
+);
+
+CREATE TABLE "Exercise"(
+	"exerciseID" NUMERIC(6),
+	"userID" NUMERIC(6),
+	"title" varchar(25),
+	"shortDescription" varchar(100),
+	"detailDescription" varchar(256),
+	PRIMARY KEY("exerciseID"),
+	FOREIGN KEY ("userID") REFERENCES "User"("userID")	
+);
+
+CREATE TABLE "Rating"(
+	"ratingID" NUMERIC(6),
+	"userID" NUMERIC(6),
+	"exerciseID" NUMERIC(6),
+	PRIMARY KEY("ratingID"),
+	FOREIGN KEY("userID") REFERENCES "User"("userID"),
+	FOREIGN KEY("exerciseID") REFERENCES "Exercise"("exerciseID")
+);
+
+CREATE TABLE "Mood"(
+	"moodID" NUMERIC(6),
+	"name" varchar(25),
+	PRIMARY KEY("moodID")
+);
+
+CREATE TABLE "Entry"(
+	"entryID" NUMERIC(6),
+	"moodID" NUMERIC(6),
+	"userID" NUMERIC(6),
+	"date" DATE,
+	"title" varchar(50),
+	"difficulty" varchar(256),
+	"pride" varchar(256),
+	"additional" varchar(256),
+	"privacy" BOOLEAN,
+	PRIMARY KEY("entryID"),
+	FOREIGN KEY("moodID") REFERENCES "Mood"("moodID"),
+	FOREIGN KEY("userID") REFERENCES "User"("userID")
+);
+
+CREATE TABLE "Symptom"(
+	"symptomID" NUMERIC(6),
+	"entryID" NUMERIC(6),
+	"name" varchar(25),
+	PRIMARY KEY("symptomID"),
+	FOREIGN KEY("entryID") REFERENCES "Entry"("entryID")
+);
+
+CREATE TABLE "Activity"(
+	"activityID" NUMERIC(6),
+	"entryID" NUMERIC(6),
+	"name" varchar(25),
+	PRIMARY KEY("activityID"),
+	FOREIGN KEY("entryID") REFERENCES "Entry"("entryID")
+);

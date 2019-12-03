@@ -284,3 +284,13 @@ added suppress warnings to all pages, removed unused imports of all pages, remov
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 240 min
 sprint review, created data base scheme, discussed class diagram (interface, views), entitiy classes
+
+03.12.19
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+90 min
+discussed class diagram and database scheme
+
+03.12.19
+wackt2
+45 min
+created postgresql file for local database, tested it and uploaded it
