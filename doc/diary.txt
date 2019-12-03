@@ -292,5 +292,5 @@ discussed class diagram and database scheme
 
 03.12.19
 wackt2
-45 min
-created postgresql file for local database, tested it and uploaded it
+75 min
+created postgresql file for local database, tested it, wrote entity classes
