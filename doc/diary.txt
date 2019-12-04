@@ -285,6 +285,11 @@ meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 240 min
 sprint review, created data base scheme, discussed class diagram (interface, views), entitiy classes
 
+30.11.19
+neues4
+120 min
+edit class diagram
+
 03.12.19
 meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
 90 min
@@ -294,3 +299,8 @@ discussed class diagram and database scheme
 wackt2
 75 min
 created postgresql file for local database, tested it, wrote entity classes
+
+03.12.19
+neues4
+60min 
+edit class diagram
