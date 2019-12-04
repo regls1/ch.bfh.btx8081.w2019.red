@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * model class of activity
  * 
@@ -10,13 +12,9 @@ public class Activity {
 	// primary key
 	int activityId;
 	String name;
+	ArrayList<Entry> diaryEntryList;
 	// foreign key
 	int entryId;
-	
-	/*
-	 * ArrayList<Activity> activityList;
-	 * ArrayList<Entry> diaryEntryList;
-	 */
 	
 	/*
 	 * getter and setter methods

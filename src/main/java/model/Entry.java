@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,14 +18,12 @@ public class Entry {
 	String pride;
 	String additional;
 	Boolean privacy;
+	ArrayList<Entry> activityList;
+	ArrayList<Mood> moodList;
+	ArrayList<Symptom> symptomList;
 	// foreign keys
 	int moodId;
 	int userId;
-	
-	/*
-	 * ArrayList<Entry> diaryEntryList;
-	 * ArrayList<Mood> moodList;
-	 */
 	
 	/*
 	 * getter and setter methods

@@ -14,11 +14,7 @@ public class Exercise {
 	String detailDescription;
 	// foreign key
 	int userId;
-	
-	/*
-	 * ArrayList<Exercise> exerciseList;
-	 */
-	
+
 	/*
 	 * getter and setter methods
 	 */

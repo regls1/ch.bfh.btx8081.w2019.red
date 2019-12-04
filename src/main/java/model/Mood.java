@@ -12,10 +12,6 @@ public class Mood {
 	String name;
 	
 	/*
-	 * ArrayList<Mood> moodList;
-	 */
-	
-	/*
 	 * getter and setter methods
 	 */
 	public int getMoodId() {

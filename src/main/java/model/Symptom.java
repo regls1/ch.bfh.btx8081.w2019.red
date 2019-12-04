@@ -1,4 +1,7 @@
 package model;
+
+import java.util.ArrayList;
+
 /**
  * model class of symptom
  * 
@@ -9,12 +12,9 @@ public class Symptom {
 	// primary key
 	int symptomId;
 	String name;
+	ArrayList<Entry> diaryEntryList;
 	// foreign key
 	int entryId;
-	
-	/*
-	 * ArrayList<Entry> diaryEntryList;
-	 */
 	
 	/*
 	 * getter and setter methods

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * model class of rating
  * 
@@ -10,13 +12,10 @@ public class Rating {
 	// primary key
 	int ratingId;
 	int value;
+	ArrayList<Exercise> exerciseList;
 	// foreign keys
 	int userId;
 	int exerciseId;
-	
-	/*
-	 * ArrayList<Exercise> exerciseList;
-	 */
 	
 	/*
 	 * getter and setter methods
