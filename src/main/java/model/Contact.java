@@ -1,24 +1,39 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 /**
  * model class of contact
  * 
- * @author wackt2
+ * @author wackt2, romap1
  *
  */
+
+@Entity
 public class Contact {
 	// primary key
-	int contactId;
-	String title;
-	String firstName;
-	String name;
-	String mail;
-	String mobile;
-	String street;
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int contactId;
+	
+	private String title;
+	private String firstName;
+	private String name;
+	private String mail;
+	private String mobile;
+	private String street;
 	// foreign keys
-	int statusId;
-	int cityId;
-	int userId;
+	
+	private Enum<Status> statusId;
+	@ManyToOne
+	private int cityId;
+	@ManyToOne
+	private int userId;
+	
 	
 	/*
 	 * getter and setter methods
@@ -26,9 +41,7 @@ public class Contact {
 	public int getContactId() {
 		return contactId;
 	}
-	public void setContactId(int contactId) {
-		this.contactId = contactId;
-	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -65,23 +78,20 @@ public class Contact {
 	public void setStreet(String street) {
 		this.street = street;
 	}
-	public int getStatusId() {
+	public Enum<Status> getStatusId() {
 		return statusId;
 	}
-	public void setStatusId(int statusId) {
-		this.statusId = statusId;
+	public void setStatusId(Enum<Status> status) {
+		this.statusId = status;
 	}
+	
 	public int getCityId() {
 		return cityId;
 	}
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
-	}
+	
 	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+
 	
 }
