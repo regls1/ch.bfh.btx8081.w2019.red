@@ -68,7 +68,17 @@ public class ExerciseDetailView extends VerticalLayout {
 			dlgExerciseDetail.close();
 		});
 
-		Label lblExerciseDetail = new Label("Atme langsam und tief durch die Nase ein, bis sich Dein Bauch mit Luft gefüllt hat, und atme durch den Mund wieder aus. Versuche dabei die einströmende Luft in der Nase zu spüren und fühle, wie sich Deine Bauchdecke hebt und wieder senkt. Du kannst auch eine Hand auf Deinen Bauch legen, damit es Dir einfacher fällt, Dich auf das Heben und Senken Deines Bauches zu konzentrieren. Achte auf Deinen Atem und achte darauf, dass Du in das Zwerchfell oder den Bauch, anstatt in die Brust atmest. Konzentriere Dich so lange auf Deine Atmung, bis sich Deine Angst wieder gelegt hat und sich Dein Herzschlag verlangsamt. Wenn dies der Fall ist, klicke auf beenden.");
+		Label lblExerciseDetail = new Label("Atme langsam und tief durch die Nase ein, "
+				+ "bis sich Dein Bauch mit Luft gefüllt hat, und atme durch den Mund wieder aus. "
+				+ "Versuche dabei die einströmende Luft in der Nase zu spüren und fühle, "
+				+ "wie sich Deine Bauchdecke hebt und wieder senkt. "
+				+ "Du kannst auch eine Hand auf Deinen Bauch legen, damit es Dir einfacher fällt, "
+				+ "Dich auf das Heben und Senken Deines Bauches zu konzentrieren. "
+				+ "Achte auf Deinen Atem und achte darauf, dass Du in das Zwerchfell oder den Bauch, "
+				+ "anstatt in die Brust atmest. Konzentriere Dich so lange auf Deine Atmung, "
+				+ "bis sich Deine Angst wieder gelegt hat und sich Dein Herzschlag verlangsamt. "
+				+ "Wenn dies der Fall ist, klicke auf beenden.");
+		//lblExerciseDetail.append(lblExerciseDetail.getValue());
 		HorizontalLayout layout = new HorizontalLayout(btnExit, btnFinish);
 		dlgExerciseDetail.add(lblExerciseDetail, layout);
 
