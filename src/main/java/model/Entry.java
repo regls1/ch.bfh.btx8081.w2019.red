@@ -3,27 +3,44 @@ package model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
 /**
  * model class of entry
  * 
- * @author wackt2
+ * @author wackt2, romap1
  *
  */
+@Entity
 public class Entry {
 	// primary key
-	int entryId;
-	Date date;
-	String title;
-	String difficulty;
-	String pride;
-	String additional;
-	Boolean privacy;
-	ArrayList<Entry> activityList;
-	ArrayList<Mood> moodList;
-	ArrayList<Symptom> symptomList;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int entryId;
+	private Date date;
+	private String title;
+	private String difficulty;
+	private String pride;
+	private String additional;
+	private Boolean privacy;
+	
+	@OneToMany (mappedBy = "entryId")
+	private ArrayList<Activity> activityList;
+	@ManyToOne
+	private Mood mood;
+	@OneToMany (mappedBy = "entryId")
+	private ArrayList<Symptom> symptomList;
 	// foreign keys
-	int moodId;
-	int userId;
+	@ManyToOne
+	private int moodId;
+	@ManyToOne
+	private int userId;
 	
 	/*
 	 * getter and setter methods
@@ -31,9 +48,7 @@ public class Entry {
 	public int getEntryId() {
 		return entryId;
 	}
-	public void setEntryId(int entryId) {
-		this.entryId = entryId;
-	}
+	
 	public Date getDate() {
 		return date;
 	}
@@ -73,13 +88,9 @@ public class Entry {
 	public int getMoodId() {
 		return moodId;
 	}
-	public void setMoodId(int moodId) {
-		this.moodId = moodId;
-	}
+	
 	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+	
 }
