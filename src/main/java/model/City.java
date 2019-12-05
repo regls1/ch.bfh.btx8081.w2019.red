@@ -1,16 +1,24 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * model class of city
  * 
- * @author wackt2
+ * @author wackt2, romap1
  *
  */
+@Entity 
 public class City {
 	// primary key
-	int cityId;
-	int zip;
-	String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int cityId;
+	private int zip;
+	private String name;
 	
 	/*
 	 * getter and setter methods
@@ -18,9 +26,7 @@ public class City {
 	public int getCityId() {
 		return cityId;
 	}
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
-	}
+
 	public int getZip() {
 		return zip;
 	}
