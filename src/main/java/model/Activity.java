@@ -2,12 +2,15 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+
 /**
  * model class of  activity
  * 
  * @author wackt2
  *
  */
+@Entity
 public class Activity {
 	// primary key
 	int activityId;
