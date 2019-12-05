@@ -309,3 +309,9 @@ edit class diagram
 khala1, gashf2, romap1, regls1, neues4
 120min
 attempt to implement database. 
+
+05.12.19
+romap1
+30min
+adding annotations and improve the class Entry, City and Contact. 
+Delete Class Status and create Enum Status.
