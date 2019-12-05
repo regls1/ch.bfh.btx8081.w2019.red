@@ -304,3 +304,8 @@ created postgresql file for local database, tested it, wrote entity classes
 neues4
 60min 
 edit class diagram
+
+05.12.19
+khala1, gashf2, romap1, regls1, neues4
+120min
+attempt to implement database. 
