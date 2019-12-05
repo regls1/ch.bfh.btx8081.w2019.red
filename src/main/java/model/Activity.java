@@ -3,19 +3,27 @@ package model;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * model class of  activity
  * 
- * @author wackt2
+ * @author wackt2, neues4
  *
  */
 @Entity
 public class Activity {
 	// primary key
-	int activityId;
-	String name;
-	ArrayList<Entry> diaryEntryList;
+	@Id
+	@GeneratedValue
+	private int activityId;
+	
+	private String name;
+	
+	@ManyToOne
+	private final ArrayList<Entry> diaryEntryList;
 	// foreign key
 	int entryId;
 	
