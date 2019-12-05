@@ -2,6 +2,6 @@ package model;
 
 public enum Status {
 
-	available, notAvalable, 
+	available, notAvalable, absent, onVacation
 }
 
