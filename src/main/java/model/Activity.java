@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * model class of activity
+ * model class of  activity
  * 
  * @author wackt2
  *
