@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * model class of rating
@@ -23,7 +24,11 @@ public class Rating implements IEntity {
 	private int value;
 	private ArrayList<Exercise> exerciseList;
 	// foreign keys
+	@ManyToOne
+	private User user;
 	private int userId;
+	@ManyToOne
+	private Exercise exercise;
 	private int exerciseId;
 	
 	/*

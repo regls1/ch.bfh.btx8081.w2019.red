@@ -23,8 +23,9 @@ public class Activity implements IEntity {
 	private String name;
 	
 	// foreign key
-	@ManyToOne
 	int entryId;
+	@ManyToOne
+	private Entry entry;
 	
 	/*
 	 * getter and setter methods

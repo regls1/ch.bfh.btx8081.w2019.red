@@ -37,10 +37,11 @@ public class Entry implements IEntity {
 	@OneToMany (mappedBy = "entryId")
 	private ArrayList<Symptom> symptomList;
 	// foreign keys
-	
-	//@ManyToOne
-	//private int moodId;
 	@ManyToOne
+	private Mood mood;
+	private int moodId;
+	@ManyToOne
+	private User user;
 	private int userId;
 	
 	/*

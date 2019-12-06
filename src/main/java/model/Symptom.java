@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * model class of symptom
@@ -22,6 +23,8 @@ public class Symptom implements IEntity {
 	private String name;
 	private ArrayList<Entry> diaryEntryList;
 	// foreign key
+	@ManyToOne
+	Entry entry;
 	int entryId;
 
 	/*

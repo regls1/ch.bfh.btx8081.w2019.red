@@ -28,8 +28,10 @@ public class Contact implements IEntity {
 	// foreign keys
 	private Enum<Status> statusId;
 	@ManyToOne
+	private City city;
 	private int cityId;
 	@ManyToOne
+	private User user;
 	private int userId;
 	
 	/*

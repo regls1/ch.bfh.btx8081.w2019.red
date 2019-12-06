@@ -23,6 +23,7 @@ public class Exercise implements IEntity {
 	private String detailDescription;
 	// foreign key
 	@ManyToOne
+	private User user;
 	private int userId;
 
 	/*
