@@ -19,7 +19,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class Entry {
 	// primary key
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int entryId;
