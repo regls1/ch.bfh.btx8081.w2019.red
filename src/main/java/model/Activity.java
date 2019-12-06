@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Activity {
+public class Activity implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -29,7 +29,7 @@ public class Activity {
 	/*
 	 * getter and setter methods
 	 */
-	public int getActivityId() {
+	public int getId() {
 		return activityId;
 	}
 

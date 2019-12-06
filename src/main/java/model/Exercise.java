@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Exercise {
+public class Exercise implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -28,7 +28,7 @@ public class Exercise {
 	/*
 	 * getter and setter methods
 	 */
-	public int getExerciseId() {
+	public int getId() {
 		return exerciseId;
 	}
 

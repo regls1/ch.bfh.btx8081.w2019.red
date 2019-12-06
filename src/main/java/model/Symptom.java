@@ -16,7 +16,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Symptom {
+public class Symptom implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -29,7 +29,7 @@ public class Symptom {
 	/*
 	 * getter and setter methods
 	 */
-	public int getSymptomId() {
+	public int getId() {
 		return symptomId;
 	}
 

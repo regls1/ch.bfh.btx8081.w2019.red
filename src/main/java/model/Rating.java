@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +15,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Rating {
+public class Rating implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -30,7 +29,7 @@ public class Rating {
 	/*
 	 * getter and setter methods
 	 */
-	public int getRatingId() {
+	public int getId() {
 		return ratingId;
 	}
 	

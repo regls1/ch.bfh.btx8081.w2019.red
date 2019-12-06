@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Entry {
+public class Entry implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -44,7 +44,7 @@ public class Entry {
 	/*
 	 * getter and setter methods
 	 */
-	public int getEntryId() {
+	public int getId() {
 		return entryId;
 	}
 	

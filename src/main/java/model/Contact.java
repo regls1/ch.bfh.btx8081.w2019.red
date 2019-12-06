@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Contact {
+public class Contact implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -26,18 +26,17 @@ public class Contact {
 	private String mobile;
 	private String street;
 	// foreign keys
-	
+	@ManyToOne
 	private Enum<Status> statusId;
 	@ManyToOne
 	private int cityId;
 	@ManyToOne
 	private int userId;
 	
-	
 	/*
 	 * getter and setter methods
 	 */
-	public int getContactId() {
+	public int getId() {
 		return contactId;
 	}
 	

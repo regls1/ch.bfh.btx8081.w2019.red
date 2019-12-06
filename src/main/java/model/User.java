@@ -3,6 +3,7 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,32 +15,20 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table (name = "User")
-public class User {
+public class User implements IEntity {
 	// primary key
-	
-	@Column(name = "id")
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int userId;
-	
-	@Column(name = "name")
 	private String firstName;
-	
-	@Column(name = "age")
 	private String name;
 
 	/*
 	 * getter and setter methods
 	 */
-	
-	@Id
-	@GeneratedValue
-	public int getUserId() {
+	public int getId() {
 		return userId;
 	}
-
-//	public void setUserId(int userId) {
-//		this.userId = userId;
-//	}
 	
 	public String getFirstName() {
 		return firstName;

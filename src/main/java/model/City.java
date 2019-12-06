@@ -12,7 +12,7 @@ import javax.persistence.Id;
  *
  */
 @Entity 
-public class City {
+public class City implements IEntity {
 	// primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
@@ -23,10 +23,10 @@ public class City {
 	/*
 	 * getter and setter methods
 	 */
-	public int getCityId() {
+	public int getId() {
 		return cityId;
 	}
-
+	
 	public int getZip() {
 		return zip;
 	}
