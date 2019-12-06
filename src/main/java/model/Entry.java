@@ -34,8 +34,6 @@ public class Entry implements IEntity {
 	
 	@OneToMany (mappedBy = "entryId")
 	private ArrayList<Activity> activityList;
-	@ManyToOne
-	private Mood mood;
 	@OneToMany (mappedBy = "entryId")
 	private ArrayList<Symptom> symptomList;
 	// foreign keys
