@@ -26,7 +26,6 @@ public class Contact implements IEntity {
 	private String mobile;
 	private String street;
 	// foreign keys
-	@ManyToOne
 	private Enum<Status> statusId;
 	@ManyToOne
 	private int cityId;
