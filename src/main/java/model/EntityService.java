@@ -14,6 +14,7 @@ public class EntityService {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("ch.bfh.btx8081.w2019.red.git");
 		EntityManager em =   factory.createEntityManager();
 		this.em= em;
+		em.getTransaction();
 	}
 	
 	public static EntityService getInctance() {
@@ -28,5 +29,12 @@ public class EntityService {
 		return em;
 	}
 	
+	
+	public static void main(String[] args) {
+		EntityService es = new EntityService();
+		EntityManager em = es.getManager();
+		em.getTransaction();
+		em.close();
+	}
 	
 }
