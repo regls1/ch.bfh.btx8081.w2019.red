@@ -32,9 +32,9 @@ public class Entry implements IEntity {
 	private String additional;
 	private Boolean privacy;
 	
-	@OneToMany (mappedBy = "entryId")
+	@OneToMany (mappedBy = "entry")
 	private ArrayList<Activity> activityList;
-	@OneToMany (mappedBy = "entryId")
+	@OneToMany (mappedBy = "entry")
 	private ArrayList<Symptom> symptomList;
 	// foreign keys
 	@ManyToOne
@@ -43,6 +43,8 @@ public class Entry implements IEntity {
 	@ManyToOne
 	private User user;
 	private int userId;
+	@OneToMany
+	private Activity activity;
 	
 	/*
 	 * getter and setter methods
