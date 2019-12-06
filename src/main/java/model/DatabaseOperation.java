@@ -16,7 +16,7 @@ public class DatabaseOperation<E extends IEntity> {
 	public void insertInto(E entity) {
 	}
 	
-	public void updateById(int id) {
+	public void updateEntry(E entity) {
 	}
 	
 	public void deleteById(int id) {
