@@ -9,16 +9,16 @@ package model;
 
 public class DatabaseOperation<E extends IEntity> {
 
-	public E getById(int id) {
+	public E get(int id) {
 		return null;
 	}
 	
-	public void insertInto(E entity) {
+	public void insert(E entity) {
 	}
 	
-	public void updateEntry(E entity) {
+	public void update(E entity) {
 	}
 	
-	public void deleteById(int id) {
+	public void delete(int id) {
 	}
 }
