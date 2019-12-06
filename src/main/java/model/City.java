@@ -30,12 +30,15 @@ public class City {
 	public int getZip() {
 		return zip;
 	}
+	
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
