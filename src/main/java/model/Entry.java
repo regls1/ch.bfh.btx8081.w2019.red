@@ -43,8 +43,6 @@ public class Entry implements IEntity {
 	@ManyToOne
 	private User user;
 	private int userId;
-	@OneToMany
-	private Activity activity;
 	
 	/*
 	 * getter and setter methods
