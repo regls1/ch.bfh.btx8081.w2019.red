@@ -26,6 +26,10 @@ public class Symptom implements IEntity {
 	@ManyToOne
 	Entry entry;
 	int entryId;
+	
+	public Symptom() {
+		
+	}
 
 	/*
 	 * getter and setter methods

@@ -19,6 +19,10 @@ public class Mood {
 	private int moodId;
 	private String name;
 	
+	public Mood() {
+		
+	}
+	
 	/*
 	 * getter and setter methods
 	 */

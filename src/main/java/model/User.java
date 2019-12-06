@@ -20,6 +20,10 @@ public class User implements IEntity {
 	private int userId;
 	private String firstName;
 	private String name;
+	
+	public User() {
+		
+	}
 
 	/*
 	 * getter and setter methods

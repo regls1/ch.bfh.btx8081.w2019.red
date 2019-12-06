@@ -31,6 +31,10 @@ public class Rating implements IEntity {
 	private Exercise exercise;
 	private int exerciseId;
 	
+	public Rating() {
+		
+	}
+	
 	/*
 	 * getter and setter methods
 	 */

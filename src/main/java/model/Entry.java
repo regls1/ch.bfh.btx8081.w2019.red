@@ -32,6 +32,10 @@ public class Entry implements IEntity {
 	private String additional;
 	private Boolean privacy;
 	
+	public Entry() {
+		
+	}
+	
 	@OneToMany (mappedBy = "entry")
 	private ArrayList<Activity> activityList;
 	@OneToMany (mappedBy = "entry")

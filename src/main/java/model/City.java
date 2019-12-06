@@ -20,6 +20,10 @@ public class City implements IEntity {
 	private int zip;
 	private String name;
 	
+	public City() {
+		
+	}
+	
 	/*
 	 * getter and setter methods
 	 */

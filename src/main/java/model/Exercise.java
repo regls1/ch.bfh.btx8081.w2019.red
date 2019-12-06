@@ -25,6 +25,10 @@ public class Exercise implements IEntity {
 	@ManyToOne
 	private User user;
 	private int userId;
+	
+	public Exercise() {
+		
+	}
 
 	/*
 	 * getter and setter methods

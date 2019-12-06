@@ -27,6 +27,10 @@ public class Activity implements IEntity {
 	@ManyToOne
 	private Entry entry;
 	
+	public Activity() {
+		
+	}
+	
 	/*
 	 * getter and setter methods
 	 */

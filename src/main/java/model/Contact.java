@@ -34,6 +34,10 @@ public class Contact implements IEntity {
 	private User user;
 	private int userId;
 	
+	public Contact() {
+		
+	}
+	
 	/*
 	 * getter and setter methods
 	 */
