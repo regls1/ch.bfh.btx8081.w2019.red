@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * model class of entry
@@ -22,7 +24,8 @@ public class Entry implements IEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int entryId;
-	private Date date;
+	@Temporal(TemporalType.DATE)
+	private Date date; 
 	private String title;
 	private String difficulty;
 	private String pride;
