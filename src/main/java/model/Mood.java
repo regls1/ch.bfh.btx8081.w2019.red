@@ -25,9 +25,11 @@ public class Mood {
 	public int getMoodId() {
 		return moodId;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
