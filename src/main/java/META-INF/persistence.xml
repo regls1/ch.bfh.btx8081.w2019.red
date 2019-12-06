@@ -2,5 +2,13 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="ch.bfh.btx8081.w2019.red.git">
 	<class>model.Activity</class>
+	<class>model.City</class>
+	<class>model.Contact</class>
+	<class>model.Entry</class>
+	<class>model.Exercise</class>
+	<class>model.Mood</class>
+	<class>model.Rating</class>
+	<class>model.Symptom</class>
+	<class>model.User</class>
 	</persistence-unit>
 </persistence>
