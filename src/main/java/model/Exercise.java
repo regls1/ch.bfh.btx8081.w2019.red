@@ -15,7 +15,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class Exercise {
 	// primary key
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int exerciseId;
@@ -36,23 +35,28 @@ public class Exercise {
 	public String getTitle() {
 		return title;
 	}
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 	public String getShortDescription() {
 		return shortDescription;
 	}
+	
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
+	
 	public String getDetailDescription() {
 		return detailDescription;
 	}
+	
 	public void setDetailDescription(String detailDescription) {
 		this.detailDescription = detailDescription;
 	}
+	
 	public int getUserId() {
 		return userId;
 	}
-
 }
