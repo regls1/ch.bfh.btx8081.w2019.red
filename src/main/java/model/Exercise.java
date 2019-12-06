@@ -1,19 +1,30 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 /**
  * model class of exercise
  * 
- * @author wackt2
+ * @author wackt2, romap1
  *
  */
+@Entity
 public class Exercise {
 	// primary key
-	int exerciseId;
-	String title;
-	String shortDescription;
-	String detailDescription;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int exerciseId;
+	private String title;
+	private String shortDescription;
+	private String detailDescription;
 	// foreign key
-	int userId;
+	@OneToMany
+	private int userId;
 
 	/*
 	 * getter and setter methods
@@ -21,9 +32,7 @@ public class Exercise {
 	public int getExerciseId() {
 		return exerciseId;
 	}
-	public void setExerciseId(int exerciseId) {
-		this.exerciseId = exerciseId;
-	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -45,7 +54,5 @@ public class Exercise {
 	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+
 }
