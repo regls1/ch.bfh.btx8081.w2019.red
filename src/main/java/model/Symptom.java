@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -17,33 +18,19 @@ import javax.persistence.Id;
 @Entity
 public class Symptom {
 	// primary key
-
-	@Column(name = "symptomId")
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int symptomId;
-
-	@Column(name = "name")
 	private String name;
-
-	@Column(name = "diaryEntryList")
-	
 	private ArrayList<Entry> diaryEntryList;
 	// foreign key
-
-	@Column(name = "entryId")
 	int entryId;
 
 	/*
 	 * getter and setter methods
 	 */
-
-	@Id
-	@GeneratedValue
 	public int getSymptomId() {
 		return symptomId;
-	}
-
-	public void setSymptomId(int symptomId) {
-		this.symptomId = symptomId;
 	}
 
 	public String getName() {
@@ -56,9 +43,5 @@ public class Symptom {
 
 	public int getEntryId() {
 		return entryId;
-	}
-
-	public void setEntryId(int entryId) {
-		this.entryId = entryId;
 	}
 }
