@@ -26,7 +26,7 @@ public class Contact implements IEntity {
 	private String mobile;
 	private String street;
 	// foreign keys
-	private Enum<Status> statusId;
+	private Status statusId;
 	@ManyToOne
 	private City city;
 	private int cityId;
@@ -93,11 +93,11 @@ public class Contact implements IEntity {
 		this.street = street;
 	}
 	
-	public Enum<Status> getStatusId() {
+	public Status getStatusId() {
 		return statusId;
 	}
 	
-	public void setStatusId(Enum<Status> status) {
+	public void setStatusId(Status status) {
 		this.statusId = status;
 	}
 	
