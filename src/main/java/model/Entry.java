@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,11 +37,11 @@ public class Entry implements IEntity {
 		
 	}
 	
-	/* @OneToMany (mappedBy = "entry")
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
 	private final ArrayList<Activity> activityList= new ArrayList<Activity>();
-	@OneToMany (mappedBy = "entry")
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
 	private ArrayList<Symptom> symptomList = new ArrayList<Symptom>();
-	*/
+
 	// foreign keys
 	@ManyToOne
 	private Mood mood;
