@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -22,7 +23,8 @@ public class Rating implements IEntity {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int ratingId;
 	private int value;
-	private ArrayList<Exercise> exerciseList;
+	//@ManyToOne
+	//private final ArrayList<Exercise> exerciseList= new ArrayList<Exercise>();
 	// foreign keys
 	@ManyToOne
 	private User user;
@@ -50,14 +52,15 @@ public class Rating implements IEntity {
 		this.value = value;
 	}
 	
-	public ArrayList<Exercise> getExerciseList() {
+	/* public ArrayList<Exercise> getExerciseList() {
 		return exerciseList;
 	}
-
+	*/
+/*
 	public void setExerciseList(ArrayList<Exercise> exerciseList) {
 		this.exerciseList = exerciseList;
 	}
-	
+*/	
 	public int getUserId() {
 		return userId;
 	}

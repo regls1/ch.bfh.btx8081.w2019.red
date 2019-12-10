@@ -21,10 +21,10 @@ public class Symptom implements IEntity {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int symptomId;
 	private String name;
-	private ArrayList<Entry> diaryEntryList;
+	// private final ArrayList<Entry> diaryEntryList = new ArrayList<Entry>();
 	// foreign key
 	@ManyToOne
-	Entry entry;
+	private Entry entry;
 	int entryId;
 	
 	public Symptom() {
@@ -50,11 +50,13 @@ public class Symptom implements IEntity {
 		return entryId;
 	}
 
-	public ArrayList<Entry> getDiaryEntryList() {
+	/* public ArrayList<Entry> getDiaryEntryList() {
 		return diaryEntryList;
 	}
-
+	*/
+/*
 	public void setDiaryEntryList(ArrayList<Entry> diaryEntryList) {
 		this.diaryEntryList = diaryEntryList;
 	}
+	*/
 }
