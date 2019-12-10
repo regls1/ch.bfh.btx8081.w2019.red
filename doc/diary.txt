@@ -320,3 +320,8 @@ Delete Class Status and create Enum Status.
 gashf2, romap1, regls1, neues4, wackt2
 200min
 attempt to implement persistence.
+
+10.12.19
+gashf2, romap1, regls1, neues4, wackt2
+170min
+implementing database
