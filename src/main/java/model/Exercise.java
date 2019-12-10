@@ -1,10 +1,14 @@
 package model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * model class of exercise
@@ -29,6 +33,9 @@ public class Exercise implements IEntity {
 	public Exercise() {
 		
 	}
+	
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "exercise")
+	private final ArrayList<Rating> diaryEntryList = new ArrayList<Rating>();
 
 	/*
 	 * getter and setter methods

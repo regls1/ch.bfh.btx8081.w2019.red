@@ -1,12 +1,9 @@
 package model;
 
-import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -23,8 +20,6 @@ public class Rating implements IEntity {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int ratingId;
 	private int value;
-	//@ManyToOne
-	//private final ArrayList<Exercise> exerciseList= new ArrayList<Exercise>();
 	// foreign keys
 	@ManyToOne
 	private User user;

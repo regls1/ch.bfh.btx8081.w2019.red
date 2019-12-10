@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +20,6 @@ public class Symptom implements IEntity {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int symptomId;
 	private String name;
-	// private final ArrayList<Entry> diaryEntryList = new ArrayList<Entry>();
 	// foreign key
 	@ManyToOne
 	private Entry entry;
