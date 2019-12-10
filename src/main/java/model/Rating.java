@@ -47,15 +47,6 @@ public class Rating implements IEntity {
 		this.value = value;
 	}
 	
-	/* public ArrayList<Exercise> getExerciseList() {
-		return exerciseList;
-	}
-	*/
-/*
-	public void setExerciseList(ArrayList<Exercise> exerciseList) {
-		this.exerciseList = exerciseList;
-	}
-*/	
 	public int getUserId() {
 		return userId;
 	}

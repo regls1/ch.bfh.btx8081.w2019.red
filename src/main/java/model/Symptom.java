@@ -47,14 +47,4 @@ public class Symptom implements IEntity {
 	public int getEntryId() {
 		return entryId;
 	}
-
-	/* public ArrayList<Entry> getDiaryEntryList() {
-		return diaryEntryList;
-	}
-	*/
-/*
-	public void setDiaryEntryList(ArrayList<Entry> diaryEntryList) {
-		this.diaryEntryList = diaryEntryList;
-	}
-	*/
 }
