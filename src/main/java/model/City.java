@@ -1,9 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * model class of city
@@ -23,6 +27,9 @@ public class City implements IEntity {
 	public City() {
 		
 	}
+	
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "city")
+	private final ArrayList<Contact> contactList= new ArrayList<Contact>();
 	
 	/*
 	 * getter and setter methods

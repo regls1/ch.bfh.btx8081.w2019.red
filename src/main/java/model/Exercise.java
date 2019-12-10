@@ -35,7 +35,7 @@ public class Exercise implements IEntity {
 	}
 	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "exercise")
-	private final ArrayList<Rating> diaryEntryList = new ArrayList<Rating>();
+	private final ArrayList<Rating> ratingList = new ArrayList<Rating>();
 
 	/*
 	 * getter and setter methods

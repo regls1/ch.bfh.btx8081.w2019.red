@@ -1,9 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * model class of user
@@ -24,6 +28,15 @@ public class User implements IEntity {
 	public User() {
 		
 	}
+	
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
+	private final ArrayList<Entry> entryList= new ArrayList<Entry>();
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
+	private final ArrayList<Contact> contactList= new ArrayList<Contact>();
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
+	private final ArrayList<Exercise> exerciseList= new ArrayList<Exercise>();
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
+	private final ArrayList<Rating> RatingList= new ArrayList<Rating>();
 
 	/*
 	 * getter and setter methods

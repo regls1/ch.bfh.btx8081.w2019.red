@@ -1,9 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * model class of mood
@@ -22,6 +26,9 @@ public class Mood {
 	public Mood() {
 		
 	}
+	
+	@OneToMany (fetch = FetchType.EAGER, mappedBy = "mood")
+	private final ArrayList<Entry> entryList= new ArrayList<Entry>();
 	
 	/*
 	 * getter and setter methods
