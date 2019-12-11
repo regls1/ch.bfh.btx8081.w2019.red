@@ -15,10 +15,16 @@ public class EntityService {
 	  protected static EntityManager em;
 	  //private static EntityService instance;
 
+	 /**
+	  * 
+	  */
 	  public EntityService() {
 		  em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 	  }
 	
+	  /**
+	   * EntityService as Singleton
+	   */
 	/* public static EntityService getInstance() {
 		if (instance == null) {
 			instance = new EntityService();
@@ -28,12 +34,10 @@ public class EntityService {
 	}
 	*/
 	
-	/* public static EntityManager getManager() {
-		return em;
-
-	}
-	*/
 	
+	  /**
+	   * 
+	   */
     public void setUp() {
         // Begin a new local transaction so that we can persist a new entity
         EntityTransaction transaction = em.getTransaction();
