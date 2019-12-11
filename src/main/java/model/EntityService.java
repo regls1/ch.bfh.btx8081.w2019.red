@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class EntityService {
 	
 	  private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2019.red.git";
-	  private EntityManager em;
+	  protected static EntityManager em;
 	  //private static EntityService instance;
 
 	  public EntityService() {

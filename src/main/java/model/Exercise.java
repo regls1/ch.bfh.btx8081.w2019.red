@@ -68,6 +68,10 @@ public class Exercise implements IEntity {
 		this.detailDescription = detailDescription;
 	}
 	
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 	public int getUserId() {
 		return userId;
 	}

@@ -20,7 +20,7 @@ public class ExerciseModel {
 	 */
 	@SuppressWarnings("unchecked")
 	public ArrayList<Exercise> getAllExercises() {
-		return (ArrayList<Exercise>)EntityService.em.createQuery("select c from Contact c").getResultList();
+		return (ArrayList<Exercise>)EntityService.em.createQuery("select e from Exercise e").getResultList();
 	}
  
 	/**
@@ -46,6 +46,7 @@ public class ExerciseModel {
 		e.setTitle(exercise.getTitle());
 		e.setShortDescription(exercise.getShortDescription());
 		e.setDetailDescription(exercise.getDetailDescription());
+		// user id stays the same
 		
 		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
@@ -66,6 +67,7 @@ public class ExerciseModel {
 		e.setTitle(exercise.getTitle());
 		e.setShortDescription(exercise.getShortDescription());
 		e.setDetailDescription(exercise.getDetailDescription());
+		e.setUserId(exercise.getUserId());
 		
 		EntityService.em.persist(e);
 		EntityService.em.getTransaction().commit();
@@ -83,6 +85,79 @@ public class ExerciseModel {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(e);
+		EntityService.em.getTransaction().commit();
+		EntityService.em.flush();
+	}
+	
+	/**
+	 * get a list of all ratings
+	 * @param id
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public ArrayList<Rating> getAllRatings() {
+		return (ArrayList<Rating>)EntityService.em.createQuery("select r from Rating r").getResultList();
+	}
+ 
+	/**
+	 * get a rating based on the id
+	 * @param id
+	 * @return
+	 */
+	public Rating getRating(int id) {
+		return EntityService.em.find(Rating.class, id);
+	}
+	
+	/**
+	 * update existing rating
+	 * @param id
+	 * @param rating
+	 * @return
+	 */
+	public Rating updateRating(int id, Rating rating) {
+		EntityService.em.getTransaction().begin();
+		
+		Rating r = EntityService.em.find(Rating.class, id);
+		
+		r.setValue(rating.getValue());
+		// foreign keys userid and exerciseid stay the same
+		
+		EntityService.em.getTransaction().commit();
+		EntityService.em.flush();
+		
+		return r;
+	}
+ 
+	/**
+	 * add a rating 
+	 * @param rating
+	 * @return
+	 */
+	public Rating addRating(Rating rating) {
+		EntityService.em.getTransaction().begin();
+		
+		Rating r = new Rating();
+		
+		r.setValue(rating.getValue());
+		r.setUserId(rating.getUserId());
+		r.setExerciseId(rating.getExerciseId());
+		
+		EntityService.em.persist(r);
+		EntityService.em.getTransaction().commit();
+		EntityService.em.flush();
+		
+		return r;
+	}	
+ 
+	/**
+	 * delete a rating
+	 * @param rating
+	 */
+	public void deleteRating(int id) {
+		Rating r = EntityService.em.find(Rating.class, id);
+		
+		EntityService.em.getTransaction().begin();
+		EntityService.em.remove(r);
 		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
 	}

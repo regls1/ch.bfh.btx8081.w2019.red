@@ -47,8 +47,16 @@ public class Rating implements IEntity {
 		this.value = value;
 	}
 	
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 	public int getUserId() {
 		return userId;
+	}
+	
+	public void setExerciseId(int exerciseId) {
+		this.exerciseId = exerciseId;
 	}
 	
 	public int getExerciseId() {
