@@ -330,3 +330,9 @@ implementing database
 wackt2
 85min
 implemented (model) service classes for contact and exercise
+
+11.12.19
+romap1
+60min
+renamed:  ExerciseModel to ExerciseServiceClass, DiaryModel to DiaryServiceClass and ContactModel to ContactServiceClass
+implemented DiaryServiceClass
