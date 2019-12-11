@@ -2,10 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
-public class ExerciseModel {
+public class ExerciseServiceClass {
 	
 	/**
-	 * get an user based on the id
+	 * get an user based on the id 
 	 * @param id
 	 * @return
 	 */

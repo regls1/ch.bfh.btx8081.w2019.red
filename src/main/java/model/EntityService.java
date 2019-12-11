@@ -4,6 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+/**
+ * 
+ * @author Patricia
+ *
+ */
 public class EntityService {
 	
 	  private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2019.red.git";
