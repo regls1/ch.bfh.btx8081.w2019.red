@@ -101,8 +101,16 @@ public class Contact implements IEntity {
 		this.statusId = status;
 	}
 	
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+	
 	public int getCityId() {
 		return cityId;
+	}
+	
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
 	public int getUserId() {
