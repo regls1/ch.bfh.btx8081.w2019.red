@@ -325,3 +325,8 @@ attempt to implement persistence.
 gashf2, romap1, regls1, neues4, wackt2
 170min
 implementing database
+
+11.12.19
+wackt2
+85min
+implemented (model) service classes for contact and exercise
