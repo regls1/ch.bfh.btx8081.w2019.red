@@ -47,8 +47,9 @@ public class DiaryServiceClass {
 		e.setDate(entry.getDate());
 		e.setAdditional(entry.getAdditional());
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return e;
 	}
@@ -72,8 +73,9 @@ public class DiaryServiceClass {
 		e.setAdditional(entry.getAdditional());
 		
 		EntityService.em.persist(e);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return e;
 	}	
@@ -87,8 +89,9 @@ public class DiaryServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(e);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	
@@ -115,8 +118,9 @@ public class DiaryServiceClass {
 		
 		m.setName(mood.getName());
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return m;
 	}
@@ -134,8 +138,9 @@ public class DiaryServiceClass {
 		
 		m.setName(mood.getName());
 		EntityService.em.persist(m);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return m;
 	}	
@@ -149,8 +154,9 @@ public class DiaryServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(m);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	
@@ -177,8 +183,9 @@ public class DiaryServiceClass {
 		
 		s.setName(symptom.getName());
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return s;
 	}
@@ -196,8 +203,9 @@ public class DiaryServiceClass {
 		
 		s.setName(symptom.getName());
 		EntityService.em.persist(s);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return s;
 	}	
@@ -211,8 +219,9 @@ public class DiaryServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(s);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	
@@ -240,8 +249,9 @@ public class DiaryServiceClass {
 		
 		a.setName(activity.getName());
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return a;
 	}
@@ -259,8 +269,9 @@ public class DiaryServiceClass {
 		
 		a.setName(activity.getName());
 		EntityService.em.persist(a);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return a;
 	}	
@@ -274,8 +285,9 @@ public class DiaryServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(a);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	
