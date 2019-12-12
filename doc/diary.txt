@@ -341,3 +341,8 @@ implemented DiaryServiceClass
 khala1, gashf2, romap1, regls1
 90min
 created MainTestClass. Attempt to commit data in data base. Debugging ServiceClasses.
+
+12.12.19
+romap1
+40min
+added documentation to ExerciseServiceClass. Continued on MainTestClass.
