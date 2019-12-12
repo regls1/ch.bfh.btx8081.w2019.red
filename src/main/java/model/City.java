@@ -38,6 +38,10 @@ public class City implements IEntity {
 		return cityId;
 	}
 	
+	public void setId(int cityId) {
+		this.cityId = cityId;
+	}
+	
 	public int getZip() {
 		return zip;
 	}

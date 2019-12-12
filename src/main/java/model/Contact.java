@@ -109,6 +109,7 @@ public class Contact implements IEntity {
 		return cityId;
 	}
 	
+	
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}

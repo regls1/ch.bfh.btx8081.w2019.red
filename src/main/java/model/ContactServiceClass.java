@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class ContactServiceClass {
 
+	
+	
+	
 	/**
 	 * get an user based on the id 
 	 * @param id
@@ -66,8 +69,10 @@ public class ContactServiceClass {
 		c.setName(city.getName());
 		
 		EntityService.em.persist(c);
-		EntityService.em.getTransaction().commit();
+		
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		//EntityService.em.close();
 		
 		return c;
 	}	

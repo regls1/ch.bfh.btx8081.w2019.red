@@ -12,27 +12,26 @@ import javax.persistence.Persistence;
 public class EntityService {
 	
 	  private static final String PERSISTENCE_UNIT_NAME = "ch.bfh.btx8081.w2019.red.git";
-	  protected static EntityManager em;
-	  //private static EntityService instance;
+	  protected static EntityManager em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+	  private static EntityService instance;
 
 	 /**
 	  * 
 	  */
 	  public EntityService() {
-		  em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+		 // em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 	  }
 	
-	  /**
-	   * EntityService as Singleton
-	   */
-	/* public static EntityService getInstance() {
+	 
+	   //EntityService as Singleton
+	    public static EntityService getInstance() {
 		if (instance == null) {
 			instance = new EntityService();
 			return instance;
 		}
 	return instance;
 	}
-	*/
+	
 	
 	
 	  /**
@@ -66,6 +65,16 @@ public class EntityService {
 		//EntityManager em = es.getManager();
 		es.setUp();
 		es.close();
+		/*
+		ContactServiceClass csc = new ContactServiceClass();
+		Contact contact1 = new Contact();
+		City city1 = new City();
+		city1.setName("Bern");
+		city1.setZip(2555);
+		contact1.setCityId(city1.getId());
+		csc.addContact(contact1);
+		System.out.println(csc.addContact(contact1));
+		*/
 		//em.getTransaction();
 		//em.close();
 	}
