@@ -49,8 +49,9 @@ public class ContactServiceClass {
 		c.setZip(city.getZip());
 		c.setName(city.getName());
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return c;
 	}
@@ -86,8 +87,9 @@ public class ContactServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(c);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	/**
@@ -128,8 +130,9 @@ public class ContactServiceClass {
 		c.setStatusId(contact.getStatusId());
 		//foreign keys cityid and userid stay the same
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return c;
 	}
@@ -153,8 +156,9 @@ public class ContactServiceClass {
 		c.setUserId(contact.getUserId());
 		
 		EntityService.em.persist(c);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return c;
 	}	
@@ -168,7 +172,8 @@ public class ContactServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(c);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 }
