@@ -336,3 +336,8 @@ romap1
 60min
 renamed:  ExerciseModel to ExerciseServiceClass, DiaryModel to DiaryServiceClass and ContactModel to ContactServiceClass
 implemented DiaryServiceClass
+
+12.12.19
+khala1, gashf2, romap1, regls1
+90min
+created MainTestClass. Attempt to commit data in data base. Debugging ServiceClasses.
