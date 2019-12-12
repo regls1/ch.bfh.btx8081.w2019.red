@@ -47,9 +47,9 @@ public class ExerciseServiceClass {
 		e.setShortDescription(exercise.getShortDescription());
 		e.setDetailDescription(exercise.getDetailDescription());
 		// user id stays the same
-		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return e;
 	}
@@ -70,8 +70,9 @@ public class ExerciseServiceClass {
 		e.setUserId(exercise.getUserId());
 		
 		EntityService.em.persist(e);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return e;
 	}	
@@ -85,8 +86,9 @@ public class ExerciseServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(e);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 	
 	/**
@@ -122,8 +124,9 @@ public class ExerciseServiceClass {
 		r.setValue(rating.getValue());
 		// foreign keys userid and exerciseid stay the same
 		
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return r;
 	}
@@ -143,8 +146,9 @@ public class ExerciseServiceClass {
 		r.setExerciseId(rating.getExerciseId());
 		
 		EntityService.em.persist(r);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 		
 		return r;
 	}	
@@ -158,7 +162,8 @@ public class ExerciseServiceClass {
 		
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(r);
-		EntityService.em.getTransaction().commit();
 		EntityService.em.flush();
+		EntityService.em.getTransaction().commit();
+		
 	}
 }
