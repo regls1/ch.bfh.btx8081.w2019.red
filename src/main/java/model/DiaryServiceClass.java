@@ -11,9 +11,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Gets the User with the given ID.
 	 * @param id
-	 * @return
+	 * @return the found User instance or null if the entity does not exist.
 	 */
 	public User getEntry(int id) {
 		return EntityService.em.find(User.class, id);
@@ -21,8 +21,8 @@ public class DiaryServiceClass {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Gets a ArrayList with all Entries.
+	 * @return the ArrayList with all Entry instance.
 	 */
 	@SuppressWarnings("unchecked")
 	public ArrayList<Entry> getAllEntries() {
@@ -30,10 +30,10 @@ public class DiaryServiceClass {
 	}
 	
 	/**
-	 * 
+	 * Updates Entry with the given ID.
 	 * @param id
 	 * @param entry
-	 * @return
+	 * @return the Entry.
 	 */
 	public Entry updateEntry(int id, Entry entry) {
 		EntityService.em.getTransaction().begin();
@@ -56,9 +56,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Adds Entry.
 	 * @param entry
-	 * @return
+	 * @return the new Entry.
 	 */
 	public Entry addEntry(Entry entry) {
 		EntityService.em.getTransaction().begin();
@@ -81,7 +81,7 @@ public class DiaryServiceClass {
 	}	
 	
 	/**
-	 * 
+	 * Deletes Entry with the given ID.
 	 * @param id
 	 */
 	public void deleteEntry(int id) {
@@ -96,9 +96,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Gets Mood with the given ID.
 	 * @param id
-	 * @return
+	 * @return the found Mood instance or null if the entity does not exist.
 	 */
 	public User getMood(int id) {
 		return EntityService.em.find(User.class, id);
@@ -106,10 +106,10 @@ public class DiaryServiceClass {
 	}
 	
 	/**
-	 * 
+	 * Updates the mood with a given ID
 	 * @param id
 	 * @param mood
-	 * @return
+	 * @return the mood
 	 */
 	public Mood updateMood(int id, Mood mood) {
 		EntityService.em.getTransaction().begin();
@@ -127,9 +127,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Adds a Mood. 
 	 * @param mood
-	 * @return
+	 * @return the new Mood.
 	 */
 	public Mood addMood(Mood mood) {
 		EntityService.em.getTransaction().begin();
@@ -146,7 +146,7 @@ public class DiaryServiceClass {
 	}	
 	
 	/**
-	 * 
+	 * Deletes a Mood with the given ID.
 	 * @param id
 	 */
 	public void deleteMood(int id) {
@@ -161,9 +161,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Gets a Symptom with the given ID.
 	 * @param id
-	 * @return
+	 * @return the found Symptom instance or null if the entity does not exist.
 	 */
 	public User getSymptom(int id) {
 		return EntityService.em.find(User.class, id);
@@ -171,10 +171,10 @@ public class DiaryServiceClass {
 	}
 	
 	/**
-	 * 
+	 * Updates the Symptom with the given ID.
 	 * @param id
 	 * @param symptom
-	 * @return
+	 * @return the Symptom.
 	 */
 	public Symptom updateSymptom(int id, Symptom symptom) {
 		EntityService.em.getTransaction().begin();
@@ -192,9 +192,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Adds a Symptom.
 	 * @param symptom
-	 * @return
+	 * @return the new Symptom.
 	 */
 	public Symptom addSymptom(Symptom symptom) {
 		EntityService.em.getTransaction().begin();
@@ -211,7 +211,7 @@ public class DiaryServiceClass {
 	}	
 	
 	/**
-	 * 
+	 * Deletes a Symptom with the given ID
 	 * @param id
 	 */
 	public void deleteSymptom(int id) {
@@ -227,20 +227,20 @@ public class DiaryServiceClass {
 	
 
 	/**
-	 * 
+	 * Gets an Activity with the given ID.
 	 * @param id
-	 * @return
+	 * @return the found Activity instance or null if the entity does not exist.
 	 */
-	public User getActivity(int id) {
-		return EntityService.em.find(User.class, id);
+	public Activity getActivity(int id) {
+		return EntityService.em.find(Activity.class, id);
 		
 	}
 	
 	/**
-	 * 
+	 * Updates an activity with the given ID.
 	 * @param id
 	 * @param Activity
-	 * @return
+	 * @return the Activity.
 	 */
 	public Activity updateActivity(int id, Activity activity) {
 		EntityService.em.getTransaction().begin();
@@ -258,9 +258,9 @@ public class DiaryServiceClass {
 	
 	
 	/**
-	 * 
+	 * Adds an activity.
 	 * @param Activity
-	 * @return
+	 * @return the new Activity.
 	 */
 	public Activity addActivity(Activity activity) {
 		EntityService.em.getTransaction().begin();
@@ -277,7 +277,7 @@ public class DiaryServiceClass {
 	}	
 	
 	/**
-	 * 
+	 * Deletes an activity with the given ID
 	 * @param id
 	 */
 	public void deleteActivity(int id) {
