@@ -18,11 +18,10 @@ public class EntityService {
 	private static EntityService instance;
 
 	/**
-	 * 
+	 * Constructor
 	 */
 	public EntityService() {
-		// em =
-		// Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+		
 	}
 
 	/**
