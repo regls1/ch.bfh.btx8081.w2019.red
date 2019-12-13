@@ -1,6 +1,11 @@
-package model;
+package service;
 
 import java.util.ArrayList;
+
+import model.EntityService;
+import model.Exercise;
+import model.Rating;
+import model.User;
 
 public class ExerciseService {
 	
