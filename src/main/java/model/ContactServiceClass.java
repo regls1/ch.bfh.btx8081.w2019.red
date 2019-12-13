@@ -41,7 +41,7 @@ public class ContactServiceClass {
 	 * @param city
 	 * @return
 	 */
-	public City updateExercise(int id, City city) {
+	public City updateCity(int id, City city) {
 		EntityService.em.getTransaction().begin();
 		
 		City c = EntityService.em.find(City.class, id);
@@ -84,12 +84,14 @@ public class ContactServiceClass {
 	 */
 	public void deleteCity(int id) {
 		City c = EntityService.em.find(City.class, id);
-		
+		try {
 		EntityService.em.getTransaction().begin();
 		EntityService.em.remove(c);
 		EntityService.em.flush();
 		EntityService.em.getTransaction().commit();
-		
+		}catch(Exception e){
+			System.err.println("Error: " + e.getMessage());
+		}
 	}
 	
 	/**
@@ -128,6 +130,7 @@ public class ContactServiceClass {
 		c.setMail(contact.getMail());
 		c.setMobile(contact.getMobile());
 		c.setStatusId(contact.getStatusId());
+		c.setStreet(contact.getStreet());
 		//foreign keys cityid and userid stay the same
 		
 		EntityService.em.flush();
@@ -154,6 +157,7 @@ public class ContactServiceClass {
 		c.setMobile(contact.getMobile());
 		c.setStatusId(contact.getStatusId());
 		c.setUserId(contact.getUserId());
+		c.setStreet(contact.getStreet());
 		
 		EntityService.em.persist(c);
 		EntityService.em.flush();
