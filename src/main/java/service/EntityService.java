@@ -1,4 +1,4 @@
-package model;
+package service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;

@@ -1,6 +1,12 @@
-package model;
+package service;
 
 import java.util.ArrayList;
+
+import model.Activity;
+import model.Entry;
+import model.Mood;
+import model.Symptom;
+import model.User;
 
 /**
  * 

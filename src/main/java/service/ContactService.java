@@ -1,6 +1,10 @@
-package model;
+package service;
 
 import java.util.ArrayList;
+
+import model.City;
+import model.Contact;
+import model.User;
 
 public class ContactService {
 
