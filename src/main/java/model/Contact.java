@@ -38,6 +38,15 @@ public class Contact implements IEntity {
 		
 	}
 	
+	public Contact(String title, String firstName, String name, String mail, String mobile, String street) {
+		this.title = title;
+		this.firstName = firstName;
+		this.name = name;
+		this.mail = mail;
+		this.mobile = mobile;
+		this.street = street;
+	}
+	
 	/*
 	 * getter and setter methods
 	 */
@@ -68,7 +77,7 @@ public class Contact implements IEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getMail() {
 		return mail;
 	}

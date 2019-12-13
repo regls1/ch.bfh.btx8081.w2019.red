@@ -31,6 +31,9 @@ public class Activity implements IEntity {
 		
 	}
 	
+	public Activity(String name) {
+		this.name = name;
+	}
 	/*
 	 * getter and setter methods
 	 */
@@ -45,7 +48,7 @@ public class Activity implements IEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public int getEntryId() {
 		return entryId;
 	}

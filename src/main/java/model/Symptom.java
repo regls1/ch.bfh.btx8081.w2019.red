@@ -24,9 +24,13 @@ public class Symptom implements IEntity {
 	@ManyToOne
 	private Entry entry;
 	int entryId;
-	
+
 	public Symptom() {
-		
+
+	}
+
+	public Symptom(String name) {
+		this.name = name;
 	}
 
 	/*

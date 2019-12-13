@@ -24,11 +24,16 @@ public class User implements IEntity {
 	private int userId;
 	private String firstName;
 	private String name;
-	
+
 	public User() {
-		
+
 	}
-	
+
+	public User(String firstName, String name) {
+		this.firstName = firstName;
+		this.name = name;
+	}
+
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
 	private final ArrayList<Entry> entryList= new ArrayList<Entry>();
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "user")
@@ -44,7 +49,7 @@ public class User implements IEntity {
 	public int getId() {
 		return userId;
 	}
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -56,7 +61,7 @@ public class User implements IEntity {
 	public String getName() {
 		return name;
 	}
-
+	
 	public void setName(String name) {
 		this.name = name;
 	}

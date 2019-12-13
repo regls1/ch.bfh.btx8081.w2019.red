@@ -34,6 +34,13 @@ public class Exercise implements IEntity {
 		
 	}
 	
+	public Exercise(String title, String shortDescription, String detailDescription) {
+		this.title = title;
+		this.shortDescription = shortDescription;
+		this.detailDescription = detailDescription;
+		
+	}
+	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "exercise")
 	private final ArrayList<Rating> ratingList = new ArrayList<Rating>();
 
@@ -55,7 +62,7 @@ public class Exercise implements IEntity {
 	public String getShortDescription() {
 		return shortDescription;
 	}
-	
+	 
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}

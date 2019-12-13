@@ -27,6 +27,10 @@ public class Mood {
 		
 	}
 	
+	public Mood(String name) {
+		this.name = name;
+	}
+	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "mood")
 	private final ArrayList<Entry> entryList= new ArrayList<Entry>();
 	

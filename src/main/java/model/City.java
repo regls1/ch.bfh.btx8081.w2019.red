@@ -28,6 +28,11 @@ public class City implements IEntity {
 		
 	}
 	
+	public City(int zip, String name) {
+		this.zip = zip;
+		this.name = name;
+	}
+	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "city")
 	private final ArrayList<Contact> contactList= new ArrayList<Contact>();
 	
@@ -41,6 +46,7 @@ public class City implements IEntity {
 	public void setId(int cityId) {
 		this.cityId = cityId;
 	}
+
 	
 	public int getZip() {
 		return zip;
@@ -49,7 +55,7 @@ public class City implements IEntity {
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
