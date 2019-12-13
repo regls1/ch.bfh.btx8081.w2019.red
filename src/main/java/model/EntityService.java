@@ -68,6 +68,7 @@ public class EntityService {
 	 * For Testing EntityService class
 	 * @param args
 	 */
+	/**
 	public static void main(String[] args) {
 		EntityService es = new EntityService();
 		es.setUp();
@@ -75,5 +76,5 @@ public class EntityService {
 		
 
 	}
-
+**/
 }

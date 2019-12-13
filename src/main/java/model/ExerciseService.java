@@ -2,7 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
-public class ExerciseServiceClass {
+public class ExerciseService {
 	
 	/**
 	 * get an user based on the id 

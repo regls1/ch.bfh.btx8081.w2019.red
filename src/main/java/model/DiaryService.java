@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Patricia ,
  *
  */
-public class DiaryServiceClass {
+public class DiaryService {
 	
 	
 	/**
