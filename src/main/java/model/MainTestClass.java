@@ -27,19 +27,29 @@ public class MainTestClass {
 		contact1.setCityId(51);
 		contact1.setFirstName("der");
 		contact1.setName("Ben");
-		contact1.setMail("asdj@bfh.ch");
+		contact1.setMail("asjkjhdj@bfh.ch");
 		contact1.setMobile("123 123 123");
 		contact1.setStatusId(Status.absent);
-		contact1.setTitle("DR");
-		//contact1.setUserId(13);
-		contact1.setStreet("Catstreet");
+		contact1.setTitle("DR.phil");
+		contact1.setUserId(13);
+		contact1.setStreet("Catstreet 12");
+		//contact1.setStreet("Catstreet");
 		csc.addContact(contact1);
 	
 		//setStreet() doesn't work
-		//
-		
-		
 		//System.out.println(csc.addContact(contact1));
+		
+		
+		User user = new User();
+		user.setFirstName("Karl");
+		user.setName("Muster");	
+		user.getId();
+		
+		DiaryServiceClass dsc = new DiaryServiceClass();
+		
+		
+		
+		
 	}
 
 }
