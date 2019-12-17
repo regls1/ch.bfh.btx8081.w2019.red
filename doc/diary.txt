@@ -348,3 +348,11 @@ romap1
 added documentation to ExerciseServiceClass. Continued on MainTestClass.
 
 13.12.19
+80min
+khala1, gashf2, romap1, regls1
+discussion with product owner. team discussion: task distribution
+
+13.12.19
+romap1
+60min
+troubleshooting in Eclipse.
