@@ -31,6 +31,8 @@ import view.DiaryView.MockEntry;
 public class ContactView extends VerticalLayout {
 
 	Button personOne = new Button("Dr. med. Hans Müller");
+	//Button btnDelete = new Button(new Icon(VaadinIcon.TRASH));
+	//Button btnEdit = new Button(new Icon(VaadinIcon.EYE));
 	Button personTwo = new Button("Dr. med Anna Schmid");
 	Button personThree = new Button("George Meyer");
 	Button personFour = new Button("Marie Goodwill");
@@ -144,7 +146,19 @@ public class ContactView extends VerticalLayout {
 		dialog.add(vLayout);
 		
 		HorizontalLayout dialogLayoutMenu = new HorizontalLayout();
-		Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC));
+		//Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC));
+		
+		Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC), event -> {
+			System.out.println(txtTitle.getValue());
+			System.out.println(txtFirstname.getValue());
+			System.out.println(txtName.getValue());
+			System.out.println(txtPhone.getValue());
+			System.out.println(txtMail.getValue());
+			System.out.println(txtStreet.getValue());
+			System.out.println(txtCity.getValue());
+			dialog.close();
+		});
+		
 		Button btnClose = new Button("Abbrechen", new Icon(VaadinIcon.CLOSE), event -> {
 			dialog.close();
 		});
