@@ -356,3 +356,8 @@ discussion with product owner. team discussion: task distribution
 romap1
 60min
 troubleshooting in Eclipse.
+
+15.12.19
+neues4
+30min
+created exceptions
