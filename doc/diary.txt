@@ -346,3 +346,5 @@ created MainTestClass. Attempt to commit data in data base. Debugging ServiceCla
 romap1
 40min
 added documentation to ExerciseServiceClass. Continued on MainTestClass.
+
+13.12.19
