@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * interface for database operations get, insert, update and delete
  * 
@@ -7,7 +9,7 @@ package model;
  *
  */
 
-public class DatabaseOperation<E extends IEntity> {
+public class DatabaseOperation<E> implements IEntity {
 
 	public E get(int id) {
 		return null;
@@ -20,5 +22,17 @@ public class DatabaseOperation<E extends IEntity> {
 	}
 	
 	public void delete(int id) {
+	}
+
+	@Override
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ArrayList<?> getArrayList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
