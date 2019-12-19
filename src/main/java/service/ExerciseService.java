@@ -84,7 +84,7 @@ public class ExerciseService {
 	 * delete an exercise
 	 * @param exercise
 	 */
-	public void deleteCustomer(int id) {
+	public void deleteExercise(int id) {
 		Exercise e = EntityService.em.find(Exercise.class, id);
 		
 		EntityService.em.getTransaction().begin();
