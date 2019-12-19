@@ -1,9 +1,10 @@
 package model;
 
-import java.util.ArrayList;
+
 
 /**
- * interface for database operations get, insert, update and delete
+ * This class will be not used //romap1
+ * Generic Class for database operations get, insert, update and delete
  * 
  * @author wackt2
  *
@@ -29,10 +30,11 @@ public class DatabaseOperation<E> implements IEntity {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+/**
 	@Override
 	public ArrayList<?> getArrayList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	*/
 }
