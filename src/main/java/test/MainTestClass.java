@@ -6,7 +6,11 @@ import model.Status;
 import model.User;
 import service.ContactService;
 import service.DiaryService;
-
+/**
+ * For Testing CRUD-Methodes
+ * @author Patricia
+ *
+ */
 public class MainTestClass {
 
 	public static void main(String[] args) {
@@ -19,7 +23,18 @@ public class MainTestClass {
 		City city1 = new City();
 		city1.setName("Bern");
 		city1.setZip(2555);
-		csc.addCity(city1);
+		//csc.addCity(city1);
+		City city2 = new City();
+		city2.setName("Biel");
+		city2.setZip(3333);
+		
+		
+		// Test updateCity
+		//csc.addCity(city2);
+		//city2.setName("Zürich");
+		//csc.updateCity(city2.getId(), city1);// update funktioniert nicht
+		//System.out.println(city1.getId());
+		//csc.getCity(city1.getId());
 		
 		//Test deleteCity. only works once
 		//csc.deleteCity(1); 
@@ -30,8 +45,10 @@ public class MainTestClass {
 		//System.out.println(csc.getCity(101));
 		
 		//Test addContact
-		Contact contact1 = new Contact();
 		
+		/**
+		
+		Contact contact1 = new Contact();
 		User user = new User();
 		user.setFirstName("Karl");
 		user.setName("Muster");	
@@ -49,16 +66,12 @@ public class MainTestClass {
 		//contact1.setStreet("Catstreet");
 		csc.addContact(contact1);
 	
-		//setStreet() doesn't work
+		//setStreet() 
 		//System.out.println(csc.addContact(contact1));
 		
 		
-		
-		user.getId();
-		
-		DiaryService dsc = new DiaryService();
-		
-		
+	
+		**/
 		
 		
 	}
