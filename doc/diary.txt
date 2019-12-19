@@ -361,3 +361,19 @@ troubleshooting in Eclipse.
 neues4
 30min
 created exceptions
+
+19.12.19
+khala1, gashf2, romap1, regls1, neues4, wackt2
+20 min
+daily scrum meeting
+discussed actual tasks, problems and questions
+
+19.12.19
+khala1, gashf2, romap1, regls1, neues4, wackt2
+70 min
+discussed how to connect all classes for persistence
+
+19.12.19
+wackt2
+165 min
+tried to show contacts from database in view. generally could get the data from database... but there was a problem with dynamic variables
