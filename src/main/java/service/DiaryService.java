@@ -1,7 +1,6 @@
 package service;
 
-import java.util.ArrayList;
-
+import java.util.List;
 import model.Activity;
 import model.Entry;
 import model.Mood;
@@ -31,8 +30,8 @@ public class DiaryService {
 	 * @return the ArrayList with all Entry instance.
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<Entry> getAllEntries() {
-		return (ArrayList<Entry>)EntityService.em.createQuery("select e from Entry e").getResultList();
+	public List<Entry> getAllEntries() {
+		return (List<Entry>)EntityService.em.createQuery("select e from Entry e").getResultList();
 	}
 	
 	/**

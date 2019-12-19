@@ -1,7 +1,6 @@
 package service;
 
-import java.util.ArrayList;
-
+import java.util.List;
 import model.Exercise;
 import model.Rating;
 import model.User;
@@ -23,8 +22,8 @@ public class ExerciseService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<Exercise> getAllExercises() {
-		return (ArrayList<Exercise>)EntityService.em.createQuery("select e from Exercise e").getResultList();
+	public List<Exercise> getAllExercises() {
+		return (List<Exercise>)EntityService.em.createQuery("select e from Exercise e").getResultList();
 	}
  
 	/**
@@ -101,8 +100,8 @@ public class ExerciseService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<Rating> getAllRatings() {
-		return (ArrayList<Rating>)EntityService.em.createQuery("select r from Rating r").getResultList();
+	public List<Rating> getAllRatings() {
+		return (List<Rating>)EntityService.em.createQuery("select r from Rating r").getResultList();
 	}
  
 	/**

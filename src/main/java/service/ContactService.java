@@ -1,7 +1,6 @@
 package service;
 
-import java.util.ArrayList;
-
+import java.util.List;
 import model.City;
 import model.Contact;
 import model.User;
@@ -26,8 +25,8 @@ public class ContactService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<City> getAllExercises() {
-		return (ArrayList<City>)EntityService.em.createQuery("select c from City c").getResultList();
+	public List<City> getAllCities() {
+		return (List<City>)EntityService.em.createQuery("select c from City c").getResultList();
 	}
  
 	/**
@@ -105,8 +104,8 @@ public class ContactService {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public ArrayList<Contact> getAllContacts() {
-		return (ArrayList<Contact>)EntityService.em.createQuery("select c from Contact c").getResultList();
+	public List<Contact> getAllContacts() {
+		return (List<Contact>)EntityService.em.createQuery("select c from Contact c").getResultList();
 	}
  
 	/**
