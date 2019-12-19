@@ -6,5 +6,5 @@ public interface IEntity {
 
 	int getId();
 	
-	ArrayList<?> getArrayList();
+	//ArrayList<?> getArrayList();
 }
