@@ -53,6 +53,7 @@ public class ContactService {
 		c.setZip(city.getZip());
 		c.setName(city.getName());
 		
+		//EntityService.em.find(City, primaryKey)
 		EntityService.em.flush();
 		EntityService.em.getTransaction().commit();
 		
@@ -136,7 +137,7 @@ public class ContactService {
 		c.setStatusId(contact.getStatusId());
 		c.setStreet(contact.getStreet());
 		//foreign keys cityid and userid stay the same
-		
+		EntityService.em.refresh(c);
 		EntityService.em.flush();
 		EntityService.em.getTransaction().commit();
 		
