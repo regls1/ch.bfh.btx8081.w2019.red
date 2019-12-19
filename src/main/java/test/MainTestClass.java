@@ -19,6 +19,9 @@ public class MainTestClass {
 		
 		ContactService csc = new ContactService();
 		
+		
+	
+		
 		//Test addCity
 		City city1 = new City();
 		city1.setName("Bern");
@@ -32,7 +35,7 @@ public class MainTestClass {
 		// Test updateCity
 		//csc.addCity(city2);
 		//city2.setName("Zürich");
-		//csc.updateCity(city2.getId(), city1);// update funktioniert nicht
+		//csc.updateCity(city2.getId(), city1);
 		//System.out.println(city1.getId());
 		//csc.getCity(city1.getId());
 		
