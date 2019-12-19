@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.GridLayout;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import com.vaadin.flow.component.UI;
@@ -18,10 +16,12 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
-import view.DiaryView.MockEntry;
+import model.City;
+import model.Contact;
+import service.ContactService;
 
 /**
- * A list of all contacts for a patient with emergency contacts.
+ * A list of all Contacts for a patient with emergency Contacts.
  * 
  * @author gashf2, regls1
  *
@@ -40,25 +40,31 @@ public class ContactView extends VerticalLayout {
 	Button personSix = new Button("Notfallpsychiatrie");
 	Button personSeven = new Button("Dr. med. Tim Meier");
 	Label lblTitle;
+	ContactService csc = new ContactService();
+	List<Contact> allContacts = csc.getAllContacts();
 	
 	public ContactView() {
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
-		Button btnNewContact = new Button("Neuer Kontakt erstellen");
-		btnNewContact.addClickListener(event -> createContactDialog().open());
-		H3 lblContactPerson = new H3("Meine Kontaktpersonen");
+		Button btnNewContact2 = new Button("Neuer Kontakt erstellen");
+		btnNewContact2.addClickListener(event -> createContact2Dialog().open());
+		H3 lblContact2Person = new H3("Meine Kontaktpersonen");
 		btnReturn.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
-		add(btnReturn, btnNewContact, lblContactPerson);
-		ListBox<Button> boxContactPerson = new ListBox<Button>();
-		boxContactPerson.setSizeFull();
-		boxContactPerson.add(personOne, personTwo, personThree, personFour);
-		add(boxContactPerson);
+		add(btnReturn, btnNewContact2, lblContact2Person);
+		ListBox<Button> boxContact2Person = new ListBox<Button>();
+		boxContact2Person.setSizeFull();
+		Button personEight = null;
+		for(Contact contact : allContacts) {
+			personEight = new Button(contact.getTitle()+" "+ contact.getFirstName()+" " + contact.getName());
+		}
+		boxContact2Person.add(personOne, personTwo, personThree, personFour, personEight);
+		add(boxContact2Person);
 
-		H3 lblMoreContacts = new H3("Weiterführende Kontakte");
-		add(lblMoreContacts);
-		ListBox<Button> boxMoreContact = new ListBox<Button>();
-		boxMoreContact.setSizeFull();
-		boxMoreContact.add(personFive, personSix, personSeven);
-		add(boxMoreContact);
+		H3 lblMoreContact2s = new H3("Weiterführende Kontakte");
+		add(lblMoreContact2s);
+		ListBox<Button> boxMoreContact2 = new ListBox<Button>();
+		boxMoreContact2.setSizeFull();
+		boxMoreContact2.add(personFive, personSix, personSeven);
+		add(boxMoreContact2);
 
 		personOne.addClickListener(event -> createDialog().open());
 		personTwo.addClickListener(event -> createDialog().open());
@@ -72,17 +78,17 @@ public class ContactView extends VerticalLayout {
 	private Dialog createDialog() {
 		Dialog dialog = new Dialog();
 
-		List<Contact> contactList = new ArrayList<Contact>();
-		Grid<Contact> grid = new Grid<>();
-		contactList.add(new Contact("Status", "Erreichbar"));
-		contactList.add(new Contact("Uhrzeiten", "Mo-Fr: 08:00-17:00"));
-		contactList.add(new Contact("Standort", "Bahnhofstr. 12, 8004 Zürich"));
-		contactList.add(new Contact("Telefonnummer", "076 123 45 67"));
-		contactList.add(new Contact("E-Mail", "test@bfh.ch"));
+		List<Contact2> Contact2List = new ArrayList<Contact2>();
+		Grid<Contact2> grid = new Grid<>();
+		Contact2List.add(new Contact2("Status", "Erreichbar"));
+		Contact2List.add(new Contact2("Uhrzeiten", "Mo-Fr: 08:00-17:00"));
+		Contact2List.add(new Contact2("Standort", "Bahnhofstr. 12, 8004 Zürich"));
+		Contact2List.add(new Contact2("Telefonnummer", "076 123 45 67"));
+		Contact2List.add(new Contact2("E-Mail", "test@bfh.ch"));
 
-		grid.setItems(contactList);
-		grid.addColumn(Contact::getTextInfo);
-		grid.addColumn(Contact::getText);
+		grid.setItems(Contact2List);
+		grid.addColumn(Contact2::getTextInfo);
+		grid.addColumn(Contact2::getText);
 		grid.setWidth("500px");
 		grid.setHeightByRows(true);
 		VerticalLayout dialogLayout = new VerticalLayout();
@@ -95,7 +101,7 @@ public class ContactView extends VerticalLayout {
 		return dialog;
 	}
 	
-	private Dialog createContactDialog() {
+	private Dialog createContact2Dialog() {
 		Dialog dialog = new Dialog();
 		Label lblTitleDialog = new Label("Neuer Kontakt erstellen");
 		
@@ -149,6 +155,15 @@ public class ContactView extends VerticalLayout {
 		//Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC));
 		
 		Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC), event -> {
+			Contact contact = new Contact();
+			contact.setTitle(txtTitle.getValue());
+			contact.setFirstName(txtFirstname.getValue());
+			contact.setName(txtName.getValue());
+			contact.setMobile(txtPhone.getValue());
+			contact.setMail(txtMail.getValue());
+			contact.setStreet(txtStreet.getValue());
+			csc.addContact(contact);
+			
 			System.out.println(txtTitle.getValue());
 			System.out.println(txtFirstname.getValue());
 			System.out.println(txtName.getValue());
@@ -168,12 +183,12 @@ public class ContactView extends VerticalLayout {
 		return dialog;
 	}
 
-	public class Contact {
+	public class Contact2 {
 
 		private String textInfo;
 		private String text;
 
-		public Contact(String textInfo, String text) {
+		public Contact2(String textInfo, String text) {
 			this.textInfo = textInfo;
 			this.text = text;
 		}
