@@ -1,11 +1,9 @@
 package view;
 
-import java.util.ArrayList;
 import java.util.List;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
@@ -16,7 +14,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
-import model.City;
 import model.Contact;
 import service.ContactService;
 
@@ -77,7 +74,54 @@ public class ContactView extends VerticalLayout {
 
 	private Dialog createDialog() {
 		Dialog dialog = new Dialog();
-
+		//Contact contact = new Contact();
+		
+		VerticalLayout vLayout = new VerticalLayout();
+		
+		HorizontalLayout dialogLayoutContact = new HorizontalLayout();		
+		Label lblContact = new Label("Name: ");
+		lblContact.setWidth("130px");
+		Label lblContactData = new Label("Titel + Vorname + Nachname");
+		//Label lblContactData = new Label(contact.getTitle() + contact.getFirstName() + contact.getName());
+		dialogLayoutContact.add(lblContact, lblContactData);
+		
+		HorizontalLayout dialogLayoutAddress = new HorizontalLayout();
+		Label lblAddress = new Label("Adresse: ");
+		lblAddress.setWidth("130px");
+		Label lblAddressContact = new Label("Strasse + Stadt");
+		dialogLayoutAddress.add(lblAddress, lblAddressContact);
+		
+		HorizontalLayout dialogLayoutPhone = new HorizontalLayout();
+		Label lblPhone = new Label("Telefonnummer: ");
+		lblPhone.setWidth("130px");
+		Label lblPhoneContact = new Label("Telefonnummer");
+		dialogLayoutPhone.add(lblPhone, lblPhoneContact);
+		
+		HorizontalLayout dialogLayoutMail = new HorizontalLayout();
+		Label lblMail = new Label("E-Mail: ");
+		lblMail.setWidth("130px");
+		Label lblMailContact = new Label("Email");
+		dialogLayoutMail.add(lblMail, lblMailContact);	
+			
+		vLayout.add(dialogLayoutContact, dialogLayoutAddress, dialogLayoutPhone, dialogLayoutMail);
+		dialog.add(vLayout);
+		
+		HorizontalLayout dialogLayoutMenu = new HorizontalLayout();
+		
+		Button btnDelete = new Button("Kontakt löschen", new Icon(VaadinIcon.TRASH), event -> {
+			//DOING SOMETHING
+			dialog.close();
+		});
+		
+		Button btnClose = new Button("Abbrechen", new Icon(VaadinIcon.CLOSE), event -> {
+			dialog.close();
+		});
+		dialogLayoutMenu.add(btnDelete, btnClose);
+		dialog.add(dialogLayoutMenu);
+			
+		return dialog;
+		
+		/**
 		List<Contact2> Contact2List = new ArrayList<Contact2>();
 		Grid<Contact2> grid = new Grid<>();
 		Contact2List.add(new Contact2("Status", "Erreichbar"));
@@ -99,11 +143,12 @@ public class ContactView extends VerticalLayout {
 		dialogLayout.add(btnClose, new Label(personOne.getText()), grid);
 		dialog.add(dialogLayout);
 		return dialog;
+		*/
 	}
 	
 	private Dialog createContact2Dialog() {
 		Dialog dialog = new Dialog();
-		Label lblTitleDialog = new Label("Neuer Kontakt erstellen");
+		//Label lblTitleDialog = new Label("Neuer Kontakt erstellen");
 		
 		VerticalLayout vLayout = new VerticalLayout();
 		HorizontalLayout dialogLayoutTitle = new HorizontalLayout();		
@@ -164,6 +209,7 @@ public class ContactView extends VerticalLayout {
 			contact.setStreet(txtStreet.getValue());
 			csc.addContact(contact);
 			
+			/**
 			System.out.println(txtTitle.getValue());
 			System.out.println(txtFirstname.getValue());
 			System.out.println(txtName.getValue());
@@ -171,6 +217,7 @@ public class ContactView extends VerticalLayout {
 			System.out.println(txtMail.getValue());
 			System.out.println(txtStreet.getValue());
 			System.out.println(txtCity.getValue());
+			*/
 			dialog.close();
 		});
 		
