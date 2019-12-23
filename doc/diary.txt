@@ -377,3 +377,8 @@ discussed how to connect all classes for persistence
 wackt2
 165 min
 tried to show contacts from database in view. generally could get the data from database... but there was a problem with dynamic variables
+
+23.12.19
+regls1
+90min: troubleshoopting in eclipse
+60min: update diary view
