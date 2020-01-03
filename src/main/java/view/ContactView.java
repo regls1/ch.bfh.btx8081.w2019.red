@@ -27,17 +27,13 @@ import service.ContactService;
 @Route
 public class ContactView extends VerticalLayout {
 
-	Button personOne = new Button("Dr. med. Hans Müller");
 	//Button btnDelete = new Button(new Icon(VaadinIcon.TRASH));
 	//Button btnEdit = new Button(new Icon(VaadinIcon.EYE));
-	Button personTwo = new Button("Dr. med Anna Schmid");
-	Button personThree = new Button("George Meyer");
-	Button personFour = new Button("Marie Goodwill");
-	Button personFive = new Button("Notfall");
-	Button personSix = new Button("Notfallpsychiatrie");
-	Button personSeven = new Button("Dr. med. Tim Meier");
 	Label lblTitle;
+	
+	// create new contact service
 	ContactService csc = new ContactService();
+	// contact service reads all contacts from database and saves them into a list
 	List<Contact> allContacts = csc.getAllContacts();
 	
 	public ContactView() {
@@ -49,20 +45,22 @@ public class ContactView extends VerticalLayout {
 		add(btnReturn, btnNewContact2, lblContact2Person);
 		ListBox<Button> boxContact2Person = new ListBox<Button>();
 		boxContact2Person.setSizeFull();
-		Button personEight = null;
+		
+		// loop through contact list and create buttons for gui
 		for(Contact contact : allContacts) {
-			personEight = new Button(contact.getTitle()+" "+ contact.getFirstName()+" " + contact.getName());
+			boxContact2Person.add(new Button(contact.getTitle()+" "+ contact.getFirstName()+" " + contact.getName()));
 		}
-		boxContact2Person.add(personOne, personTwo, personThree, personFour, personEight);
+		
+		// add to gui
 		add(boxContact2Person);
 
 		H3 lblMoreContact2s = new H3("Weiterführende Kontakte");
 		add(lblMoreContact2s);
 		ListBox<Button> boxMoreContact2 = new ListBox<Button>();
 		boxMoreContact2.setSizeFull();
-		boxMoreContact2.add(personFive, personSix, personSeven);
 		add(boxMoreContact2);
 
+		/*
 		personOne.addClickListener(event -> createDialog().open());
 		personTwo.addClickListener(event -> createDialog().open());
 		personThree.addClickListener(event -> createDialog().open());
@@ -70,6 +68,7 @@ public class ContactView extends VerticalLayout {
 		personFive.addClickListener(event -> createDialog().open());
 		personSix.addClickListener(event -> createDialog().open());
 		personSeven.addClickListener(event -> createDialog().open());
+		*/
 	}
 
 	private Dialog createDialog() {
