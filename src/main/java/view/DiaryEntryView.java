@@ -33,22 +33,22 @@ public class DiaryEntryView extends VerticalLayout{
 	
 	ArrayList<String> activityList;
 	Button btnBack;
-	Button btnMoodVeryWell;
-	Button btnMoodGood;
-	Button btnMoodNormal;
-	Button btnMoodSad;
-	Button btnMoodVerySad;
 	Button btnSave;
 	CheckboxGroup<String> cbgActivities;
 	DatePicker datePicker;
 	HorizontalLayout moodLayout;
+	Image imgHappy;
+	Image imgSatisfied;
+	Image imgNeutral;
+	Image imgBad;
+	Image imgAngry;
 	RadioButtonGroup<String> rbgPrivacy;
+	RadioButtonGroup<String> rbgMood;
 	TextField txtTitle;
 	TextArea txtDayDifficulty;
 	TextArea txtDayPride;
 	TextArea txtDaySymptom;
 	TextArea txtAddition;
-	
 	
 	public DiaryEntryView() {
 		activityList = new ArrayList<String>();
@@ -106,14 +106,22 @@ public class DiaryEntryView extends VerticalLayout{
 		
 		// horizontal layout for mood buttons
 		moodLayout = new HorizontalLayout();
-		// buttons that contain images with different mood levels 
-		btnMoodVeryWell = new Button(new Image("./img/Sehr gut.png", "sehr gut"));
-		btnMoodGood = new Button(new Image("./img/gut.png", "gut"));
-		btnMoodNormal = new Button(new Image("./img/normal.png", "normal"));
-		btnMoodSad = new Button(new Image("./img/schlecht.png", "schlecht"));
-		btnMoodVerySad = new Button(new Image("./img/sehr schlecht.png", "sehr schlecht"));
+		
+		// radiobuttongroup to set mood levels
+		rbgMood = new RadioButtonGroup<>();
+		rbgMood.setLabel("Stimmung");
+		rbgMood.setItems("glücklich", "zufrieden", "neutral", "schlecht", "wütend");
+		rbgMood.setValue("glücklich");
+		
+		// images that contain the mood levels
+		imgHappy = new Image("./img/Sehr gut.png", "sehr gut");
+		imgSatisfied = new Image("./img/gut.png", "gut");
+		imgNeutral = new Image("./img/normal.png", "normal");
+		imgBad = new Image("./img/schlecht.png", "schlecht");
+		imgAngry = new Image("./img/sehr schlecht.png", "sehr schlecht");
+		
 		// add all buttons to horizontal layout
-		moodLayout.add(btnMoodVeryWell, btnMoodGood, btnMoodNormal, btnMoodSad, btnMoodVerySad);
+		moodLayout.add(imgHappy, imgSatisfied, imgNeutral, imgBad, imgAngry);
 		
 		// radiobuttongroup to set entry private or public with standard value private
 		rbgPrivacy = new RadioButtonGroup<>();
@@ -128,7 +136,7 @@ public class DiaryEntryView extends VerticalLayout{
 		// add all components to the vertical layout of the view
 		add(btnBack, new H3("Neuen Tagebucheintrag erstellen"), datePicker, txtTitle, txtDayDifficulty, txtDayPride, 
 				txtDaySymptom, txtAddition, new Label("Was hast Du für Aktivitäten an diesem Tag gemacht?"), 
-				cbgActivities, new Label("Wie war Deine Stimmung an diesem Tag?"), moodLayout, rbgPrivacy, btnSave);
+				cbgActivities, new Label("Wie war Deine Stimmung an diesem Tag?"), rbgMood, moodLayout, rbgPrivacy, btnSave);
 	}
 	
 	public void saveEntry() {
