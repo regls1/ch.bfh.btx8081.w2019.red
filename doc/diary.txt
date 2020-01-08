@@ -382,3 +382,8 @@ tried to show contacts from database in view. generally could get the data from 
 regls1
 90min: troubleshoopting in eclipse
 60min: update diary view
+
+08.12.20
+gashf2
+180 min
+create dialogs for all the contacts with their own details
