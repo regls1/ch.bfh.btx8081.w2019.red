@@ -37,6 +37,13 @@ public class Entry implements IEntity {
 		
 	}
 	
+	public Entry(int id, String title, Date date) {
+		this.entryId = id;
+		this.title= title;
+		this.date = date;
+	}
+	
+	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
 	private final ArrayList<Activity> activityList= new ArrayList<Activity>();
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
