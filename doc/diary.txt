@@ -387,3 +387,8 @@ regls1
 gashf2
 180 min
 create dialogs for all the contacts with their own details
+
+09.01.20
+romap1
+100min
+working on DiaryView implementation. DiaryView can now delete and read from Database.
