@@ -1,6 +1,7 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.vaadin.flow.component.Component;
@@ -15,6 +16,8 @@ import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.Route;
 
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
+import model.Entry;
+import service.DiaryService;
 
 /**
  * PLEASE contact me if you want to change something in this class.
@@ -28,8 +31,8 @@ import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 @Route
 public class DiaryView extends VerticalLayout {
 
-	private List<MockEntry> diaryEntryList = new ArrayList<MockEntry>();
-	private Grid<MockEntry> grid = new Grid<>();
+	private List<Entry> diaryEntryList = new ArrayList<Entry>();
+	private Grid<Entry> grid = new Grid<>();
 	private Button entryAddBtn = new Button("Neuer Eintrag");
 
 	/**
@@ -37,19 +40,30 @@ public class DiaryView extends VerticalLayout {
 	 */
 	public DiaryView() {
 
+		
+		//MockEntries
+		DiaryService ds = new DiaryService();
+		Entry testEntry = new Entry (1,"juhu!", new Date());
+		ds.addEntry(testEntry);
+		
+		List<Entry> allEntries=	ds.getAllEntries();
+		grid.setItems(allEntries);
+		
 		// Add mock data in Grid.
-		diaryEntryList.add(new MockEntry(1, "Hallo Welt!", "26.11.2019"));
-		diaryEntryList.add(new MockEntry(2, "Familientreffen", "27.11.2019"));
-		grid.setItems(diaryEntryList);
+	//	diaryEntryList.add(new Entry(1, "Hallo Welt!", new Date()));
+	//	diaryEntryList.add(new Entry(2, "Familientreffen", new Date()));
+		
 
 		// Set the name of the Header in Grid. A bug doesn't allow to set the Header
 		// when its empty.
-		grid.addColumn(MockEntry::getEntryNb).setHeader("Eintragsnummer");
-		grid.addColumn(MockEntry::getTitel).setHeader("Titel");
-		grid.addColumn(MockEntry::getDate).setHeader("Datum");
+		
+		grid.addColumn(Entry::getId).setHeader("Eintragsnummer");
+		grid.addColumn(Entry::getTitle).setHeader("Titel");
+		grid.addColumn(Entry::getDate).setHeader("Datum");
 
 		// navigation to DiaryEntryView by Eye Icon or klick on Entry. Will later
 		// navigate to a specific DiaryEntryView.
+		
 		grid.addComponentColumn(entry -> showDiaryEntryView(entry)).setHeader("Anzeigen");
 		grid.addItemClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
 
@@ -59,6 +73,7 @@ public class DiaryView extends VerticalLayout {
 
 		// navigates to DiaryEntryView for Creating a new Entry.
 		entryAddBtn.addClickListener(e -> UI.getCurrent().navigate(DiaryEntryView.class));
+		
 
 		// returnToHomescreen()
 		Button returnButton = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
@@ -67,40 +82,49 @@ public class DiaryView extends VerticalLayout {
 		// Layout
 		add(returnButton, new H2("Tagebuch"), entryAddBtn, grid);
 
+		
 	}
 
 	/**
 	 * Deletes an Entry
 	 * 
-	 * @param grid, contains MockeEntries
-	 * @param entry, a MockEntry
+	 * @param grid, contains Entries
+	 * @param entry, a Entry
 	 * @return Button with Trash Icon
 	 */
-	private Button deleteEntry(Grid<MockEntry> grid, MockEntry entry) {
+	private Button deleteEntry(Grid<Entry> grid, Entry entry) {
 		@SuppressWarnings("unchecked")
 		Button TrashBtn = new Button(new Icon(VaadinIcon.TRASH), clickEvent -> {
-			ListDataProvider<MockEntry> dataProvider = (ListDataProvider<MockEntry>) grid.getDataProvider();
+			ListDataProvider<Entry> dataProvider = (ListDataProvider<Entry>) grid.getDataProvider();
 			dataProvider.getItems().remove(entry);
 			dataProvider.refreshAll();
+			DiaryService ds = new DiaryService();
+			ds.deleteEntry(entry.getId());
 		});
 		return TrashBtn;
 	}
 
 	/**
-	 * Navigates to the DiaryEntryView.
-	 * @param entry, a MockEntry.
+	 * Navigates to the EntryView.
+	 * @param entry, a Entry.
 	 * @return Button with Eye Icon
 	 */
-	private Button showDiaryEntryView(MockEntry entry) {
+	private Button showDiaryEntryView(Entry entry) {
 		Button eyeBtn = new Button(new Icon(VaadinIcon.EYE));
 		eyeBtn.addClickListener(event -> UI.getCurrent().navigate(DiaryEntryView.class));
 		return eyeBtn;
 	}
 
-	
+	//addEntry kann ich wahrscheinlich löschen. romap1
+	/**
+	private void addEntry(int i, String titel, Date date) {
+		
+		diaryEntryList.add(new Entry(i, titel, date));
+	}
+	**/
 
 	/**
-	 * Mock Entry Class for setting Header of Grid
+	 * Mock Entry Class for setting Header of Grid. Deprecated. Use Entry instead.
 	 * 
 	 * @author Patricia
 	 *
