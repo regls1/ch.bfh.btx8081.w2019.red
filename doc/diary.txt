@@ -392,3 +392,8 @@ create dialogs for all the contacts with their own details
 romap1
 100min
 working on DiaryView implementation. DiaryView can now delete and read from Database.
+
+10.01.20
+romap1
+120min
+MVP DiaryView implementation.
