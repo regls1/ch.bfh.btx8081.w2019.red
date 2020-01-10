@@ -9,6 +9,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.listbox.ListBox;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -83,6 +84,7 @@ public class ContactView extends VerticalLayout {
 		VerticalLayout vLayout = new VerticalLayout();
 		
 		Contact contact = csc.getContact(id);
+		City city = csc.getCity(contact.getCityId());
 		
 		HorizontalLayout dialogLayoutContact = new HorizontalLayout();		
 		Label lblContact = new Label("Name: ");
@@ -94,7 +96,7 @@ public class ContactView extends VerticalLayout {
 		HorizontalLayout dialogLayoutAddress = new HorizontalLayout();
 		Label lblAddress = new Label("Adresse: ");
 		lblAddress.setWidth("130px");
-		Label lblAddressContact = new Label(contact.getStreet() + " + Stadt");
+		Label lblAddressContact = new Label(contact.getStreet() + ", " );
 		dialogLayoutAddress.add(lblAddress, lblAddressContact);
 		
 		HorizontalLayout dialogLayoutPhone = new HorizontalLayout();
@@ -154,76 +156,68 @@ public class ContactView extends VerticalLayout {
 	
 	private Dialog createContact2Dialog() {
 		Dialog dialog = new Dialog();
-		//Label lblTitleDialog = new Label("Neuer Kontakt erstellen");
-		
+		H3 lblTitleDialog = new H3("Neuer Kontakt erstellen");
 		VerticalLayout vLayout = new VerticalLayout();
-		HorizontalLayout dialogLayoutTitle = new HorizontalLayout();		
-		Label lblTitle = new Label("Titel: ");
-		lblTitle.setWidth("130px");
-		TextField txtTitle = new TextField();
-		dialogLayoutTitle.add(lblTitle, txtTitle);
-		
-		HorizontalLayout dialogLayoutFirstname = new HorizontalLayout();
-		Label lblFirstname = new Label("Vorname: ");
-		lblFirstname.setWidth("130px");
-		TextField txtFirstname = new TextField();
-		dialogLayoutFirstname.add(lblFirstname, txtFirstname);
-		
 		HorizontalLayout dialogLayoutName = new HorizontalLayout();
-		Label lblName = new Label("Name: ");
-		lblName.setWidth("130px");
-		TextField txtName = new TextField();
-		dialogLayoutName.add(lblName, txtName);
-		
+		TextField txtTitle = new TextField("Titel");
+		TextField txtFirstname = new TextField("Vorname");
+		TextField txtName = new TextField("Name");
+		dialogLayoutName.add(txtTitle, txtFirstname, txtName);
 		HorizontalLayout dialogLayoutPhone = new HorizontalLayout();
-		Label lblPhone = new Label("Telefonnummer: ");
-		lblPhone.setWidth("130px");
-		TextField txtPhone = new TextField();
-		dialogLayoutPhone.add(lblPhone, txtPhone);
-		
+		TextField txtPhone = new TextField("Telefonnummer");
+		dialogLayoutPhone.add(txtPhone);
 		HorizontalLayout dialogLayoutMail = new HorizontalLayout();
-		Label lblMail = new Label("Email: ");
-		lblMail.setWidth("130px");
-		TextField txtMail = new TextField();
-		dialogLayoutMail.add(lblMail, txtMail);
-		
-		HorizontalLayout dialogLayoutStreet = new HorizontalLayout();
-		Label lblStreet = new Label("Strasse: ");
-		lblStreet.setWidth("130px");
-		TextField txtStreet = new TextField();
-		dialogLayoutStreet.add(lblStreet, txtStreet);
-		
-		HorizontalLayout dialogLayoutCity = new HorizontalLayout();
-		Label lblCity = new Label("Stadt: ");
-		lblCity.setWidth("130px");
-		TextField txtCity = new TextField();
-		dialogLayoutCity.add(lblCity, txtCity);
-		
-		HorizontalLayout dialogLayoutPlz = new HorizontalLayout();
-		Label lblPlz = new Label("Plz: ");
-		lblPlz.setWidth("130px");
-		TextField txtPlz = new TextField();
-		dialogLayoutPlz.add(lblPlz, txtPlz);
-		
-		vLayout.add(dialogLayoutTitle, dialogLayoutFirstname, dialogLayoutName, dialogLayoutPhone, dialogLayoutMail, dialogLayoutStreet, dialogLayoutPlz, dialogLayoutCity);
+		TextField txtMail = new TextField("E-Mail");
+		dialogLayoutMail.add(txtMail);
+		HorizontalLayout dialogLayoutAddress = new HorizontalLayout();
+		TextField txtStreet = new TextField("Strasse");
+		TextField txtPLZ = new TextField("PLZ");
+		TextField txtCity = new TextField("Stadt");
+		dialogLayoutAddress.add(txtStreet, txtPLZ, txtCity);
+		vLayout.add(lblTitleDialog, dialogLayoutName, dialogLayoutPhone, dialogLayoutMail, dialogLayoutAddress);
 		dialog.add(vLayout);
-		
 		HorizontalLayout dialogLayoutMenu = new HorizontalLayout();
 		//Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC));
 		
 		Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC), event -> {
-			Contact contact = new Contact();
-			City city = new City();
-			contact.setTitle(txtTitle.getValue());
-			contact.setFirstName(txtFirstname.getValue());
-			contact.setName(txtName.getValue());
-			contact.setMobile(txtPhone.getValue());
-			contact.setMail(txtMail.getValue());
-			contact.setStreet(txtStreet.getValue());
-			city.setZip(Integer.parseInt(txtPlz.getValue()));
-			city.setName(txtCity.getValue());
-			csc.addCity(city);
-			csc.addContact(contact);
+			Dialog dialog2 = new Dialog();
+			Button btnOk = new Button("OK");
+			HorizontalLayout dialogWarning = new HorizontalLayout();
+			Label lblWarning = new Label("Diese Postleitzahl ist nicht erlaubt.");
+			dialogWarning.add(lblWarning, btnOk);
+			dialog2.add(dialogWarning);
+			
+			List<City> cityList = csc.getAllCities();
+			for(City selectedCity : cityList) {
+				if(selectedCity.getZip() == Integer.parseInt(txtPLZ.getValue())) {
+					Contact contact = new Contact();
+					City city = new City();
+					contact.setTitle(txtTitle.getValue());
+					contact.setFirstName(txtFirstname.getValue());
+					contact.setName(txtName.getValue());
+					contact.setMobile(txtPhone.getValue());
+					contact.setMail(txtMail.getValue());
+					contact.setStreet(txtStreet.getValue());
+					city.setZip(Integer.parseInt(txtPLZ.getValue()));
+					city.setName(txtCity.getValue());
+					contact.setCityId(city.getId());
+					csc.addCity(city);
+					csc.addContact(contact);
+					dialog.close();
+				} else {
+					//Notification not = new Notification("This PLZ is not allowed");
+					
+					
+					//btnOk.addClickListener(event2 -> dialog2.close());
+					
+					dialog2.open();
+					
+					
+				}
+				btnOk.addClickListener(event2 -> dialog2.close());
+			}
+			
+			
 			
 			/**
 			System.out.println(txtTitle.getValue());
@@ -234,7 +228,7 @@ public class ContactView extends VerticalLayout {
 			System.out.println(txtStreet.getValue());
 			System.out.println(txtCity.getValue());
 			*/
-			dialog.close();
+			
 		});
 		
 		Button btnClose = new Button("Abbrechen", new Icon(VaadinIcon.CLOSE), event -> {
