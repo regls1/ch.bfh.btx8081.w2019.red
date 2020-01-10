@@ -17,6 +17,7 @@ import com.vaadin.flow.router.Route;
 
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 import model.Entry;
+import presenter.DiaryPresenter;
 import service.DiaryService;
 
 /**
@@ -31,10 +32,10 @@ import service.DiaryService;
 @Route
 public class DiaryView extends VerticalLayout {
 
-	private List<Entry> diaryEntryList = new ArrayList<Entry>();
+	//private List<Entry> diaryEntryList = new ArrayList<Entry>();
 	private Grid<Entry> grid = new Grid<>();
 	private Button entryAddBtn = new Button("Neuer Eintrag");
-
+	private DiaryPresenter presenter = new DiaryPresenter();
 	/**
 	 * Constructor, creates a mock entry and sets the layout.
 	 */
@@ -42,11 +43,11 @@ public class DiaryView extends VerticalLayout {
 
 		
 		//MockEntries
-		DiaryService ds = new DiaryService();
-		Entry testEntry = new Entry (1,"juhu!", new Date());
-		ds.addEntry(testEntry);
+		//DiaryService ds = new DiaryService();
+		//Entry testEntry = new Entry (1,"juhu!", new Date());
+		//ds.addEntry(testEntry);
 		
-		List<Entry> allEntries=	ds.getAllEntries();
+		List<Entry> allEntries=	presenter.getAllEntries();
 		grid.setItems(allEntries);
 		
 		// Add mock data in Grid.
@@ -98,8 +99,11 @@ public class DiaryView extends VerticalLayout {
 			ListDataProvider<Entry> dataProvider = (ListDataProvider<Entry>) grid.getDataProvider();
 			dataProvider.getItems().remove(entry);
 			dataProvider.refreshAll();
-			DiaryService ds = new DiaryService();
-			ds.deleteEntry(entry.getId());
+			//braucht noch try catch klausel!!
+		presenter.deleteEntry(entry);
+		//System.out.println(((DiaryPresenter) presenter).deleteEntry(entry));
+		//	DiaryService ds = new DiaryService();
+		//	ds.deleteEntry(entry.getId());
 		});
 		return TrashBtn;
 	}
