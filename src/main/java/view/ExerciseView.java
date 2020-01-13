@@ -12,6 +12,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 import model.Exercise;
+import presenter.ExercisePresenter;
 import service.ExerciseService;
 
 /**
@@ -25,11 +26,11 @@ import service.ExerciseService;
 @Route
 public class ExerciseView extends VerticalLayout {
 
-	// create new exercise service
-	ExerciseService exsc = new ExerciseService();
+	// create new ExercisePresenter
+	ExercisePresenter exPresenter = new ExercisePresenter();
 
 	// exercise service reads all contacts from database and saves them into a list
-	List<Exercise> allExercises = exsc.getAllExercises();
+	List<Exercise> allExercises = exPresenter.getAllExercises();
 
 	/*
 	 * create new list box with buttons
