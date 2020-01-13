@@ -1,6 +1,5 @@
 package view;
 
-import java.util.List;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
@@ -15,10 +14,8 @@ import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
-import model.City;
 import model.Contact;
 import presenter.ContactPresenter;
-import service.ContactService;
 
 /**
  * A list of all Contacts for a patient with emergency Contacts.
@@ -52,6 +49,9 @@ public class ContactView extends VerticalLayout {
 		add(btnReturn, btnNewContact2, lblContact2Person);
 		boxContact2Person = new ListBox<Button>();
 		boxContact2Person.setSizeFull();
+		
+		boxMoreContact2 = new ListBox<Button>();
+		boxMoreContact2.setSizeFull();
 
 		// loop through contact list and create buttons for gui
 
@@ -73,8 +73,7 @@ public class ContactView extends VerticalLayout {
 
 		H3 lblMoreContact2s = new H3("Weiterführende Kontakte");
 		add(lblMoreContact2s);
-		boxMoreContact2 = new ListBox<Button>();
-		boxMoreContact2.setSizeFull();
+		
 		add(boxMoreContact2);
 	}
 
@@ -195,14 +194,6 @@ public class ContactView extends VerticalLayout {
 			presenter.saveContact(txtTitle.getValue(), txtFirstname.getValue(), txtName.getValue(), txtPhone.getValue(),
 					txtMail.getValue(), txtStreet.getValue(), 2);}
 			dialog.close();
-
-			// csc.addContact(contact);
-			/*
-			 * if(rbgKind.getValue().equals("Ja")) { Button b = new
-			 * Button(contact.getTitle() + " " + contact.getFirstName() + " " +
-			 * contact.getName()); boxMoreContact2.add(b); b.addClickListener(event2 ->
-			 * createDialog(contact.getId()).open()); }
-			 */
 
 		});
 
