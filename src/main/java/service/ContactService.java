@@ -7,9 +7,6 @@ import model.User;
 
 public class ContactService {
 
-	
-	
-	
 	/**
 	 * get an user based on the id 
 	 * @param id
@@ -162,6 +159,7 @@ public class ContactService {
 		c.setStatusId(contact.getStatusId());
 		c.setUserId(contact.getUserId());
 		c.setStreet(contact.getStreet());
+		c.setCityId(contact.getCityId());
 		
 		EntityService.em.persist(c);
 		EntityService.em.flush();
