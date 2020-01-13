@@ -14,7 +14,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
 /**
- * Shows the Main View with three Buttons
+ * Shows the Main View with three Buttons and the application title and logo 
  * @author relgs1
  */
 @SuppressWarnings("serial")
@@ -41,7 +41,7 @@ public class MainView extends VerticalLayout {
      	btnContact.addClassName("icon50px");
      	btnContact.setIconAfterText(true);
      	btnContact.setWidth("100%");
-     	btnContact.setHeight("150px");
+     	btnContact.setHeight("70%");
      	btnContact.addClickListener(e -> UI.getCurrent().navigate(ContactView.class));
      	
      	// button with link to exercise view
@@ -49,7 +49,7 @@ public class MainView extends VerticalLayout {
         btnExercise.addClassName("icon50px");
         btnExercise.setIconAfterText(true);
         btnExercise.setWidth("100%");
-        btnExercise.setHeight("150px");
+        btnExercise.setHeight("70%");
         btnExercise.addClickListener(e -> UI.getCurrent().navigate(ExerciseView.class));
         
         // button with link to diary view
@@ -57,7 +57,7 @@ public class MainView extends VerticalLayout {
         btnDiary.addClassName("icon50px");
         btnDiary.setIconAfterText(true);
         btnDiary.setWidth("100%");
-        btnDiary.setHeight("150px");
+        btnDiary.setHeight("70%");
         btnDiary.addClickListener(e -> UI.getCurrent().navigate(DiaryView.class));
         
         // add all components to layout
