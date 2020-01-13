@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.listbox.ListBox;
@@ -13,7 +14,6 @@ import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 import model.Exercise;
 import presenter.ExercisePresenter;
-import service.ExerciseService;
 
 /**
  * A view which contains all the exercises as buttons and navigates the user to the corresponding 
@@ -42,7 +42,7 @@ public class ExerciseView extends VerticalLayout {
 	 */
 	public ExerciseView() {
 
-		H1 title = new H1("Übungen");
+		H2 title = new H2("Übungen");
 
 		// create a return button which navigates the user back to the MainView
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
