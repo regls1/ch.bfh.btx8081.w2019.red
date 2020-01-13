@@ -46,7 +46,6 @@ public class ContactTest {
 		assertEquals(contact.getName(), "Rubino");
 	}
 	
-	/**
 	@Test
 	public void testContact() {
 		int id = this.testGetContactId("hansjuerg.rubino@bfh.ch");
@@ -64,7 +63,6 @@ public class ContactTest {
 		assertTrue(contact.getUserId() == (2));
 		assertFalse(contact.getUserId() == (1));
 	}
-	*/
 	
 	@Test
 	public void testDeleteContact() {
@@ -73,7 +71,4 @@ public class ContactTest {
 		cPresenter.deleteContact(id);
 		assertFalse(contact.getName().equals("Rubino"));
 	}
-	
-
-
 }
