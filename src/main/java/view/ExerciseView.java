@@ -15,9 +15,8 @@ import model.Exercise;
 import service.ExerciseService;
 
 /**
- * A view which contains all the exercises as buttons and opens a new dialog if a button is clicked.
- * This dialog shows further information needed to do the exercise.
- * After the exercise is done, it can be rated in a new dialog.
+ * A view which contains all the exercises as buttons and navigates the user to the corresponding 
+ * ExerciseDetailView if he clicks a button
  * 
  * @author neues4
  *
@@ -44,18 +43,20 @@ public class ExerciseView extends VerticalLayout {
 
 		H1 title = new H1("Übungen");
 
+		// create a return button which navigates the user back to the MainView
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		btnReturn.setIconAfterText(false);
 		btnReturn.addClickListener( e -> UI.getCurrent().navigate(MainView.class));
 
+		// create a new ListBox to store the buttons with the exercise titles
 		ListBox<Button> boxExerciseTitle = new ListBox<Button>();
 		boxExerciseTitle.setSizeFull();
 
-		// loop through exercise list and create buttons. create a dialog which shows the right exercise
+		// loop through exercise list and create buttons with the titles of the exercises. Add the buttons to the ListBox
 		for(Exercise exercise : allExercises) {
 			Button bt = new Button(exercise.getTitle());
 			boxExerciseTitle.add(bt);
-			//bt.addClickListener(event -> createDialog(exercise.getId()).open());
+			// navigate the user to the corresponding ExerciseDetailView
 			if (exercise.getId() == 1) {
 			bt.addClickListener(event -> UI.getCurrent().navigate(ExerciseDetailView1.class));
 			}
