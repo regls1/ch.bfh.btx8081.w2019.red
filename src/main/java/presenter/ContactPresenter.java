@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.City;
 import model.Contact;
+import model.Status;
 import service.ContactService;
 
 /**
@@ -17,7 +18,7 @@ public class ContactPresenter {
 	private Contact contact;
 	private ContactService csc = new ContactService();
 
-	public void saveContact(String title, String firstName, String name, String mobile, String mail, String street) {
+	public void saveContact(String title, String firstName, String name, String mobile, String mail, String street, int kind) {
 		contact = new Contact();
 
 		contact.setTitle(title);
@@ -26,6 +27,7 @@ public class ContactPresenter {
 		contact.setMobile(mobile);
 		contact.setMail(mail);
 		contact.setStreet(street);
+		contact.setUserId(kind);
 
 		csc.addContact(contact);
 	}
@@ -44,5 +46,9 @@ public class ContactPresenter {
 
 	public void deleteContact(int id) {
 		csc.deleteContact(id);
+	}
+	
+	public void setStatus(int status) {
+		
 	}
 }
