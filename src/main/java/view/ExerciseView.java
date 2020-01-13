@@ -70,7 +70,6 @@ public class ExerciseView extends VerticalLayout {
 			else if (exercise.getId() == 4) {
 				bt.addClickListener(event -> UI.getCurrent().navigate(ExerciseDetailView4.class));
 			}
-			/*
 			else if (exercise.getId() == 5) {
 				bt.addClickListener(event -> UI.getCurrent().navigate(ExerciseDetailView5.class));
 			}
@@ -83,7 +82,6 @@ public class ExerciseView extends VerticalLayout {
 			else if (exercise.getId() == 8) {
 				bt.addClickListener(event -> UI.getCurrent().navigate(ExerciseDetailView8.class));
 			}
-			*/
 		}
 		// add the return button, the title and the ListBox to the view
 		add(btnReturn, title, boxExerciseTitle);
