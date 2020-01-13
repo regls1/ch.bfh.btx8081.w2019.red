@@ -9,6 +9,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -43,9 +44,9 @@ public class DiaryView extends VerticalLayout {
 
 		
 		//MockEntries
-		//DiaryService ds = new DiaryService();
-		//Entry testEntry = new Entry (1,"juhu!", new Date());
-		//ds.addEntry(testEntry);
+		DiaryService ds = new DiaryService();
+		Entry testEntry = new Entry (1,"juhu!", new Date());
+		ds.addEntry(testEntry);
 		
 		List<Entry> allEntries=	presenter.getAllEntries();
 		grid.setItems(allEntries);
