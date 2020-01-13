@@ -393,7 +393,17 @@ romap1
 100min
 working on DiaryView implementation. DiaryView can now delete and read from Database.
 
+09.01.20
+gashf2, regls1
+100min
+added a validation for cities that are already in the database.
+
 10.01.20
 romap1
 120min
 MVP DiaryView implementation.
+
+10.01.20
+gashf2, regls1
+120min
+tried to connect cityid with the correct city, works but not always 
