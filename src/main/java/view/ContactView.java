@@ -17,6 +17,7 @@ import com.vaadin.flow.router.Route;
 import ch.bfh.btx8081.w2019.red.SocialDisorderApp.MainView;
 import model.City;
 import model.Contact;
+import presenter.ContactPresenter;
 import service.ContactService;
 
 /**
@@ -34,11 +35,13 @@ public class ContactView extends VerticalLayout {
 	Label lblTitle;
 
 	// create new contact service
-	ContactService csc = new ContactService();
+	// ContactService csc = new ContactService();
 	// contact service reads all contacts from database and saves them into a list
-	List<Contact> allContacts = csc.getAllContacts();
+
 	ListBox<Button> boxMoreContact2;
 	ListBox<Button> boxContact2Person;
+	ContactPresenter presenter = new ContactPresenter();
+	// List<Contact> allContacts = presenter.getAllContacts();
 
 	public ContactView() {
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
@@ -51,9 +54,16 @@ public class ContactView extends VerticalLayout {
 		boxContact2Person.setSizeFull();
 
 		// loop through contact list and create buttons for gui
-		for (Contact contact : allContacts) {
+
+		for (Contact contact : presenter.getAllContacts()) {
 			Button b = new Button(contact.getTitle() + " " + contact.getFirstName() + " " + contact.getName());
-			boxContact2Person.add(b);
+			if(contact.getUserId() == 1) {
+				boxMoreContact2.add(b);
+			}
+			else if(contact.getUserId() == 2) {
+				boxContact2Person.add(b);
+			}
+			
 			b.addClickListener(event -> createDialog(contact.getId()).open());
 			System.out.println(contact.getId());
 		}
@@ -68,38 +78,39 @@ public class ContactView extends VerticalLayout {
 		add(boxMoreContact2);
 	}
 
-	private Dialog createDialog(int id) {
+	public Dialog createDialog(int id) {
 		Dialog dialog = new Dialog();
 		// Contact contact = new Contact();
 
 		VerticalLayout vLayout = new VerticalLayout();
 
-		Contact contact = csc.getContact(id);
-		City city = csc.getCity(contact.getCityId());
+		// Contact contact = csc.getContact(id);
+		// City city = csc.getCity(contact.getCityId());
 
 		HorizontalLayout dialogLayoutContact = new HorizontalLayout();
 		Label lblContact = new Label("Name: ");
 		lblContact.setWidth("130px");
 		// Label lblContactData = new Label("Titel + Vorname + Nachname");
-		Label lblContactData = new Label(contact.getTitle() + " " + contact.getFirstName() + " " + contact.getName());
+		Label lblContactData = new Label(presenter.getContact(id).getTitle() + " "
+				+ presenter.getContact(id).getFirstName() + " " + presenter.getContact(id).getName());
 		dialogLayoutContact.add(lblContact, lblContactData);
 
 		HorizontalLayout dialogLayoutAddress = new HorizontalLayout();
 		Label lblAddress = new Label("Adresse: ");
 		lblAddress.setWidth("130px");
-		Label lblAddressContact = new Label(contact.getStreet() + ", ");
+		Label lblAddressContact = new Label(presenter.getContact(id).getStreet() + ", ");
 		dialogLayoutAddress.add(lblAddress, lblAddressContact);
 
 		HorizontalLayout dialogLayoutPhone = new HorizontalLayout();
 		Label lblPhone = new Label("Telefonnummer: ");
 		lblPhone.setWidth("130px");
-		Label lblPhoneContact = new Label(contact.getMobile());
+		Label lblPhoneContact = new Label(presenter.getContact(id).getMobile());
 		dialogLayoutPhone.add(lblPhone, lblPhoneContact);
 
 		HorizontalLayout dialogLayoutMail = new HorizontalLayout();
 		Label lblMail = new Label("E-Mail: ");
 		lblMail.setWidth("130px");
-		Label lblMailContact = new Label(contact.getMail());
+		Label lblMailContact = new Label(presenter.getContact(id).getMail());
 		dialogLayoutMail.add(lblMail, lblMailContact);
 		H3 h3Details = new H3("Details");
 		vLayout.add(h3Details, dialogLayoutContact, dialogLayoutAddress, dialogLayoutPhone, dialogLayoutMail);
@@ -108,7 +119,7 @@ public class ContactView extends VerticalLayout {
 		HorizontalLayout dialogLayoutMenu = new HorizontalLayout();
 
 		Button btnDelete = new Button("Kontakt löschen", new Icon(VaadinIcon.TRASH), event -> {
-			csc.deleteContact(id);
+			presenter.deleteContact(id);
 			dialog.close();
 		});
 
@@ -146,12 +157,11 @@ public class ContactView extends VerticalLayout {
 		rbgKind.setLabel("Weiterführender Kontakt?");
 		rbgKind.setItems("Ja", "Nein");
 		rbgKind.setValue("Nein");
-		
-		
-		
-		vLayout.add(lblTitleDialog, dialogLayoutName, dialogLayoutPhone, dialogLayoutMail, dialogLayoutAddress, rbgKind);
+
+		vLayout.add(lblTitleDialog, dialogLayoutName, dialogLayoutPhone, dialogLayoutMail, dialogLayoutAddress,
+				rbgKind);
 		dialog.add(vLayout);
-		
+
 		// Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC));
 
 		Button btnSave = new Button("Speichern", new Icon(VaadinIcon.DISC), event -> {
@@ -161,34 +171,38 @@ public class ContactView extends VerticalLayout {
 			Label lblWarning = new Label("Diese Postleitzahl ist nicht erlaubt.");
 			dialogWarning.add(lblWarning, btnOk);
 			dialog2.add(dialogWarning);
-			Contact contact = new Contact();
-			List<City> cityList = csc.getAllCities();
-			for (City selectedCity : cityList) {
+			// Contact contact = new Contact();
+			// List<City> cityList = csc.getAllCities();
+/*
+			for (City selectedCity : presenter.getAllCities()) {
 				if (selectedCity.getZip() == Integer.parseInt(txtPLZ.getValue())) {
-					//city = selectedCity;
-					contact.setTitle(txtTitle.getValue());
-					contact.setFirstName(txtFirstname.getValue());
-					contact.setName(txtName.getValue());
-					contact.setMobile(txtPhone.getValue());
-					contact.setMail(txtMail.getValue());
-					contact.setStreet(txtStreet.getValue());
-					System.out.println("\n"+selectedCity.getId());
-					dialog.close();
+					// city = selectedCity;
+
+					System.out.println("\n" + selectedCity.getId());
+
 				} else {
 					dialog2.open();
 				}
-
-				btnOk.addClickListener(event2 -> dialog2.close());
-			}
-			csc.addContact(contact);
-			/*
-			if(rbgKind.getValue().equals("Ja")) {
-				Button b = new Button(contact.getTitle() + " " + contact.getFirstName() + " " + contact.getName());
-				boxMoreContact2.add(b);
-				b.addClickListener(event2 -> createDialog(contact.getId()).open());
 			}
 			*/
-			
+
+			//btnOk.addClickListener(event2 -> dialog2.close());
+			if(rbgKind.getValue().equals("Ja")) {
+				presenter.saveContact(txtTitle.getValue(), txtFirstname.getValue(), txtName.getValue(), txtPhone.getValue(),
+						txtMail.getValue(), txtStreet.getValue(), 1);
+			}
+			else {
+			presenter.saveContact(txtTitle.getValue(), txtFirstname.getValue(), txtName.getValue(), txtPhone.getValue(),
+					txtMail.getValue(), txtStreet.getValue(), 2);}
+			dialog.close();
+
+			// csc.addContact(contact);
+			/*
+			 * if(rbgKind.getValue().equals("Ja")) { Button b = new
+			 * Button(contact.getTitle() + " " + contact.getFirstName() + " " +
+			 * contact.getName()); boxMoreContact2.add(b); b.addClickListener(event2 ->
+			 * createDialog(contact.getId()).open()); }
+			 */
 
 		});
 
