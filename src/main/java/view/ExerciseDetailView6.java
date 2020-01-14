@@ -5,7 +5,7 @@ import java.util.List;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -48,14 +48,14 @@ public class ExerciseDetailView6 extends VerticalLayout {
 
 		Exercise exercise = allExercises.get(5);
 		
-		H1 exerciseTitle = new H1(exercise.getTitle());
+		H2 exerciseTitle = new H2(exercise.getTitle());
 		
 		Label exerciseShortDescrp = new Label(exercise.getShortDescription());
 
 		/*
 		 * button to start the exercise
 		 */
-		Button btnStart = new Button("Start", new Icon(VaadinIcon.PLAY_CIRCLE_O));
+		Button btnStart = new Button("Übung starten", new Icon(VaadinIcon.PLAY_CIRCLE_O));
 		btnStart.setIconAfterText(false);
 
 		/*
@@ -70,10 +70,10 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		 */
 		Dialog dlgExerciseDetail = new Dialog();
 
-		Button btnExit = new Button("Abbrechen", event -> {
+		Button btnExit = new Button("Übung abbrechen", new Icon(VaadinIcon.CLOSE_SMALL), event -> {
 			dlgExerciseDetail.close();
 		});
-		Button btnFinish = new Button("Beenden", event -> {
+		Button btnFinish = new Button("Übung erledigt", new Icon(VaadinIcon.CHECK), event -> {
 			dlgExerciseDetail.close();
 		});
 
@@ -84,7 +84,7 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		dlgExerciseDetail.add(exerciseDetailDescrp, layout);
 
 		dlgExerciseDetail.setWidth("400px");
-		dlgExerciseDetail.setHeight("600px");
+		dlgExerciseDetail.setHeight("100px");
 
 		btnStart.addClickListener(event -> dlgExerciseDetail.open());
 
@@ -92,6 +92,7 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		 * dialog to rate the exercise after finishing 
 		 */
 		Dialog dlgRating = new Dialog();
+	
 		btnFinish.addClickListener(event -> dlgRating.open());
 
 		RadioButtonGroup<String> rbgRating = new RadioButtonGroup<>();
@@ -111,9 +112,12 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		String stringRating4 = String.valueOf(rating4.getValue());
 		String stringRating5 = String.valueOf(rating5.getValue());
 		rbgRating.setItems(stringRating1, stringRating2, stringRating3, stringRating4, stringRating5);
-		rbgRating.setLabel("Mit wie vielen Sternen bewertest du diese Übung?");
+		rbgRating.setLabel("Auf einer Skala von 1 (schlecht) bis 5 (sehr gut): Wie sehr hat diese Übung dir geholfen?");
+		
+		dlgRating.setWidth("600px");
+		dlgRating.setHeight("150px");
 
-		Button btnOk = new Button("OK", event -> {
+		Button btnOk = new Button("Speichern", event -> {
 			/*
 			Rating rating = new Rating();
 			rating.setValue(rating1.getValue());
@@ -125,8 +129,11 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		Button btnClose = new Button("Abbrechen", event -> {
 			dlgRating.close();
 		});
-		dlgRating.add(rbgRating, btnOk, btnClose);
+		HorizontalLayout layoutButtons = new HorizontalLayout(btnOk, btnClose);
+		VerticalLayout layoutRating = new VerticalLayout(rbgRating);
+		dlgRating.add(layoutRating, layoutButtons);
 	}
 
 
 }
+
