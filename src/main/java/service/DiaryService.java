@@ -8,8 +8,8 @@ import model.Symptom;
 import model.User;
 
 /**
- * 
- * @author Patricia ,
+ * Service class for Diary, knows the database. 
+ * @author romap1
  *
  */
 public class DiaryService {
