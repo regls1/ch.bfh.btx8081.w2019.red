@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 /**
  * EntityService creates only one EntityManager by using the Singleton pattern.
  * 
- * @author Patricia
+ * @author romap1
  *
  */
 public class EntityService {
