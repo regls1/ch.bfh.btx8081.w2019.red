@@ -19,12 +19,16 @@ import service.DiaryService;
  * @author wackt2
  *
  */
-
 class DiaryTest {
 
 	private DiaryPresenter presenter = new DiaryPresenter();
 	private DiaryService service = new DiaryService();
 	
+	/**
+	 * method to get id of an existing entry
+	 * @param date, date of an entry
+	 * @return id of entry
+	 */
 	public int getEntryID(Date date) {
 		int id = 0;
 		for (Entry entry : service.getAllEntries()) {
@@ -36,12 +40,18 @@ class DiaryTest {
 	}
 	
 	@Test
+	/**
+	 * method that tests if an entry can be added
+	 */
 	public void addEntry() {
 		//presenter.save...(...);
 		//assertTrue(presenter...(...));
 	}
 	
 	@Test
+	/**
+	 * method that tests if it is possible to access an entry from database
+	 */
 	public void getEntry() throws ParseException {
 		//String sDate = "30.05.2020";
 		//Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
@@ -52,6 +62,9 @@ class DiaryTest {
 	}
 	
 	@Test
+	/**
+	 * method that tests if an existing entry can be deleted in database
+	 */
 	public void deleteEntry() {
 		//String sDate = "30.05.2020";
 		//Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
