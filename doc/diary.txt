@@ -389,6 +389,21 @@ gashf2
 create dialogs for all the contacts with their own details
 
 09.01.20
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+20min
+Daily Scrum
+
+09.01.20
+wackt2, neues4
+60min
+review problem with id when routing to a new site, testing of possible solutions, research in web, discussing of workarounds if there is no possible solution
+
+09.01.20
+gashf2, regls1
+20 min
+discussing the problem of cities (separate table, check city, ...)
+
+09.01.20
 romap1
 100min
 working on DiaryView implementation. DiaryView can now delete and read from Database.
@@ -399,6 +414,11 @@ gashf2, regls1
 added a validation for cities that are already in the database.
 
 10.01.20
+meeting: khala1, gashf2, romap1, regls1, neues4, wackt2
+15min
+Daily Scrum
+
+10.01.20
 romap1
 120min
 MVP DiaryView implementation.
@@ -406,4 +426,14 @@ MVP DiaryView implementation.
 10.01.20
 gashf2, regls1
 120min
-tried to connect cityid with the correct city, works but not always 
+tried to connect cityid with the correct city, works but not always
+
+14.01.20
+wackt2
+40 min
+junit tests for diary view, uncompleted because of missing code like presenter
+
+14.01.20
+wackt2
+..min
+mvp exercise 
