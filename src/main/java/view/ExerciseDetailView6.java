@@ -16,6 +16,7 @@ import com.vaadin.flow.router.Route;
 
 import model.Exercise;
 import model.Rating;
+import presenter.ExercisePresenter;
 import service.ExerciseService;
 
 /**
@@ -33,6 +34,8 @@ public class ExerciseDetailView6 extends VerticalLayout {
 	ExerciseService exsc = new ExerciseService();
 	
 	List<Exercise> allExercises = exsc.getAllExercises();
+	ExercisePresenter presenter = new ExercisePresenter();
+	Exercise exercise;
 
 	/*
 	 * constructor
@@ -46,7 +49,7 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		btnReturn.setIconAfterText(false);
 		btnReturn.addClickListener( e -> UI.getCurrent().navigate(ExerciseView.class));	
 
-		Exercise exercise = allExercises.get(5);
+		exercise = allExercises.get(5);
 		
 		H2 exerciseTitle = new H2(exercise.getTitle());
 		
@@ -118,6 +121,8 @@ public class ExerciseDetailView6 extends VerticalLayout {
 		dlgRating.setHeight("150px");
 
 		Button btnOk = new Button("Speichern", event -> {
+			presenter.saveRating(Integer.parseInt(rbgRating.getValue()), exercise.getId());
+			
 			/*
 			Rating rating = new Rating();
 			rating.setValue(rating1.getValue());
