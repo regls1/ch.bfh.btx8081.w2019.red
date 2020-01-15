@@ -32,18 +32,6 @@ public class Entry implements IEntity {
 	private String pride;
 	private String additional;
 	private Boolean privacy;
-	
-	public Entry() {
-		
-	}
-	
-	public Entry(int id, String title, Date date) {
-		this.entryId = id;
-		this.title= title;
-		this.date = date;
-	}
-	
-	
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
 	private final ArrayList<Activity> activityList= new ArrayList<Activity>();
 	@OneToMany (fetch = FetchType.EAGER, mappedBy = "entry")
@@ -56,6 +44,31 @@ public class Entry implements IEntity {
 	@ManyToOne
 	private User user;
 	private int userId;
+	
+	
+	public Entry() {
+		
+	}
+	
+	public Entry(int id, String title, Date date, String difficulty, String pride, String additional, Boolean privacy) {
+		this.entryId = id;
+		this.title= title;
+		this.date = date;
+		this.difficulty = difficulty;
+		this.pride = pride;
+		this.additional = additional;
+		this.privacy = privacy;
+	}
+	
+	public Entry(int id, String title, Date date) {
+		this.entryId = id;
+		this.title= title;
+		this.date = date;
+	}
+	
+	
+	
+	
 	
 	/*
 	 * getter and setter methods
