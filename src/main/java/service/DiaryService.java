@@ -105,8 +105,8 @@ public class DiaryService {
 	 * @param id
 	 * @return the found Mood instance or null if the entity does not exist.
 	 */
-	public User getMood(int id) {
-		return EntityService.em.find(User.class, id);
+	public Mood getMood(int id) {
+		return EntityService.em.find(Mood.class, id);
 		
 	}
 	
@@ -170,8 +170,8 @@ public class DiaryService {
 	 * @param id
 	 * @return the found Symptom instance or null if the entity does not exist.
 	 */
-	public User getSymptom(int id) {
-		return EntityService.em.find(User.class, id);
+	public Symptom getSymptom(int id) {
+		return EntityService.em.find(Symptom.class, id);
 		
 	}
 	
