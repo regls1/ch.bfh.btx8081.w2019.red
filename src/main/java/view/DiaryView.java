@@ -87,7 +87,7 @@ public class DiaryView extends VerticalLayout {
 			ListDataProvider<Entry> dataProvider = (ListDataProvider<Entry>) grid.getDataProvider();
 			dataProvider.getItems().remove(entry);
 			dataProvider.refreshAll();
-			//braucht noch try catch klausel mit ExceptonHandling!!
+			//braucht noch try catch klausel mit ExceptonHandling
 		presenter.deleteEntry(entry);
 		});
 		return TrashBtn;
@@ -104,13 +104,7 @@ public class DiaryView extends VerticalLayout {
 		return eyeBtn;
 	}
 
-	//addEntry kann ich wahrscheinlich löschen. romap1
-	/**
-	private void addEntry(int i, String titel, Date date) {
-		
-		diaryEntryList.add(new Entry(i, titel, date));
-	}
-	**/
+	
 
 	/**
 	 * Mock Entry Class for setting Header of Grid. Deprecated. Use Entry instead.
