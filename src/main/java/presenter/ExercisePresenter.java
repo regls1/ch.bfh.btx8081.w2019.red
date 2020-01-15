@@ -55,10 +55,12 @@ public class ExercisePresenter {
 	 * @param userId, id of current user
 	 * @param exerciseId, id of exercise
 	 */
-	public void saveRating(int value, int userId, int exerciseId) {
+	public void saveRating(int value, int exerciseId) {
 		// set all attributes
+		rating = new Rating();
 		rating.setValue(value);
-		rating.setUserId(userId);
+		//rating.setUserId(userId);
+		
 		rating.setExerciseId(exerciseId);
 		
 		service.addRating(rating);
