@@ -31,7 +31,7 @@ public class ExerciseService {
 	 * @param id
 	 * @return
 	 */
-	public Exercise getExerise(int id) {
+	public Exercise getExercise(int id) {
 		return EntityService.em.find(Exercise.class, id);
 	}
 	
