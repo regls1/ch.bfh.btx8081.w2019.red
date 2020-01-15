@@ -20,8 +20,8 @@ public class DiaryService {
 	 * @param id
 	 * @return the found User instance or null if the entity does not exist.
 	 */
-	public User getEntry(int id) {
-		return EntityService.em.find(User.class, id);
+	public Entry getEntry(int id) {
+		return EntityService.em.find(Entry.class, id);
 		
 	}
 
