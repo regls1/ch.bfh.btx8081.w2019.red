@@ -435,5 +435,5 @@ junit tests for diary view, uncompleted because of missing code like presenter
 
 14.01.20
 wackt2
-..min
-mvp exercise 
+150min
+presenter exercise 
