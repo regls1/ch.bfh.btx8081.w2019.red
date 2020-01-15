@@ -431,9 +431,14 @@ tried to connect cityid with the correct city, works but not always
 14.01.20
 wackt2
 40 min
-junit tests for diary view, uncompleted because of missing code like presenter
+junit tests for diary view, uncompleted because of missing code like presenter 
+Added Comment:presenter was not missing, just incomplete ;) lets communicate better next time, romap1
 
 14.01.20
 wackt2
 150min
 presenter exercise 
+
+15.01.20
+210min
+Diary Presenter expanded, Minor Correction in Entry, Mood and Activity 
