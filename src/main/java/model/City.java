@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 /**
  * model class of city
  * 
- * @author wackt2, romap1
+ * @author wackt2, romap1(added annotation)
  *
  */
 @Entity 
