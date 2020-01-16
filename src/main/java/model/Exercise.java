@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 /**
  * model class of exercise
  * 
- * @author wackt2, romap1
+ * @author wackt2, romap1(annotations)
  *
  */
 @Entity
