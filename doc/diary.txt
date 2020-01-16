@@ -428,6 +428,11 @@ gashf2, regls1
 120min
 tried to connect cityid with the correct city, works but not always
 
+13.01.20
+regls1, gashf2
+150min
+correct city to contact and started junit test for contact
+
 14.01.20
 wackt2
 40 min
@@ -443,7 +448,17 @@ presenter exercise
 210min
 Diary Presenter expanded, Minor Correction in Entry, Mood and Activity
 
+15.01.20
+gashf2
+30min
+match rating for the correct exercise
+
 16.01.20
 wackt2
 300min
 diary presenter, service, models correction, junit tests -> error db with attributes, saving entries in db from gui 
+
+16.01.20
+gashf2
+60min
+get average rating for the exercises, code refactoring for contact view
