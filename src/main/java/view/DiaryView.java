@@ -30,7 +30,7 @@ public class DiaryView extends VerticalLayout {
 
 	
 	private Grid<Entry> grid = new Grid<>();
-	private Button entryAddBtn = new Button("Neuer Eintrag");
+	private Button entryAddBtn = new Button("Neuer Eintrag" , new Icon(VaadinIcon.PLUS));
 	private DiaryPresenter presenter = new DiaryPresenter();
 	
 	/**
@@ -40,10 +40,15 @@ public class DiaryView extends VerticalLayout {
 
 		
 		//Creates Mock Entries, is used as long Entries cant get added with DiaryEntryView to database.
+		/*
 		DiaryService ds = new DiaryService();
-		Entry testEntry = new Entry (1,"juhu!", new Date());
-		ds.addEntry(testEntry);
-		
+		Entry testEntry1 = new Entry (1, "Mein Tag", new Date());
+		Entry testEntry2 = new Entry(2, "Mein Tag2", new Date());
+		Entry testEntry3= new Entry(3, "Mein Tag 3", new Date() );
+		ds.addEntry(testEntry1);
+		ds.addEntry(testEntry2);
+		ds.addEntry(testEntry3);
+		*/
 		List<Entry> allEntries=	presenter.getAllEntries();
 		grid.setItems(allEntries);
 
