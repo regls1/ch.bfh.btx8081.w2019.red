@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import model.Activity;
+import model.City;
 import model.Entry;
 import model.Mood;
 import model.Symptom;
@@ -12,7 +13,7 @@ import service.DiaryService;
 /**
  * Presenter for Diary Entries.
  * 
- * @author romap1
+ * @author romap1, wackt2
  *
  */
 public class DiaryPresenter {
@@ -20,16 +21,29 @@ public class DiaryPresenter {
 	private DiaryService ds = new DiaryService();
 
 	/**
+	 * method to check entry if it already exists
+	 * 
+	 * @param entry, entry code
+	 * @return boolean, true if it exists or false if it doesn't exist
+	 */
+	public boolean checkEntry(Entry entry) {
+		for (Entry e : this.getAllEntries()) {
+			if (e.getId() == entry.getId()) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
 	 * Returns List with all Entries from the database.
 	 * 
 	 * @return List with all Entries
 	 */
 	public List<Entry> getAllEntries() {
 		return ds.getAllEntries();
-
 	}
 
-	
 	/**
 	 * Gets Entry
 	 * 
@@ -38,10 +52,18 @@ public class DiaryPresenter {
 	 */
 	public Entry getEntry(Entry entry) {
 		return ds.getEntry(entry.getId());
-
+	}
+	
+	/**
+	 * Gets Entry
+	 * 
+	 * @param id
+	 * @return Entry
+	 */
+	public Entry getEntry(int id) {
+		return ds.getEntry(id);
 	}
 
-	
 	/**
 	 * Deletes Entry
 	 * 
@@ -49,9 +71,16 @@ public class DiaryPresenter {
 	 */
 	public void deleteEntry(Entry entry) {
 		ds.deleteEntry(entry.getId());
-
 	}
-
+	
+	/**
+	 * Deletes Entry
+	 * 
+	 * @param id
+	 */
+	public void deleteEntry(int id) {
+		ds.deleteEntry(id);
+	}
 	
 	/**
 	 * Updates Entry
@@ -61,7 +90,6 @@ public class DiaryPresenter {
 	public void updateEntry(Entry entry) {
 		ds.updateEntry(entry.getId(), entry);
 	}
-
 	
 	/**
 	 * Adds Entry
@@ -72,7 +100,6 @@ public class DiaryPresenter {
 		ds.addEntry(entry);
 	}
 
-	
 	/**
 	 * Gets Mood
 	 * 
@@ -81,10 +108,8 @@ public class DiaryPresenter {
 	 */
 	public Mood getMood(Entry entry) {
 		return ds.getMood(entry.getMoodId());
-
 	}
 
-	
 	/*
 	 * Added as soon DiaryEntryView works.
 	 * 
@@ -92,7 +117,6 @@ public class DiaryPresenter {
 	 * 
 	 * }
 	 */
-
 	
 	/**
 	 * Adds Mood
@@ -103,7 +127,6 @@ public class DiaryPresenter {
 		ds.addMood(mood);
 	}
 
-	
 	/**
 	 * Deletes Mood
 	 * 
@@ -113,7 +136,6 @@ public class DiaryPresenter {
 		ds.deleteMood(entry.getMoodId());
 	}
 
-	
 	/**
 	 * Get Symptom
 	 * 
@@ -123,7 +145,6 @@ public class DiaryPresenter {
 	public Symptom getSymptom(int id) {
 		return ds.getSymptom(id);
 	}
-
 	
 	/*
 	 * Added as soon DiaryEntryView works. public void updateSymptom(Symptom
@@ -132,7 +153,6 @@ public class DiaryPresenter {
 	 * }
 	 */
 
-	
 	/**
 	 * Adds Symptom
 	 * 
@@ -141,7 +161,6 @@ public class DiaryPresenter {
 	public void addSymptom(Symptom symptom) {
 		ds.addSymptom(symptom);
 	}
-
 	
 	/**
 	 * Deletes Symptom
@@ -152,7 +171,6 @@ public class DiaryPresenter {
 		ds.deleteSymptom(symptom.getId());
 	}
 
-	
 	/**
 	 * Gets Activity
 	 * 
@@ -163,7 +181,6 @@ public class DiaryPresenter {
 		return ds.getActivity(id);
 	}
 
-	
 	/**
 	 * Adds Activity
 	 * 
@@ -172,7 +189,6 @@ public class DiaryPresenter {
 	public void addActivity(Activity activity) {
 		ds.addActivity(activity);
 	}
-
 	
 	/**
 	 * Deletes Activity
@@ -182,5 +198,4 @@ public class DiaryPresenter {
 	public void deleteActivity(Activity activity) {
 		ds.deleteActivity(activity.getId());
 	}
-
 }
