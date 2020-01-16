@@ -66,10 +66,6 @@ public class Entry implements IEntity {
 		this.date = date;
 	}
 	
-	
-	
-	
-	
 	/*
 	 * getter and setter methods
 	 */
@@ -129,7 +125,15 @@ public class Entry implements IEntity {
 		return moodId;
 	}
 	
+	public void setMoodId(int moodId) {
+		this.moodId = moodId;
+	}
+	
 	public int getUserId() {
 		return userId;
+	}
+	
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }
