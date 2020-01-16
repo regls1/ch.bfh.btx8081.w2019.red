@@ -35,7 +35,7 @@ public class ContactView extends VerticalLayout {
 	public ContactView() {
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		Button btnNewContact = new Button("Neuer Kontakt erstellen");
-		btnNewContact.addClickListener(event -> createContactDialog().open());
+		btnNewContact.addClickListener(event -> openContactAddDialog().open());
 		H2 lblContactPerson = new H2("Meine Kontaktpersonen");
 		btnReturn.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
 		add(btnReturn, btnNewContact, lblContactPerson);
@@ -54,7 +54,7 @@ public class ContactView extends VerticalLayout {
 				boxContacts.add(b);
 			}
 
-			b.addClickListener(event -> createDialog(contact.getId()).open());
+			b.addClickListener(event -> openContactDetailDialog(contact.getId()).open());
 			System.out.println(contact.getId());
 		}
 
@@ -72,7 +72,7 @@ public class ContactView extends VerticalLayout {
 	 * @param id, id of the contact
 	 * @return dialog, dialog with the information of a contact
 	 */
-	public Dialog createDialog(int id) {
+	public Dialog openContactDetailDialog(int id) {
 		Dialog dialog = new Dialog();
 
 		VerticalLayout vLayout = new VerticalLayout();
@@ -128,7 +128,7 @@ public class ContactView extends VerticalLayout {
 	 * 
 	 * @return dialog, dialog with the fields for the needed information
 	 */
-	private Dialog createContactDialog() {
+	private Dialog openContactAddDialog() {
 		Dialog dialog = new Dialog();
 		H2 lblTitleDialog = new H2("Neuer Kontakt erstellen");
 		VerticalLayout vLayout = new VerticalLayout();
