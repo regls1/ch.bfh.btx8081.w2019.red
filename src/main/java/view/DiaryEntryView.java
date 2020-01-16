@@ -1,5 +1,7 @@
 package view;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -9,7 +11,6 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.CheckboxGroup;
 import com.vaadin.flow.component.datepicker.DatePicker;
-import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
@@ -21,6 +22,8 @@ import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+
+import presenter.DiaryPresenter;
 
 /**
  * class that contains the view to add or edit an entry
@@ -52,9 +55,10 @@ public class DiaryEntryView extends VerticalLayout {
 	TextArea txtDayPride;
 	TextArea txtDaySymptom;
 	TextArea txtAddition;
+	DiaryPresenter presenter;
 
-	public DiaryEntryView() {
-
+	public DiaryEntryView() throws ParseException {
+		presenter = new DiaryPresenter();
 		// button for returning to diary page
 		btnBack = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
 		btnBack.addClickListener(e -> UI.getCurrent().navigate(DiaryView.class));
@@ -143,8 +147,23 @@ public class DiaryEntryView extends VerticalLayout {
 
 		// button to save current entry
 		btnSave = new Button("Speichern", new Icon(VaadinIcon.SAFE));
-		btnSave.addClickListener(e -> saveEntry());
-
+		
+		boolean privacy;
+		if(rbgPrivacy.getValue().equals("privat")) {
+			privacy = true;
+		} else {
+			privacy = false;
+		}
+		
+		btnSave.addClickListener(e -> {
+			try {
+				presenter.addEntry(txtTitle.getValue(), new SimpleDateFormat("yyyy-dd-MM").parse(datePicker.getValue().toString()), txtDayDifficulty.getValue(), 
+						txtDayPride.getValue(), txtAddition.getValue(), privacy, presenter.getMoodId(rbgMood.getValue()));
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+			}
+		});
+		
 		// add all components to the vertical layout of the view
 		add(btnBack, new H3("Neuen Tagebucheintrag erstellen"), datePicker, txtTitle, txtDayDifficulty, txtDayPride,
 				txtDaySymptom, txtAddition, new Label("Was hast Du für Aktivitäten an diesem Tag gemacht?"),
