@@ -47,20 +47,36 @@ public class ExercisePresenter {
 	public Rating getRating(int id) {
 		return service.getRating(id);
 	}
+	
+	/**
+	 * method to get the average rating of an exercise
+	 * 
+	 * @param exerciseId, id of exercise
+	 * @return average rating
+	 */
+	public double getRatingAverage(int exerciseId) {
+		double average = 0;
+		int i = 0;
+		for(Rating rating : this.getAllRatings()) {
+			if(rating.getExerciseId() == exerciseId) {
+				average += rating.getValue();
+				i++;
+			}
+		}
+		return average/i;
+	}
+	
 
 	/**
 	 * method to save a rating
 	 * 
 	 * @param value, rating value
-	 * @param userId, id of current user
 	 * @param exerciseId, id of exercise
 	 */
 	public void saveRating(int value, int exerciseId) {
 		// set all attributes
 		rating = new Rating();
 		rating.setValue(value);
-		//rating.setUserId(userId);
-		
 		rating.setExerciseId(exerciseId);
 		
 		service.addRating(rating);
