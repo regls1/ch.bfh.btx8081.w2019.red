@@ -8,7 +8,7 @@ import model.Symptom;
 
 /**
  * Service class for Diary, knows the database. 
- * @author romap1
+ * @author romap1, wackt2
  *
  */
 public class DiaryService {
@@ -98,6 +98,14 @@ public class DiaryService {
 		
 	}
 	
+	/**
+	 * Gets a ArrayList with all moods.
+	 * @return the ArrayList with all Mood instance.
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Mood> getAllMoods() {
+		return (List<Mood>)EntityService.em.createQuery("select m from Mood m").getResultList();
+	}
 	
 	/**
 	 * Gets Mood with the given ID.
