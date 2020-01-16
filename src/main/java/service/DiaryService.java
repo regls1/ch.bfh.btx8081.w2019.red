@@ -5,7 +5,6 @@ import model.Activity;
 import model.Entry;
 import model.Mood;
 import model.Symptom;
-import model.User;
 
 /**
  * Service class for Diary, knows the database. 
