@@ -54,8 +54,14 @@ public class ExerciseDetailView5 extends VerticalLayout {
 		H2 exerciseTitle = new H2(exercise.getTitle());
 		
 		Label exerciseShortDescrp = new Label(exercise.getShortDescription());
+		
+		HorizontalLayout layoutRatingStar = new HorizontalLayout();
 		Label ratingAverage = new Label(String.format("%30s%5.2f%n", "Durchschnittliches Rating: ",presenter.getRatingAverage(exercise.getId())));
-
+		layoutRatingStar.add(ratingAverage);
+		for(int i = 1; i <= presenter.getRatingAverage(exercise.getId()); i++){
+			layoutRatingStar.add(new Icon(VaadinIcon.STAR_O));
+		}
+		
 		/*
 		 * button to start the exercise
 		 */
@@ -65,7 +71,7 @@ public class ExerciseDetailView5 extends VerticalLayout {
 		/*
 		 * add the components to the view
 		 */
-		add(btnReturn, exerciseTitle, exerciseShortDescrp, ratingAverage, btnStart);
+		add(btnReturn, exerciseTitle, exerciseShortDescrp, layoutRatingStar, btnStart);
 
 		/*
 		 * create a new dialog to show further information of the exercise
