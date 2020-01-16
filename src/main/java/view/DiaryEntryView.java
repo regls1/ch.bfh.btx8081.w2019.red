@@ -156,12 +156,14 @@ public class DiaryEntryView extends VerticalLayout {
 		}
 		
 		btnSave.addClickListener(e -> {
+			UI.getCurrent().navigate(DiaryView.class);
 			try {
 				presenter.addEntry(txtTitle.getValue(), new SimpleDateFormat("yyyy-dd-MM").parse(datePicker.getValue().toString()), txtDayDifficulty.getValue(), 
 						txtDayPride.getValue(), txtAddition.getValue(), privacy, presenter.getMoodId(rbgMood.getValue()));
 			} catch (ParseException e1) {
 				e1.printStackTrace();
 			}
+			
 		});
 		
 		// add all components to the vertical layout of the view
