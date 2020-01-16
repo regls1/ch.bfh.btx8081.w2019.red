@@ -441,4 +441,9 @@ presenter exercise
 
 15.01.20
 210min
-Diary Presenter expanded, Minor Correction in Entry, Mood and Activity 
+Diary Presenter expanded, Minor Correction in Entry, Mood and Activity
+
+16.01.20
+wackt2
+300min
+diary presenter, service, models correction, junit tests -> error db with attributes, saving entries in db from gui 
