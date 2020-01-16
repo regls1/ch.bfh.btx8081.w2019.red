@@ -29,10 +29,10 @@ public class DiaryTest {
 	 * @param date, date of an entry
 	 * @return id of entry
 	 */
-	public int getEntryID(Date date) {
+	public int getEntryID(String title) {
 		int id = 0;
 		for (Entry entry : service.getAllEntries()) {
-			if (entry.getDate().equals(date)) {
+			if (entry.getTitle().equals(title)) {
 				id = entry.getId();
 			}
 		}
@@ -46,8 +46,15 @@ public class DiaryTest {
 	public void addEntry() throws ParseException {
 		String sDate = "30.05.2020";
 		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
-		Entry entry = new Entry(666, "Neuer Eintrag", date, "Nervös wegen Ansprechen", "Habe trotzdem jemanden angesprochen", "-", true);
-		presenter.addEntry(666, "Neuer Eintrag", date, "Nervös wegen Ansprechen", "Habe trotzdem jemanden angesprochen", "-", true);
+		Entry entry = new Entry();
+		entry.setTitle("Neuer Eintrag");
+		entry.setDate(date);
+		entry.setDifficulty("Nervös wegen Ansprechen");
+		entry.setPride("Habe trotzdem jemanden angesprochen");
+		entry.setAdditional("-");
+		entry.setPrivacy(true);
+		entry.setMoodId(1);
+		presenter.addEntry("Neuer Eintrag", date, "Nervös wegen Ansprechen", "Habe trotzdem jemanden angesprochen", "-", true, 1);
 		assertTrue(presenter.checkEntry(entry));
 	}
 	
@@ -55,13 +62,10 @@ public class DiaryTest {
 	/**
 	 * method that tests if it is possible to access an entry from database
 	 */
-	public void getEntry() throws ParseException {
-		String sDate = "30.05.2020";
-		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
-		int id = this.getEntryID(date);
+	public void getEntry() {
+		int id = this.getEntryID("Neuer Eintrag");
 		Entry entry = presenter.getEntry(id);
-		assertEquals(entry.getAdditional(), "additional");
-		assertEquals(entry.getPride(), "pride");
+		assertEquals(entry.getDifficulty(), "Nervös wegen Ansprechen");
 	}
 	
 	@Test
@@ -69,9 +73,7 @@ public class DiaryTest {
 	 * method that tests if an existing entry can be deleted in database
 	 */
 	public void deleteEntry() throws ParseException {
-		String sDate = "30.05.2020";
-		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
-		int id = this.getEntryID(date);
+		int id = this.getEntryID("Neuer Eintrag");
 		Entry entry = presenter.getEntry(id);
 		presenter.deleteEntry(id);
 		assertFalse(entry.getAdditional().equals("additional"));
