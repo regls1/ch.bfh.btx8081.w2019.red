@@ -124,11 +124,6 @@ public class ExerciseDetailView1 extends VerticalLayout {
 		Button btnOk = new Button("Speichern", event -> {
 			presenter.saveRating(Integer.parseInt(rbgRating.getValue()), exercise.getId());
 			
-			/*
-			Rating rating = new Rating();
-			rating.setValue(rating1.getValue());
-			exsc.addRating(rating);
-			*/
 			dlgRating.close();
 		});
 
