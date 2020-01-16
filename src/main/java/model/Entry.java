@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 /**
  * model class of entry
  * 
- * @author wackt2, romap1
+ * @author wackt2, romap1(added annotations)
  *
  */
 @Entity
