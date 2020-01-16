@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 /**
  * model class of contact
  * 
- * @author wackt2, romap1
+ * @author wackt2, romap1(added annotations)
  *
  */
 
