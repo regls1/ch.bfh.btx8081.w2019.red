@@ -19,7 +19,7 @@ import service.DiaryService;
  * @author wackt2
  *
  */
-class DiaryTest {
+public class DiaryTest {
 
 	private DiaryPresenter presenter = new DiaryPresenter();
 	private DiaryService service = new DiaryService();
