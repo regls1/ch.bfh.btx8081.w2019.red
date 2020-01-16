@@ -34,11 +34,11 @@ public class ContactView extends VerticalLayout {
 
 	public ContactView() {
 		Button btnReturn = new Button("Zurück", new Icon(VaadinIcon.ARROW_LEFT));
-		Button btnNewContact = new Button("Neuer Kontakt erstellen");
-		btnNewContact.addClickListener(event -> openContactAddDialog().open());
+		Button btnNewContact = new Button("Neuer Kontakt erstellen", new Icon(VaadinIcon.PLUS));
+		btnNewContact.addClickListener(event -> openContactAddDialog("Normal").open());
 		H2 lblContactPerson = new H2("Meine Kontaktpersonen");
 		btnReturn.addClickListener(e -> UI.getCurrent().navigate(MainView.class));
-		add(btnReturn, btnNewContact, lblContactPerson);
+		add(btnReturn, lblContactPerson, btnNewContact);
 		boxContacts = new ListBox<Button>();
 		boxContacts.setSizeFull();
 
@@ -61,7 +61,9 @@ public class ContactView extends VerticalLayout {
 		add(boxContacts);
 
 		H2 lblMoreContacts = new H2("Weiterführende Kontakte");
-		add(lblMoreContacts);
+		Button btnNewFurtherContact = new Button("Neuer Kontakt erstellen", new Icon(VaadinIcon.PLUS));
+		btnNewFurtherContact.addClickListener(event -> openContactAddDialog("Further").open());
+		add(lblMoreContacts, btnNewFurtherContact);
 
 		add(boxMoreContacts);
 	}
@@ -128,7 +130,7 @@ public class ContactView extends VerticalLayout {
 	 * 
 	 * @return dialog, dialog with the fields for the needed information
 	 */
-	private Dialog openContactAddDialog() {
+	private Dialog openContactAddDialog(String kind) {
 		Dialog dialog = new Dialog();
 		H2 lblTitleDialog = new H2("Neuer Kontakt erstellen");
 		VerticalLayout vLayout = new VerticalLayout();
@@ -148,11 +150,16 @@ public class ContactView extends VerticalLayout {
 		TextField txtPLZ = new TextField("PLZ");
 		TextField txtCity = new TextField("Stadt");
 		dialogLayoutAddress.add(txtStreet, txtPLZ, txtCity);
-
+		
 		RadioButtonGroup<String> rbgKind = new RadioButtonGroup<String>();
 		rbgKind.setLabel("Weiterführender Kontakt?");
 		rbgKind.setItems("Ja", "Nein");
-		rbgKind.setValue("Nein");
+		if (kind.equals("Normal")) {
+			rbgKind.setValue("Nein");
+		} else {
+			rbgKind.setValue("Ja");
+		}
+		rbgKind.setEnabled(false);
 
 		vLayout.add(lblTitleDialog, dialogLayoutName, dialogLayoutPhone, dialogLayoutMail, dialogLayoutAddress,
 				rbgKind);
