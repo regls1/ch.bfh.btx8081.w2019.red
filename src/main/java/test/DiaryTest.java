@@ -43,9 +43,12 @@ class DiaryTest {
 	/**
 	 * method that tests if an entry can be added
 	 */
-	public void addEntry() {
-		//presenter.save...(...);
-		//assertTrue(presenter...(...));
+	public void addEntry() throws ParseException {
+		String sDate = "30.05.2020";
+		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
+		Entry entry = new Entry(666, "Neuer Eintrag", date, "Nervös wegen Ansprechen", "Habe trotzdem jemanden angesprochen", "-", true);
+		presenter.addEntry(666, "Neuer Eintrag", date, "Nervös wegen Ansprechen", "Habe trotzdem jemanden angesprochen", "-", true);
+		assertTrue(presenter.checkEntry(entry));
 	}
 	
 	@Test
@@ -53,24 +56,24 @@ class DiaryTest {
 	 * method that tests if it is possible to access an entry from database
 	 */
 	public void getEntry() throws ParseException {
-		//String sDate = "30.05.2020";
-		//Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
-		//int id = this.getEntryID(date);
-		//Entry entry = presenter.getEntry(id);
-		//assertEquals(...);
-		//assertEquals(...);
+		String sDate = "30.05.2020";
+		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
+		int id = this.getEntryID(date);
+		Entry entry = presenter.getEntry(id);
+		assertEquals(entry.getAdditional(), "additional");
+		assertEquals(entry.getPride(), "pride");
 	}
 	
 	@Test
 	/**
 	 * method that tests if an existing entry can be deleted in database
 	 */
-	public void deleteEntry() {
-		//String sDate = "30.05.2020";
-		//Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
-		//int id = this.getEntryID(date);
-		//Entry entry = presenter.getEntry(id);
-		//presenter.delete...(id);
-		//assertFalse(...);
+	public void deleteEntry() throws ParseException {
+		String sDate = "30.05.2020";
+		Date date = new SimpleDateFormat("dd.MM.yyyy").parse(sDate);
+		int id = this.getEntryID(date);
+		Entry entry = presenter.getEntry(id);
+		presenter.deleteEntry(id);
+		assertFalse(entry.getAdditional().equals("additional"));
 	}
 }
