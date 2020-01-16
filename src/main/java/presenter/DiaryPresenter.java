@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import model.Activity;
-import model.City;
 import model.Entry;
 import model.Mood;
 import model.Symptom;
@@ -94,9 +93,19 @@ public class DiaryPresenter {
 	/**
 	 * Adds Entry
 	 */
-	public void addEntry(int id, String title, Date date, String difficulty, String pride, String additional,
-			Boolean privacy) {
-		Entry entry = new Entry(id, title, date, difficulty, pride, additional, privacy);
+	public void addEntry(String title, Date date, String difficulty, String pride, String additional,
+			Boolean privacy, int moodId) {
+		Entry entry = new Entry();
+
+		// set all attributes
+		entry.setTitle(title);
+		entry.setDate(date);
+		entry.setDifficulty(difficulty);
+		entry.setPride(pride);
+		entry.setAdditional(additional);
+		entry.setPrivacy(privacy);
+		entry.setMoodId(moodId);
+
 		ds.addEntry(entry);
 	}
 
