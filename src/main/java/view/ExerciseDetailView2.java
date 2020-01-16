@@ -55,6 +55,7 @@ public class ExerciseDetailView2 extends VerticalLayout {
 		H2 exerciseTitle = new H2(exercise.getTitle());
 		
 		Label exerciseShortDescrp = new Label(exercise.getShortDescription());
+		Label ratingAverage = new Label(String.format("%30s%5.2f%n", "Durchschnittliches Rating: ",presenter.getRatingAverage(exercise.getId())));
 
 		/*
 		 * button to start the exercise
@@ -65,7 +66,7 @@ public class ExerciseDetailView2 extends VerticalLayout {
 		/*
 		 * add the components to the view
 		 */
-		add(btnReturn, exerciseTitle, exerciseShortDescrp, btnStart);
+		add(btnReturn, exerciseTitle, exerciseShortDescrp,ratingAverage, btnStart);
 
 		/*
 		 * create a new dialog to show further information of the exercise
