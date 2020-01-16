@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import model.Activity;
+import model.City;
 import model.Entry;
 import model.Mood;
 import model.Symptom;
@@ -108,7 +109,16 @@ public class DiaryPresenter {
 
 		ds.addEntry(entry);
 	}
-
+	
+	/**
+	 * Returns List with all Entries from the database.
+	 * 
+	 * @return List with all Entries
+	 */
+	public List<Mood> getAllMoods() {
+		return ds.getAllMoods();
+	}
+	
 	/**
 	 * Gets Mood
 	 * 
@@ -117,6 +127,15 @@ public class DiaryPresenter {
 	 */
 	public Mood getMood(Entry entry) {
 		return ds.getMood(entry.getMoodId());
+	}
+	
+	public int getMoodId(String value) {
+		for (Mood selected : this.getAllMoods()) {
+			if(selected.getName() == value) {
+				return selected.getMoodId();
+			}
+		}
+		return 0;
 	}
 
 	/*
